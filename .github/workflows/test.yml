@@ -27,3 +27,5 @@ jobs:
       - name: Run tests
         run: |
           pytest ASK_modulacija_test.py  
+          pytest AM_modulacija_test.py
+
