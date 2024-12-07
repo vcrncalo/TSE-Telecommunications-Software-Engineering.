@@ -28,4 +28,6 @@ jobs:
         run: |
           pytest ASK_modulacija_test.py  
           pytest AM_modulacija_test.py
+          pytest FM_modulation_test.py
+          pytest FSK_modulation_test.py
 
