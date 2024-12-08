@@ -1,4 +1,4 @@
-name: Test ASK Modulation
+name: Test ASK/AM/FM/FSK Modulation
 
 on:
   push:
