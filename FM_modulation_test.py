@@ -10,10 +10,8 @@ class TestFMModulation(unittest.TestCase):
         duration = 2
         freq_deviation = 5
 
-        # Call the FM modulation function
         time, message_signal, carrier_signal, fm_signal = fm_modulation(carrier_freq, sample_rate, duration, freq_deviation)
 
-        # Verify the length of the generated signals
         self.assertEqual(len(time), len(message_signal))
         self.assertEqual(len(time), len(carrier_signal))
         self.assertEqual(len(time), len(fm_signal))
@@ -25,7 +23,7 @@ class TestFMModulation(unittest.TestCase):
         duration = 2
         freq_deviation = 20
 
-        # Call the FM modulation function
+        # Calling the FM modulation function
         time, message_signal, carrier_signal, fm_signal = fm_modulation(carrier_freq, sample_rate, duration, freq_deviation)
         
         # Calculate instantaneous frequency deviation
@@ -43,10 +41,10 @@ class TestFMModulation(unittest.TestCase):
         duration = 0.5
         freq_deviation = 5
 
-        # Call the FM modulation function
+        # Calling the FM modulation function
         time, message_signal, carrier_signal, fm_signal = fm_modulation(carrier_freq, sample_rate, duration, freq_deviation)
 
-        # Verify the total duration of the signal
+        # Verifyin the total duration of the signal
         expected_duration = duration
         self.assertAlmostEqual(time[-1], expected_duration - (1 / sample_rate), delta=1e-6, msg=f"Expected time[-1] close to {expected_duration}")
 
