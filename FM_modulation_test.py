@@ -10,8 +10,10 @@ class TestFMModulation(unittest.TestCase):
         duration = 2
         freq_deviation = 5
 
+        #Call
         time, message_signal, carrier_signal, fm_signal = fm_modulation(carrier_freq, sample_rate, duration, freq_deviation)
-
+        
+        #Veriy
         self.assertEqual(len(time), len(message_signal))
         self.assertEqual(len(time), len(carrier_signal))
         self.assertEqual(len(time), len(fm_signal))
