@@ -28,6 +28,6 @@ jobs:
         run: |
           pytest "AM - ASK Modulations + tests/ASK_modulation_test.py"
           pytest "AM - ASK Modulations + tests/AM_modulation_test.py"
-          pytest "FM - FSK Modulations + tests/FM_modulation_test.py"
-          pytest "FM - FSK Modulations + tests/FSK_modulation_test.py"
+          pytest "FM-FSK Modulations-tests/FM_modulation_test.py"
+          pytest "FM-FSK Modulations-tests/FSK_modulation_test.py"
 
