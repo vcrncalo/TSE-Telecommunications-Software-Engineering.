@@ -26,8 +26,8 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest "AM/ASK Modulations + tests/ASK_modulacija_test.py"
-          pytest "AM/ASK Modulations + tests/AM_modulacija_test.py"
-          pytest "FM/FSK Modulations + tests/FM_modulation_test.py"
-          pytest "FM/FSK Modulations + tests/FSK_modulation_test.py"
+          pytest "AM - ASK Modulations + tests/ASK_modulacija_test.py"
+          pytest "AM - ASK Modulations + tests/AM_modulacija_test.py"
+          pytest "FM - FSK Modulations + tests/FM_modulation_test.py"
+          pytest "FM - FSK Modulations + tests/FSK_modulation_test.py"
 
