@@ -49,8 +49,10 @@ def fsk_modulation(binary_data, carrier_freq_0, carrier_freq_1, sample_rate, bit
         # Generate the corresponding carrier for this bit and add it to the FSK signal.
         if bit == 0:
             fsk_signal[start_idx:end_idx] = np.sin(2 * np.pi * carrier_freq_0 * bit_time)
-        else:
+        elif bit ==1:
             fsk_signal[start_idx:end_idx] = np.sin(2 * np.pi * carrier_freq_1 * bit_time)
+        else :
+            raise ValueError("Input data must be binary (0s and 1s only).")
 
     return time, modulating_signal, carrier_signal_0, carrier_signal_1, fsk_signal
 
