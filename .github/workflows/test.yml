@@ -1,4 +1,4 @@
-name: Test ASK/AM/FM/FSK Modulation
+name: Test Modulations with Coverage
 
 on:
   push:
@@ -11,23 +11,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.12.5' 
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.12.5'
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install matplotlib numpy pytest 
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install matplotlib numpy pytest pytest-cov
 
-      - name: Run tests
-        run: |
-          pytest "AM - ASK Modulations + tests/ASK_modulation_test.py"
-          pytest "AM - ASK Modulations + tests/AM_modulation_test.py"
-          pytest "FM-FSK Modulations-tests/FM_modulation_test.py"
-          pytest "FM-FSK Modulations-tests/FSK_modulation_test.py"
-
+    - name: Run tests with coverage
+      run: |
+        pytest --cov=./ "AM - ASK Modulations + tests/ASK_modulation_test.py"
+        pytest --cov=./ "AM - ASK Modulations + tests/AM_modulation_test.py"
+        pytest --cov=./ "FM-FSK Modulations-tests/FM_modulation_test.py"
+        pytest --cov=./ "FM-FSK Modulations-tests/FSK_modulation_test.py"
+        pytest --cov=./ "PSK-BPSK-Modulation_and_tests/PSK_test.py"
+        pytest --cov=./ "PSK-BPSK-Modulation_and_tests/BPSK_test.py"
+        pytest --cov=./ "QAM-Modulation_and_test/QAM_test.py"
