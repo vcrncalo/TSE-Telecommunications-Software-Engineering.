@@ -34,7 +34,7 @@ def bpsk_modulation(Nbits=4000, baud=900, fs=44100, f0=1800):
 
     return t, inputSignal, carrier1, BPSK_signal, fs  # Return fs too
 
-# Happy Path Test
+# Happy Path Tests
 def test_happy_path():
     """
     Test BPSK modulation with valid parameters and plot the results.
@@ -84,7 +84,7 @@ def test_happy_path():
     plt.tight_layout(rect=[0, 0, 1, 0.96])
     plt.show()
 
-# Sad Path Test (simulating an error)
+# Sad Path Tests (simulating an error)
 def test_sad_path():
     """
     Test BPSK modulation with invalid parameters and ensure errors are raised.
@@ -98,3 +98,87 @@ def test_sad_path():
         assert isinstance(e, ValueError), f"Expected ValueError, got {type(e)}"
         print("Sad path test passed with expected error:", str(e))
 
+# Additional Happy Path Tests
+def test_happy_path_2():
+    t, inputSignal, carrier1, BPSK_signal, fs = bpsk_modulation(Nbits=5000, baud=1000)
+    assert len(inputSignal) == len(BPSK_signal), "Input and BPSK signal lengths mismatch"
+    print("Happy path test 2 passed!")
+
+def test_happy_path_3():
+    t, inputSignal, carrier1, BPSK_signal, fs = bpsk_modulation(Nbits=6000, baud=1500, f0=2500)
+    assert len(inputSignal) == len(BPSK_signal), "Input and BPSK signal lengths mismatch"
+    print("Happy path test 3 passed!")
+
+def test_happy_path_4():
+    t, inputSignal, carrier1, BPSK_signal, fs = bpsk_modulation(Nbits=10000, baud=500)
+    assert len(inputSignal) == len(BPSK_signal), "Input and BPSK signal lengths mismatch"
+    print("Happy path test 4 passed!")
+
+def test_happy_path_5():
+    t, inputSignal, carrier1, BPSK_signal, fs = bpsk_modulation(Nbits=2000, baud=1200, f0=1500)
+    assert len(inputSignal) == len(BPSK_signal), "Input and BPSK signal lengths mismatch"
+    print("Happy path test 5 passed!")
+
+# Additional Sad Path Tests
+def test_sad_path_2():
+    try:
+        t, inputSignal, carrier1, BPSK_signal, fs = bpsk_modulation(Nbits=-4000)
+        print("Sad path test 2 failed: No error raised")
+    except ValueError:
+        print("Sad path test 2 passed with ValueError as expected")
+
+def test_sad_path_3():
+    try:
+        t, inputSignal, carrier1, BPSK_signal, fs = bpsk_modulation(Nbits=4000, baud=0)
+        print("Sad path test 3 failed: No error raised")
+    except ZeroDivisionError:
+        print("Sad path test 3 passed with ZeroDivisionError as expected")
+
+def test_sad_path_4():
+    try:
+        t, inputSignal, carrier1, BPSK_signal, fs = bpsk_modulation(Nbits=4000, baud=900, f0=-1800)
+        print("Sad path test 4 failed: No error raised")
+    except ValueError:
+        print("Sad path test 4 passed with ValueError as expected for negative frequency")
+
+def test_sad_path_5():
+    try:
+        t, inputSignal, carrier1, BPSK_signal, fs = bpsk_modulation(Nbits="4000")  # Invalid input type for Nbits
+        print("Sad path test 5 failed: No error raised")
+    except TypeError:
+        print("Sad path test 5 passed with TypeError as expected")
+
+def test_sad_path_6():
+    try:
+        t, inputSignal, carrier1, BPSK_signal, fs = bpsk_modulation(Nbits=0)  # Invalid Nbits value (zero)
+        print("Sad path test 6 failed: No error raised")
+    except ValueError:
+        print("Sad path test 6 passed with ValueError as expected")
+
+def test_sad_path_7():
+    try:
+        t, inputSignal, carrier1, BPSK_signal, fs = bpsk_modulation(Nbits=4000, baud=-900)  # Invalid baud rate (negative)
+        print("Sad path test 7 failed: No error raised")
+    except ValueError:
+        print("Sad path test 7 passed with ValueError as expected for negative baud rate")
+
+def test_sad_path_8():
+    try:
+        t, inputSignal, carrier1, BPSK_signal, fs = bpsk_modulation(Nbits=4000, baud=900, f0=100000)  # Too high carrier frequency
+        print("Sad path test 8 failed: No error raised")
+    except ValueError:
+        print("Sad path test 8 passed with ValueError for excessively high carrier frequency")
+
+def test_sad_path_9():
+    try:
+        t, inputSignal, carrier1, BPSK_signal, fs = bpsk_modulation(Nbits=4000, baud=900, f0=50000)  # Too high carrier frequency
+        print("Sad path test 9 failed: No error raised")
+    except ValueError:
+        print("Sad path test 9 passed with ValueError for excessively high carrier frequency")
+
+def test_sad_path_10():
+    try:
+        t, inputSignal, carrier1, BPSK_signal, fs = bpsk_modulation(Nbits=4000, baud=900, fs=-44100)  # Invalid sampling rate
+        print("Sad path test 10 failed: No error raised")
+    except ValueError:
+        print("Sad path test 10 passed with ValueError for negative sampling rate")

@@ -95,6 +95,68 @@ class TestFSKModulation(unittest.TestCase):
         with self.assertRaises(ValueError):
             fsk_modulation(binary_data, carrier_freq_0, carrier_freq_1, sample_rate, bit_duration)
 
+    def test_single_bit(self):
+        """
+        Test the FSK modulation function with a single-bit binary data input.
+
+        Verifies:
+        - The generated signals correspond to the single bit.
+        """
+        binary_data = [1]
+        carrier_freq_0 = 5
+        carrier_freq_1 = 15
+        sample_rate = 1000
+        bit_duration = 1
+
+        time, mod_signal, carrier_0, carrier_1, fsk_signal = fsk_modulation(
+            binary_data, carrier_freq_0, carrier_freq_1, sample_rate, bit_duration
+        )
+
+        self.assertEqual(len(time), int(sample_rate * bit_duration))
+        self.assertEqual(len(fsk_signal), len(time))
+
+    def test_zero_bit_duration(self):
+        """
+        Test the FSK modulation function with zero bit duration.
+
+        Verifies:
+        - The function returns empty arrays.
+        """
+        binary_data = [0, 1]
+        carrier_freq_0 = 5
+        carrier_freq_1 = 10
+        sample_rate = 1000
+        bit_duration = 0
+
+        time, mod_signal, carrier_0, carrier_1, fsk_signal = fsk_modulation(
+            binary_data, carrier_freq_0, carrier_freq_1, sample_rate, bit_duration
+        )
+
+        self.assertEqual(len(time), 0)
+        self.assertEqual(len(mod_signal), 0)
+        self.assertEqual(len(carrier_0), 0)
+        self.assertEqual(len(carrier_1), 0)
+        self.assertEqual(len(fsk_signal), 0)
+
+    def test_large_binary_data(self):
+        """
+        Test the FSK modulation function with a large binary data input.
+
+        Verifies:
+        - The function scales appropriately without errors.
+        """
+        binary_data = [0, 1] * 1000  # Large binary sequence
+        carrier_freq_0 = 5
+        carrier_freq_1 = 10
+        sample_rate = 1000
+        bit_duration = 0.5
+
+        time, mod_signal, carrier_0, carrier_1, fsk_signal = fsk_modulation(
+            binary_data, carrier_freq_0, carrier_freq_1, sample_rate, bit_duration
+        )
+
+        self.assertEqual(len(mod_signal), len(time))
+        self.assertEqual(len(fsk_signal), len(time))
 
 if __name__ == "__main__":
     unittest.main()

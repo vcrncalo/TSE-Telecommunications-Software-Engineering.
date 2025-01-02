@@ -1,4 +1,3 @@
-# test_psk.py
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -75,55 +74,233 @@ def plot_signals(t, info_signal, carrier_signal, modulated_signal, title="Signal
     plt.tight_layout()
     plt.show()
 
-# Happy Path Test
-def test_happy_path():
-    print("Running Happy Path Test...")
+# Happy Path Tests
+
+def test_valid_duration_1():
+    print("Running Happy Path Test: Valid Duration (1)...")
     try:
         duration = 2.0  # seconds
         fc = 6  # Hz
         bit_rate = 5000  # bps
         bits_per_symbol = 4  # 16-PSK
         
-        # Generate signal and plot
         t, info_signal, carrier_signal, signal = generate_signal(duration, fc, bit_rate, bits_per_symbol)
         
         plot_signals(t, info_signal, carrier_signal, signal)
-        print("Happy path test passed successfully.")
+        print("Test passed successfully.")
     except Exception as e:
-        print(f"Error in happy path test: {e}")
+        print(f"Error: {e}")
 
-# Sad Path: Invalid duration (negative duration)
-def test_invalid_duration():
-    print("Testing Invalid Duration...")
+def test_valid_duration_2():
+    print("Running Happy Path Test: Valid Duration (2)...")
     try:
-        duration = -2  # Invalid negative duration
-        fc = 6
-        bit_rate = 5000
-        bits_per_symbol = 4
+        duration = 5.0  # seconds
+        fc = 10  # Hz
+        bit_rate = 2000  # bps
+        bits_per_symbol = 8  # 256-PSK
         
-        # Generate signal and plot
+        t, info_signal, carrier_signal, signal = generate_signal(duration, fc, bit_rate, bits_per_symbol)
+        
+        plot_signals(t, info_signal, carrier_signal, signal)
+        print("Test passed successfully.")
+    except Exception as e:
+        print(f"Error: {e}")
+
+def test_valid_frequency():
+    print("Running Happy Path Test: Valid Carrier Frequency...")
+    try:
+        duration = 2.0  # seconds
+        fc = 10  # Hz (Valid frequency)
+        bit_rate = 5000  # bps
+        bits_per_symbol = 4  # 16-PSK
+        
+        t, info_signal, carrier_signal, signal = generate_signal(duration, fc, bit_rate, bits_per_symbol)
+        
+        plot_signals(t, info_signal, carrier_signal, signal)
+        print("Test passed successfully.")
+    except Exception as e:
+        print(f"Error: {e}")
+
+def test_valid_bits_per_symbol():
+    print("Running Happy Path Test: Valid Bits Per Symbol...")
+    try:
+        duration = 2.0  # seconds
+        fc = 6  # Hz
+        bit_rate = 5000  # bps
+        bits_per_symbol = 8  # 256-PSK
+        
+        t, info_signal, carrier_signal, signal = generate_signal(duration, fc, bit_rate, bits_per_symbol)
+        
+        plot_signals(t, info_signal, carrier_signal, signal)
+        print("Test passed successfully.")
+    except Exception as e:
+        print(f"Error: {e}")
+
+def test_short_duration():
+    print("Running Happy Path Test: Short Duration...")
+    try:
+        duration = 0.1  # seconds
+        fc = 6  # Hz
+        bit_rate = 5000  # bps
+        bits_per_symbol = 4  # 16-PSK
+        
+        t, info_signal, carrier_signal, signal = generate_signal(duration, fc, bit_rate, bits_per_symbol)
+        
+        plot_signals(t, info_signal, carrier_signal, signal)
+        print("Test passed successfully.")
+    except Exception as e:
+        print(f"Error: {e}")
+
+def test_high_bit_rate():
+    print("Running Happy Path Test: High Bit Rate...")
+    try:
+        duration = 2.0  # seconds
+        fc = 6  # Hz
+        bit_rate = 10000  # bps
+        bits_per_symbol = 4  # 16-PSK
+        
+        t, info_signal, carrier_signal, signal = generate_signal(duration, fc, bit_rate, bits_per_symbol)
+        
+        plot_signals(t, info_signal, carrier_signal, signal)
+        print("Test passed successfully.")
+    except Exception as e:
+        print(f"Error: {e}")
+
+def test_multiple_symbols():
+    print("Running Happy Path Test: Multiple Symbols...")
+    try:
+        duration = 2.0  # seconds
+        fc = 6  # Hz
+        bit_rate = 5000  # bps
+        bits_per_symbol = 8  # 256-PSK
+        
+        t, info_signal, carrier_signal, signal = generate_signal(duration, fc, bit_rate, bits_per_symbol)
+        
+        plot_signals(t, info_signal, carrier_signal, signal)
+        print("Test passed successfully.")
+    except Exception as e:
+        print(f"Error: {e}")
+
+def test_varied_bit_rate():
+    print("Running Happy Path Test: Varied Bit Rate...")
+    try:
+        duration = 2.0  # seconds
+        fc = 6  # Hz
+        bit_rate = 1500  # bps
+        bits_per_symbol = 4  # 16-PSK
+        
+        t, info_signal, carrier_signal, signal = generate_signal(duration, fc, bit_rate, bits_per_symbol)
+        
+        plot_signals(t, info_signal, carrier_signal, signal)
+        print("Test passed successfully.")
+    except Exception as e:
+        print(f"Error: {e}")
+
+def test_high_frequency():
+    print("Running Happy Path Test: High Frequency...")
+    try:
+        duration = 2.0  # seconds
+        fc = 50  # Hz (High frequency)
+        bit_rate = 5000  # bps
+        bits_per_symbol = 4  # 16-PSK
+        
+        t, info_signal, carrier_signal, signal = generate_signal(duration, fc, bit_rate, bits_per_symbol)
+        
+        plot_signals(t, info_signal, carrier_signal, signal)
+        print("Test passed successfully.")
+    except Exception as e:
+        print(f"Error: {e}")
+
+def test_long_duration():
+    print("Running Happy Path Test: Long Duration...")
+    try:
+        duration = 10.0  # seconds
+        fc = 6  # Hz
+        bit_rate = 5000  # bps
+        bits_per_symbol = 4  # 16-PSK
+        t, info_signal, carrier_signal, signal = generate_signal(duration, fc, bit_rate, bits_per_symbol)
+        
+        plot_signals(t, info_signal, carrier_signal, signal)
+        print("Test passed successfully.")
+    except Exception as e:
+        print(f"Error: {e}")
+
+# Sad Path Tests
+
+def test_invalid_duration_negative():
+    print("Running Sad Path Test: Invalid Negative Duration...")
+    try:
+        duration = -1.0  # Invalid negative duration
+        fc = 6  # Hz
+        bit_rate = 5000  # bps
+        bits_per_symbol = 4  # 16-PSK
+        
         t, info_signal, carrier_signal, signal = generate_signal(duration, fc, bit_rate, bits_per_symbol)
         
         plot_signals(t, info_signal, carrier_signal, signal)
         print("Sad path test passed successfully (unexpected behavior).")
     except Exception as e:
-        print(f"Error in invalid duration test: {e}")
+        print(f"Error: {e}")
 
-# Sad Path: Invalid bit rate (zero bit rate)
-def test_invalid_bit_rate():
-    print("Testing Invalid Bit Rate...")
+def test_invalid_bit_rate_zero():
+    print("Running Sad Path Test: Invalid Zero Bit Rate...")
     try:
-        duration = 2.0
-        fc = 6
+        duration = 2.0  # seconds
+        fc = 6  # Hz
         bit_rate = 0  # Invalid zero bit rate
-        bits_per_symbol = 4
+        bits_per_symbol = 4  # 16-PSK
         
-        # Generate signal and plot
         t, info_signal, carrier_signal, signal = generate_signal(duration, fc, bit_rate, bits_per_symbol)
         
         plot_signals(t, info_signal, carrier_signal, signal)
         print("Sad path test passed successfully (unexpected behavior).")
     except Exception as e:
-        print(f"Error in invalid bit rate test: {e}")
+        print(f"Error: {e}")
 
+def test_invalid_frequency_high():
+    print("Running Sad Path Test: Invalid High Frequency...")
+    try:
+        duration = 2.0  # seconds
+        fc = 1000000  # Invalid high frequency
+        bit_rate = 5000  # bps
+        bits_per_symbol = 4  # 16-PSK
+        
+        t, info_signal, carrier_signal, signal = generate_signal(duration, fc, bit_rate, bits_per_symbol)
+        
+        plot_signals(t, info_signal, carrier_signal, signal)
+        print("Sad path test passed successfully (unexpected behavior).")
+    except Exception as e:
+        print(f"Error: {e}")
 
+def test_invalid_bit_rate_negative():
+    print("Running Sad Path Test: Invalid Negative Bit Rate...")
+    try:
+        duration = 2.0  # seconds
+        fc = 6  # Hz
+        bit_rate = -5000  # Invalid negative bit rate
+        bits_per_symbol = 4  # 16-PSK
+        
+        t, info_signal, carrier_signal, signal = generate_signal(duration, fc, bit_rate, bits_per_symbol)
+        
+        plot_signals(t, info_signal, carrier_signal, signal)
+        print("Sad path test passed successfully (unexpected behavior).")
+    except Exception as e:
+        print(f"Error: {e}")
+
+def test_invalid_symbol_rate():
+    print("Running Sad Path Test: Invalid Symbol Rate...")
+    try:
+        duration = 2.0  # seconds
+        fc = 6  # Hz
+        bit_rate = 5000  # bps
+        bits_per_symbol = 4  # 16-PSK
+        
+        # Overwrite symbol rate to make it invalid
+        bits_per_symbol = 999  # Invalid symbol rate
+        
+        t, info_signal, carrier_signal, signal = generate_signal(duration, fc, bit_rate, bits_per_symbol)
+        
+        plot_signals(t, info_signal, carrier_signal, signal)
+        print("Sad path test passed successfully (unexpected behavior).")
+    except Exception as e:
+        print(f"Error: {e}")
