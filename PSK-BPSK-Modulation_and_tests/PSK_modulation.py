@@ -28,8 +28,13 @@ class PSKModem(Modem):
         
         Parameters:
             M (int): Number of symbols in the constellation (e.g., 16 for 16-PSK).
+            
+        Example:
+            - M = 4 for QPSK
+            - M = 8 for 8-PSK
+            - M = 16 for 16-PSK
         """        
-        m = np.arange(0,M)  # all information symbols m={0,1,...,M-1}
+        m = np.arange(0, M)  # all information symbols m={0,1,...,M-1}
         I = 1/np.sqrt(2) * np.cos(m/M * 2 * np.pi)  # In-phase component
         Q = 1/np.sqrt(2) * np.sin(m/M * 2 * np.pi)  # Quadrature component
         constellation = I + 1j * Q  # reference constellation        
@@ -41,6 +46,10 @@ def plot_constellation(modem):
     
     Parameters:
         modem (Modem): Modem object with a defined constellation.
+        
+    Example: 
+        - For a 16-PSK, the constellation will have 16 points arranged around a circle.
+        - For a 4-PSK, the constellation will have 4 points equally spaced on the real and imaginary axes.
     """
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
     
@@ -72,11 +81,12 @@ def main():
     """
     Main function to demonstrate the PSK modem and plot its constellation.
     
+    Example:
+        - M = 16 for 16-PSK: 16 symbols arranged around a circle.
     """
-    M = 16
+    M = 16  # You can change M to test other PSK schemes (4, 8, 16, etc.)
     psk_modem = PSKModem(M)
     plot_constellation(psk_modem)
 
 if __name__ == '__main__':
     main()
-

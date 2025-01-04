@@ -16,19 +16,16 @@ def amplitude_modulation(carrier_freq, sample_rate, duration):
     - message_signal: The base message signal (sinusoidal wave).
     - carrier_signal: The carrier signal (sinusoidal wave).
     - am_signal: The resulting amplitude-modulated signal.
+
+    Example:
+        time, msg, carrier, am = amplitude_modulation(10, 1000, 2)
+        print(len(time))  # Output: 2000
+        print(len(msg), len(carrier), len(am))  # Output: (2000, 2000, 2000)
     """
-    # Generate a time vector with increments of 1/sample_rate.
     time = np.arange(0, duration, 1 / sample_rate)
-
-    # Generate the message signal: a simple sine wave with frequency 1 Hz.
     message_signal = np.sin(2 * np.pi * time)
-
-    # Generate the carrier signal: a sine wave with the specified carrier frequency.
     carrier_signal = np.sin(2 * np.pi * carrier_freq * time)
-
-    # Apply amplitude modulation by multiplying the message signal with the carrier.
     am_signal = message_signal * np.cos(2 * np.pi * carrier_freq * time)
-
     return time, message_signal, carrier_signal, am_signal
 
 # --------------------
@@ -42,10 +39,12 @@ def plot_am_signals(time, message_signal, carrier_signal, am_signal, carrier_fre
     - carrier_signal: The carrier signal (sinusoidal wave).
     - am_signal: The resulting amplitude-modulated signal.
     - carrier_freq: Frequency of the carrier signal in Hz.
-    """
-    plt.figure(figsize=(12, 8))  # Set figure size.
 
-    # Plot the message signal.
+    Example:
+        time, msg, carrier, am = amplitude_modulation(10, 1000, 2)
+        plot_am_signals(time, msg, carrier, am, 10)
+    """
+    plt.figure(figsize=(12, 8))
     plt.subplot(3, 1, 1)
     plt.plot(time, message_signal)
     plt.xlim([0, max(time)])
@@ -54,7 +53,6 @@ def plot_am_signals(time, message_signal, carrier_signal, am_signal, carrier_fre
     plt.xlabel('Time (s)')
     plt.ylabel('Amplitude')
 
-    # Plot the carrier signal.
     plt.subplot(3, 1, 2)
     plt.plot(time, carrier_signal)
     plt.xlim([0, max(time)])
@@ -63,10 +61,6 @@ def plot_am_signals(time, message_signal, carrier_signal, am_signal, carrier_fre
     plt.xlabel('Time (s)')
     plt.ylabel('Amplitude')
 
-    # Add text to indicate carrier frequency.
-    plt.text(0, 0.5, f'Fc = {carrier_freq} Hz', fontsize=12, color='red')
-
-    # Plot the AM modulated signal.
     plt.subplot(3, 1, 3)
     plt.plot(time, am_signal)
     plt.xlim([0, max(time)])
@@ -75,7 +69,7 @@ def plot_am_signals(time, message_signal, carrier_signal, am_signal, carrier_fre
     plt.xlabel('Time (s)')
     plt.ylabel('Amplitude')
 
-    plt.tight_layout()  # Adjust layout to prevent overlap.
+    plt.tight_layout()
     plt.show()
 
 # --------------------
@@ -93,17 +87,16 @@ def main_am(carrier_freq=10, sample_rate=1000, duration=2):
     - message_signal: The base message signal.
     - carrier_signal: The carrier signal.
     - am_signal: The amplitude-modulated signal.
+
+    Example:
+        time, msg, carrier, am = main_am(10, 1000, 2)
+        print(len(time))  # Output: 2000
     """
-    # Perform AM modulation.
     time, message_signal, carrier_signal, am_signal = amplitude_modulation(
         carrier_freq, sample_rate, duration)
-
-    # Plot the modulated signals.
     plot_am_signals(time, message_signal, carrier_signal, am_signal, carrier_freq)
-
     return time, message_signal, carrier_signal, am_signal
 
 # --------------------
 if __name__ == "__main__":
-    # Execute the main function if the script is run directly.
     main_am()

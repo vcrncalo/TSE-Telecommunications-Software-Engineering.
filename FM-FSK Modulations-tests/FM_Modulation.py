@@ -7,16 +7,24 @@ def fm_modulation(carrier_freq, sample_rate, duration, freq_deviation):
     Perform Frequency Modulation (FM) of a message signal.
 
     Parameters:
-    - carrier_freq: Carrier frequency in Hz.
-    - sample_rate: Sampling rate for signal generation in Hz.
-    - duration: Duration of the signal in seconds.
-    - freq_deviation: Frequency deviation (maximum shift from carrier frequency in Hz).
+        carrier_freq (float): Carrier frequency in Hz.
+        sample_rate (float): Sampling rate for signal generation in Hz.
+        duration (float): Duration of the signal in seconds.
+        freq_deviation (float): Frequency deviation (maximum shift from carrier frequency in Hz).
 
     Returns:
-    - time: Time vector for the entire signal.
-    - message_signal: The base message signal (a simple sine wave).
-    - carrier_signal: The carrier signal before modulation.
-    - fm_signal: The resulting FM modulated signal.
+        tuple: Contains the following:
+            - time (numpy array): Time vector for the entire signal.
+            - message_signal (numpy array): The base message signal (a simple sine wave).
+            - carrier_signal (numpy array): The carrier signal before modulation.
+            - fm_signal (numpy array): The resulting FM modulated signal.
+
+    Example:
+        carrier_freq = 10
+        sample_rate = 1000
+        duration = 2
+        freq_deviation = 5
+        time, message_signal, carrier_signal, fm_signal = fm_modulation(carrier_freq, sample_rate, duration, freq_deviation)
     """
     # Validate input parameters.
     if not isinstance(carrier_freq, (int, float)) or carrier_freq <= 0:
@@ -51,15 +59,18 @@ def plot_fm_signals(time, message_signal, carrier_signal, fm_signal, carrier_fre
     Plot the message signal, carrier signal, and FM modulated signal.
 
     Parameters:
-    - time: Time vector for the signals.
-    - message_signal: The base message signal.
-    - carrier_signal: The carrier signal before modulation.
-    - fm_signal: The resulting FM modulated signal.
-    - carrier_freq: Carrier frequency in Hz.
-    - freq_deviation: Frequency deviation in Hz.
+        time (numpy array): Time vector for the signals.
+        message_signal (numpy array): The base message signal.
+        carrier_signal (numpy array): The carrier signal before modulation.
+        fm_signal (numpy array): The resulting FM modulated signal.
+        carrier_freq (float): Carrier frequency in Hz.
+        freq_deviation (float): Frequency deviation in Hz.
+
+    Example:
+        plot_fm_signals(time, message_signal, carrier_signal, fm_signal, carrier_freq=10, freq_deviation=5)
     """
     # Set up the figure and plot the signals in subplots.
-    plt.figure(figsize=(12, 8))  # Define the overall figure size.
+    plt.figure(figsize=(12, 8))
 
     # Plot the message signal.
     plt.subplot(3, 1, 1)
@@ -94,6 +105,10 @@ def main_fm():
     Main function to execute FM modulation and visualize the results.
 
     Executes the FM modulation process and plots the message, carrier, and modulated signals.
+
+    Example:
+        This function automatically executes when the script runs and plots the signals.
+        Parameters used: carrier_freq=10, sample_rate=1000, duration=2, freq_deviation=5.
     """
     # Define FM modulation parameters.
     carrier_freq = 10       # Carrier frequency (Hz).

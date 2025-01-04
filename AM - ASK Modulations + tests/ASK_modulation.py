@@ -3,7 +3,6 @@
 import numpy as np  # Provides mathematical functions like pi (np.pi) and sine (np.sin).
 import matplotlib.pyplot as plt  # Enables plotting of graphs.
 
-
 # --------------------
 def ask_modulation(binary_sequence):
     """
@@ -18,6 +17,11 @@ def ask_modulation(binary_sequence):
             - bw (numpy array): Repeated binary sequence to match the signal duration.
             - sint (numpy array): Carrier sinusoidal signal.
             - st (numpy array): ASK modulated signal.
+
+    Example:
+        binary_sequence = [1, 0, 1, 0]
+        t, bw, sint, st = ask_modulation(binary_sequence)
+        print(len(t), len(bw))  # Outputs: 400 400
     """
     n = len(binary_sequence)  # Length of the binary sequence.
     bw = np.repeat(binary_sequence, 100)  # Each bit is repeated 100 times.
@@ -25,7 +29,6 @@ def ask_modulation(binary_sequence):
     sint = np.sin(2 * np.pi * t)  # Carrier sinusoidal signal.
     st = bw * sint  # ASK modulated signal is the product of the binary signal and the sinusoidal signal.
     return t, bw, sint, st  # Return the components.
-
 
 # --------------------
 def plot_ask_signals(t, bw, sint, st):
@@ -37,17 +40,22 @@ def plot_ask_signals(t, bw, sint, st):
         bw (numpy array): Repeated binary sequence.
         sint (numpy array): Carrier sinusoidal signal.
         st (numpy array): ASK modulated signal.
+
+    Example:
+        binary_sequence = [1, 0, 1, 0]
+        t, bw, sint, st = ask_modulation(binary_sequence)
+        plot_ask_signals(t, bw, sint, st)
     """
-    plt.figure(figsize=(10, 5))  # Set the figure size.
+    plt.figure(figsize=(10, 5))
 
     # Plot the digital signal.
-    plt.subplot(3, 1, 1)  # 3 rows, 1 column, first plot.
-    plt.plot(t, bw, linewidth=1.5)  # Plot the digital signal.
-    plt.grid(True)  # Enable grid.
-    plt.axis([0, max(t), -2, 2])  # Set x and y axis limits.
-    plt.title('Digital Signal')  # Title of the plot.
-    plt.xlabel('Time')  # Label for the x-axis.
-    plt.ylabel('Amplitude')  # Label for the y-axis.
+    plt.subplot(3, 1, 1)
+    plt.plot(t, bw, linewidth=1.5)
+    plt.grid(True)
+    plt.axis([0, max(t), -2, 2])
+    plt.title('Digital Signal')
+    plt.xlabel('Time')
+    plt.ylabel('Amplitude')
 
     # Plot the carrier signal.
     plt.subplot(3, 1, 2)
@@ -68,18 +76,20 @@ def plot_ask_signals(t, bw, sint, st):
     plt.ylabel('Amplitude')
 
     plt.tight_layout()  # Adjust layout to prevent overlapping.
-    plt.show()  # Display the plot.
-
+    plt.show()
 
 # --------------------
 if __name__ == "__main__":
     """
     Main execution block. Prompts the user for a binary sequence, performs ASK modulation, 
     and plots the results.
+
+    Example:
+        Enter a binary sequence when prompted (e.g., [1, 0, 1, 0]).
+        The program will display the plots for the digital signal, carrier signal, and modulated signal.
     """
     binary_sequence = input(
         "Enter a binary sequence in the format [1, 0, 1, 0] with brackets, commas, and spaces: ")
-    # Convert user input into a list of integers.
     binary_sequence = list(map(int, binary_sequence.strip('[]').split(",")))
 
     # Perform ASK modulation and obtain the components.

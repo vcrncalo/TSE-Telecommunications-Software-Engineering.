@@ -19,6 +19,10 @@ def bpsk_modulation(Nbits=4000, baud=900, fs=44100, f0=1800):
             - carrier1 (numpy.ndarray): Carrier wave (cosine) signal.
             - BPSK_signal (numpy.ndarray): Modulated BPSK signal.
             - fs (int): Sampling frequency used.
+    
+    Example:
+        t, inputSignal, carrier1, BPSK_signal, fs = bpsk_modulation(Nbits=5000, baud=1200, fs=44100, f0=1800)
+        # This will generate a BPSK modulated signal with 5000 bits, baud rate of 1200, sample rate 44100 Hz, and carrier frequency 1800 Hz.
     """
     # Configuration
     Ns = int(fs / baud)         # Number of samples per symbol
@@ -38,6 +42,10 @@ def bpsk_modulation(Nbits=4000, baud=900, fs=44100, f0=1800):
 def test_happy_path():
     """
     Test BPSK modulation with valid parameters and plot the results.
+    
+    Example:
+        test_happy_path()
+        # This will run the BPSK modulation function with default parameters and plot the results.
     """
     # Running BPSK modulation with valid parameters
     t, inputSignal, carrier1, BPSK_signal, fs = bpsk_modulation()
@@ -88,6 +96,10 @@ def test_happy_path():
 def test_sad_path():
     """
     Test BPSK modulation with invalid parameters and ensure errors are raised.
+    
+    Example:
+        test_sad_path()
+        # This will simulate an error due to invalid input parameters like negative Nbits.
     """
     try:
         # Running BPSK modulation with an invalid number of bits (negative value)
