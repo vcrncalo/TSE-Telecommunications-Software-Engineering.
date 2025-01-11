@@ -1,10 +1,9 @@
-# Test code for FM_modulation.py (Frequency Modulation)
 import unittest
-from FM_Modulation import fm_modulation  # Import the FM modulation function
+from FM_modulation import fm_modulation  # Import the FM modulation function
 import numpy as np  # Required for numerical calculations and validations in tests
 
-
 class TestFMModulation(unittest.TestCase):
+    # Happy path tests
     def test_increasing_carrier_frequency(self):
         """
         Test FM modulation with a standard carrier frequency and parameters.
@@ -100,26 +99,6 @@ class TestFMModulation(unittest.TestCase):
         self.assertEqual(len(time), len(carrier_signal))
         self.assertEqual(len(time), len(fm_signal))
 
-    def test_invalid_input(self):
-        """
-        Test FM modulation with invalid inputs.
-
-        Verifies:
-        - The function raises a ValueError for invalid parameter combinations.
-        """
-        invalid_inputs = [
-            ("invalid", 1000, 2, 5),  # Non-numeric carrier frequency
-            (10, -1000, 2, 5),  # Negative sampling rate
-            (10, 1000, -2, 5),  # Negative signal duration
-            (10, 1000, 2, "invalid"),  # Non-numeric frequency deviation
-        ]
-
-        for carrier_freq, sample_rate, duration, freq_deviation in invalid_inputs:
-            with self.assertRaises(ValueError):
-                fm_modulation(carrier_freq, sample_rate, duration, freq_deviation)
-
-    # Additional Tests
-
     def test_high_sample_rate(self):
         """
         Test FM modulation with a very high sampling rate.
@@ -139,21 +118,6 @@ class TestFMModulation(unittest.TestCase):
         self.assertEqual(len(time), len(message_signal))
         self.assertEqual(len(time), len(carrier_signal))
         self.assertEqual(len(time), len(fm_signal))
-
-    def test_negative_frequency_deviation(self):
-        """
-        Test FM modulation with a negative frequency deviation.
-
-        Verifies:
-        - The function raises a ValueError.
-        """
-        carrier_freq = 10
-        sample_rate = 1000
-        duration = 1
-        freq_deviation = -5
-
-        with self.assertRaises(ValueError):
-            fm_modulation(carrier_freq, sample_rate, duration, freq_deviation)
 
     def test_signal_amplitude_variation(self):
         """
@@ -210,6 +174,40 @@ class TestFMModulation(unittest.TestCase):
 
         freq_spectrum = np.fft.fft(message_signal)
         self.assertTrue(len(freq_spectrum) > 0)
+
+    # Sad path tests
+    def test_invalid_input(self):
+        """
+        Test FM modulation with invalid inputs.
+
+        Verifies:
+        - The function raises a ValueError for invalid parameter combinations.
+        """
+        invalid_inputs = [
+            ("invalid", 1000, 2, 5),  # Non-numeric carrier frequency
+            (10, -1000, 2, 5),  # Negative sampling rate
+            (10, 1000, -2, 5),  # Negative signal duration
+            (10, 1000, 2, "invalid"),  # Non-numeric frequency deviation
+        ]
+
+        for carrier_freq, sample_rate, duration, freq_deviation in invalid_inputs:
+            with self.assertRaises(ValueError):
+                fm_modulation(carrier_freq, sample_rate, duration, freq_deviation)
+
+    def test_negative_frequency_deviation(self):
+        """
+        Test FM modulation with a negative frequency deviation.
+
+        Verifies:
+        - The function raises a ValueError.
+        """
+        carrier_freq = 10
+        sample_rate = 1000
+        duration = 1
+        freq_deviation = -5
+
+        with self.assertRaises(ValueError):
+            fm_modulation(carrier_freq, sample_rate, duration, freq_deviation)
 
 if __name__ == "__main__":
     unittest.main()

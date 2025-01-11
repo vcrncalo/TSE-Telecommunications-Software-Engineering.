@@ -1,40 +1,37 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-# --------------------
 def fsk_modulation(binary_data, carrier_freq_0, carrier_freq_1, sample_rate, bit_duration):
-    """
-    Perform Frequency-Shift Keying (FSK) modulation.
+    """!
+    @brief Perform Frequency-Shift Keying (FSK) modulation.
+    
+    @param binary_data The binary data sequence to be modulated (e.g., [1, 0, 1]).
+    @param carrier_freq_0 Carrier frequency corresponding to binary 0 (Hz).
+    @param carrier_freq_1 Carrier frequency corresponding to binary 1 (Hz).
+    @param sample_rate Sampling rate for the signal (Hz).
+    @param bit_duration Duration of each bit (seconds).
+    
+    @return A tuple containing:
+        - time: Time vector for the entire signal duration.
+        - modulating_signal: Binary signal expanded over time.
+        - carrier_signal_0: Continuous carrier signal for binary 0.
+        - carrier_signal_1: Continuous carrier signal for binary 1.
+        - fsk_signal: FSK modulated signal.
+    
+    @code
+    binary_data = [1, 0, 1, 0]
+    carrier_freq_0 = 5  # Hz
+    carrier_freq_1 = 10 # Hz
+    sample_rate = 1000  # Hz
+    bit_duration = 1    # second
 
-    Parameters:
-        binary_data (list of int): The binary data sequence to be modulated (e.g., [1, 0, 1]).
-        carrier_freq_0 (float): Carrier frequency corresponding to binary 0 (Hz).
-        carrier_freq_1 (float): Carrier frequency corresponding to binary 1 (Hz).
-        sample_rate (float): Sampling rate for the signal (Hz).
-        bit_duration (float): Duration of each bit (seconds).
-
-    Returns:
-        tuple: A tuple containing the following:
-            - time (numpy.ndarray): Time vector for the entire signal duration.
-            - modulating_signal (numpy.ndarray): Binary signal expanded over time.
-            - carrier_signal_0 (numpy.ndarray): Continuous carrier signal for binary 0.
-            - carrier_signal_1 (numpy.ndarray): Continuous carrier signal for binary 1.
-            - fsk_signal (numpy.ndarray): FSK modulated signal.
-
-    Example:
-        binary_data = [1, 0, 1, 0]
-        carrier_freq_0 = 5  # Hz
-        carrier_freq_1 = 10 # Hz
-        sample_rate = 1000  # Hz
-        bit_duration = 1    # second
-
-        time, modulating_signal, carrier_signal_0, carrier_signal_1, fsk_signal = fsk_modulation(
-            binary_data, carrier_freq_0, carrier_freq_1, sample_rate, bit_duration)
-
-        This will generate a time vector, the modulating binary signal, the continuous carrier signals for 0 and 1,
-        and the resulting FSK modulated signal, all based on the input parameters.
-
+    time, modulating_signal, carrier_signal_0, carrier_signal_1, fsk_signal = fsk_modulation(
+        binary_data, carrier_freq_0, carrier_freq_1, sample_rate, bit_duration)
+    @endcode
+    
+    @details
+    This function generates a time vector, the modulating binary signal, the continuous carrier signals for 0 and 1,
+    and the resulting FSK modulated signal, all based on the input parameters.
     """
     # Create a time vector for the entire signal duration.
     time = np.arange(0, len(binary_data) * bit_duration, 1 / sample_rate)
@@ -71,21 +68,24 @@ def fsk_modulation(binary_data, carrier_freq_0, carrier_freq_1, sample_rate, bit
 
     return time, modulating_signal, carrier_signal_0, carrier_signal_1, fsk_signal
 
-
-# --------------------
 def plot_fsk_signals(time, modulating_signal, carrier_signal_0, carrier_signal_1, fsk_signal, carrier_freq_0,
                      carrier_freq_1):
-    """
-    Plot the modulating signal, carrier signals, and the FSK modulated signal.
-
-    Parameters:
-        time (numpy.ndarray): Time vector for the signals.
-        modulating_signal (numpy.ndarray): Binary modulating signal over time.
-        carrier_signal_0 (numpy.ndarray): Carrier signal for binary 0.
-        carrier_signal_1 (numpy.ndarray): Carrier signal for binary 1.
-        fsk_signal (numpy.ndarray): FSK modulated signal.
-        carrier_freq_0 (float): Frequency of carrier signal for binary 0 (Hz).
-        carrier_freq_1 (float): Frequency of carrier signal for binary 1 (Hz).
+    """!
+    @brief Plot the modulating signal, carrier signals, and the FSK modulated signal.
+    
+    @param time Time vector for the signals.
+    @param modulating_signal Binary modulating signal over time.
+    @param carrier_signal_0 Carrier signal for binary 0.
+    @param carrier_signal_1 Carrier signal for binary 1.
+    @param fsk_signal FSK modulated signal.
+    @param carrier_freq_0 Frequency of carrier signal for binary 0 (Hz).
+    @param carrier_freq_1 Frequency of carrier signal for binary 1 (Hz).
+    
+    @code
+    time, modulating_signal, carrier_signal_0, carrier_signal_1, fsk_signal = fsk_modulation(
+        [1, 0, 1, 0], 5, 10, 1000, 1)
+    plot_fsk_signals(time, modulating_signal, carrier_signal_0, carrier_signal_1, fsk_signal, 5, 10)
+    @endcode
     """
     plt.figure(figsize=(12, 8))
 
@@ -125,12 +125,11 @@ def plot_fsk_signals(time, modulating_signal, carrier_signal_0, carrier_signal_1
     plt.tight_layout()
     plt.show()
 
-
-# --------------------
 def main_fsk():
-    """
-    Main function to perform FSK modulation and plot the signals.
-
+    """!
+    @brief Main function to perform FSK modulation and plot the signals.
+    
+    @details
     Steps:
         1. Accept binary input from the user.
         2. Set FSK modulation parameters.
@@ -155,7 +154,5 @@ def main_fsk():
     plot_fsk_signals(time, modulating_signal, carrier_signal_0, carrier_signal_1, fsk_signal, carrier_freq_0,
                      carrier_freq_1)
 
-
-# --------------------
 if __name__ == "__main__":
     main_fsk()

@@ -1,10 +1,9 @@
-# Test code for FSK_modulation.py (FSK Modulation)
 import unittest
 from FSK_modulation import fsk_modulation  # Import the function from the main FSK modulation code
 import numpy as np  # Required for array manipulations and validations in tests
 
-
 class TestFSKModulation(unittest.TestCase):
+    # Happy path tests
     def test_basic_case(self):
         """
         Test the basic functionality of the FSK modulation function.
@@ -34,6 +33,7 @@ class TestFSKModulation(unittest.TestCase):
         mod_signal_reshaped = mod_signal.reshape((len(binary_data), -1))
         np.testing.assert_array_equal(mod_signal_reshaped[:, 0], binary_data)
 
+    # Happy path tests
     def test_bit_duration(self):
         """
         Test the function with varying bit durations.
@@ -56,6 +56,7 @@ class TestFSKModulation(unittest.TestCase):
         expected_duration = len(binary_data) * bit_duration
         self.assertAlmostEqual(time[-1], expected_duration, delta=1 / sample_rate)
 
+    # Happy path tests
     def test_high_frequencies(self):
         """
         Test the function with high carrier frequencies.
@@ -78,23 +79,28 @@ class TestFSKModulation(unittest.TestCase):
         self.assertTrue(np.all(np.abs(carrier_0) <= 1), "Carrier 0 signal is not normalized.")
         self.assertTrue(np.all(np.abs(carrier_1) <= 1), "Carrier 1 signal is not normalized.")
 
-    def test_invalid_binary_data(self):
+    # Happy path tests
+    def test_large_binary_data(self):
         """
-        Test the function with invalid binary input data.
+        Test the FSK modulation function with a large binary data input.
 
         Verifies:
-        - The function raises a ValueError for non-binary input data.
+        - The function scales appropriately without errors.
         """
-        binary_data = [1, 2, 0, -1]  # Invalid binary data
+        binary_data = [0, 1] * 1000  # Large binary sequence
         carrier_freq_0 = 5
         carrier_freq_1 = 10
         sample_rate = 1000
-        bit_duration = 1
+        bit_duration = 0.5
 
-        # Expect a ValueError for invalid binary input
-        with self.assertRaises(ValueError):
-            fsk_modulation(binary_data, carrier_freq_0, carrier_freq_1, sample_rate, bit_duration)
+        time, mod_signal, carrier_0, carrier_1, fsk_signal = fsk_modulation(
+            binary_data, carrier_freq_0, carrier_freq_1, sample_rate, bit_duration
+        )
 
+        self.assertEqual(len(mod_signal), len(time))
+        self.assertEqual(len(fsk_signal), len(time))
+
+    # Happy path tests
     def test_single_bit(self):
         """
         Test the FSK modulation function with a single-bit binary data input.
@@ -115,6 +121,25 @@ class TestFSKModulation(unittest.TestCase):
         self.assertEqual(len(time), int(sample_rate * bit_duration))
         self.assertEqual(len(fsk_signal), len(time))
 
+    # Sad path tests
+    def test_invalid_binary_data(self):
+        """
+        Test the function with invalid binary input data.
+
+        Verifies:
+        - The function raises a ValueError for non-binary input data.
+        """
+        binary_data = [1, 2, 0, -1]  # Invalid binary data
+        carrier_freq_0 = 5
+        carrier_freq_1 = 10
+        sample_rate = 1000
+        bit_duration = 1
+
+        # Expect a ValueError for invalid binary input
+        with self.assertRaises(ValueError):
+            fsk_modulation(binary_data, carrier_freq_0, carrier_freq_1, sample_rate, bit_duration)
+
+    # Sad path tests
     def test_zero_bit_duration(self):
         """
         Test the FSK modulation function with zero bit duration.
@@ -138,25 +163,67 @@ class TestFSKModulation(unittest.TestCase):
         self.assertEqual(len(carrier_1), 0)
         self.assertEqual(len(fsk_signal), 0)
 
-    def test_large_binary_data(self):
+    # Sad path tests
+    def test_negative_sample_rate(self):
         """
-        Test the FSK modulation function with a large binary data input.
+        Test the function with a negative sample rate.
 
         Verifies:
-        - The function scales appropriately without errors.
+        - The function raises a ValueError for a negative sample rate.
         """
-        binary_data = [0, 1] * 1000  # Large binary sequence
+        binary_data = [0, 1]
+        carrier_freq_0 = 5
+        carrier_freq_1 = 10
+        sample_rate = -1000
+        bit_duration = 1
+
+        with self.assertRaises(ValueError):
+            fsk_modulation(binary_data, carrier_freq_0, carrier_freq_1, sample_rate, bit_duration)
+
+    # Sad path tests
+    def test_zero_carrier_frequencies(self):
+        """
+        Test the function with zero carrier frequencies.
+
+        Verifies:
+        - The function does not raise an error, but the output signals are all zeros.
+        """
+        binary_data = [1, 0, 1]
+        carrier_freq_0 = 0
+        carrier_freq_1 = 0
+        sample_rate = 1000
+        bit_duration = 1
+
+        time, mod_signal, carrier_0, carrier_1, fsk_signal = fsk_modulation(
+            binary_data, carrier_freq_0, carrier_freq_1, sample_rate, bit_duration
+        )
+        self.assertTrue(np.all(carrier_0 == 0))
+        self.assertTrue(np.all(carrier_1 == 0))
+        self.assertTrue(np.all(fsk_signal == 0))
+
+    # Sad path tests
+    def test_empty_binary_data(self):
+        """
+        Test the function with empty binary data.
+
+        Verifies:
+        - The function returns empty arrays when the binary data is empty.
+        """
+        binary_data = []
         carrier_freq_0 = 5
         carrier_freq_1 = 10
         sample_rate = 1000
-        bit_duration = 0.5
+        bit_duration = 1
 
         time, mod_signal, carrier_0, carrier_1, fsk_signal = fsk_modulation(
             binary_data, carrier_freq_0, carrier_freq_1, sample_rate, bit_duration
         )
 
-        self.assertEqual(len(mod_signal), len(time))
-        self.assertEqual(len(fsk_signal), len(time))
+        self.assertEqual(len(time), 0)
+        self.assertEqual(len(mod_signal), 0)
+        self.assertEqual(len(carrier_0), 0)
+        self.assertEqual(len(carrier_1), 0)
+        self.assertEqual(len(fsk_signal), 0)
 
 if __name__ == "__main__":
     unittest.main()

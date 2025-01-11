@@ -1,30 +1,28 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# --------------------
 def fm_modulation(carrier_freq, sample_rate, duration, freq_deviation):
-    """
-    Perform Frequency Modulation (FM) of a message signal.
-
-    Parameters:
-        carrier_freq (float): Carrier frequency in Hz.
-        sample_rate (float): Sampling rate for signal generation in Hz.
-        duration (float): Duration of the signal in seconds.
-        freq_deviation (float): Frequency deviation (maximum shift from carrier frequency in Hz).
-
-    Returns:
-        tuple: Contains the following:
-            - time (numpy array): Time vector for the entire signal.
-            - message_signal (numpy array): The base message signal (a simple sine wave).
-            - carrier_signal (numpy array): The carrier signal before modulation.
-            - fm_signal (numpy array): The resulting FM modulated signal.
-
-    Example:
-        carrier_freq = 10
-        sample_rate = 1000
-        duration = 2
-        freq_deviation = 5
-        time, message_signal, carrier_signal, fm_signal = fm_modulation(carrier_freq, sample_rate, duration, freq_deviation)
+    """!
+    @brief Perform Frequency Modulation (FM) of a message signal.
+    
+    @param carrier_freq Carrier frequency in Hz.
+    @param sample_rate Sampling rate for signal generation in Hz.
+    @param duration Duration of the signal in seconds.
+    @param freq_deviation Frequency deviation (maximum shift from carrier frequency in Hz).
+    
+    @return A tuple containing:
+        - time: Time vector for the entire signal.
+        - message_signal: The base message signal (a simple sine wave).
+        - carrier_signal: The carrier signal before modulation.
+        - fm_signal: The resulting FM modulated signal.
+    
+    @code
+    carrier_freq = 10
+    sample_rate = 1000
+    duration = 2
+    freq_deviation = 5
+    time, message_signal, carrier_signal, fm_signal = fm_modulation(carrier_freq, sample_rate, duration, freq_deviation)
+    @endcode
     """
     # Validate input parameters.
     if not isinstance(carrier_freq, (int, float)) or carrier_freq <= 0:
@@ -53,21 +51,20 @@ def fm_modulation(carrier_freq, sample_rate, duration, freq_deviation):
 
     return time, message_signal, carrier_signal, fm_signal
 
-# --------------------
 def plot_fm_signals(time, message_signal, carrier_signal, fm_signal, carrier_freq, freq_deviation):
-    """
-    Plot the message signal, carrier signal, and FM modulated signal.
-
-    Parameters:
-        time (numpy array): Time vector for the signals.
-        message_signal (numpy array): The base message signal.
-        carrier_signal (numpy array): The carrier signal before modulation.
-        fm_signal (numpy array): The resulting FM modulated signal.
-        carrier_freq (float): Carrier frequency in Hz.
-        freq_deviation (float): Frequency deviation in Hz.
-
-    Example:
-        plot_fm_signals(time, message_signal, carrier_signal, fm_signal, carrier_freq=10, freq_deviation=5)
+    """!
+    @brief Plot the message signal, carrier signal, and FM modulated signal.
+    
+    @param time Time vector for the signals.
+    @param message_signal The base message signal.
+    @param carrier_signal The carrier signal before modulation.
+    @param fm_signal The resulting FM modulated signal.
+    @param carrier_freq Carrier frequency in Hz.
+    @param freq_deviation Frequency deviation in Hz.
+    
+    @code
+    plot_fm_signals(time, message_signal, carrier_signal, fm_signal, carrier_freq=10, freq_deviation=5)
+    @endcode
     """
     # Set up the figure and plot the signals in subplots.
     plt.figure(figsize=(12, 8))
@@ -99,16 +96,16 @@ def plot_fm_signals(time, message_signal, carrier_signal, fm_signal, carrier_fre
     plt.tight_layout()  # Adjust layout to prevent overlap.
     plt.show()
 
-# --------------------
 def main_fm():
-    """
-    Main function to execute FM modulation and visualize the results.
-
+    """!
+    @brief Main function to execute FM modulation and visualize the results.
+    
     Executes the FM modulation process and plots the message, carrier, and modulated signals.
-
-    Example:
-        This function automatically executes when the script runs and plots the signals.
-        Parameters used: carrier_freq=10, sample_rate=1000, duration=2, freq_deviation=5.
+    
+    @code
+    This function automatically executes when the script runs and plots the signals.
+    Parameters used: carrier_freq=10, sample_rate=1000, duration=2, freq_deviation=5.
+    @endcode
     """
     # Define FM modulation parameters.
     carrier_freq = 10       # Carrier frequency (Hz).
@@ -123,6 +120,5 @@ def main_fm():
     # Plot the modulated signals.
     plot_fm_signals(time, message_signal, carrier_signal, fm_signal, carrier_freq, freq_deviation)
 
-# --------------------
 if __name__ == "__main__":
     main_fm()  # Run the main FM modulation function.
