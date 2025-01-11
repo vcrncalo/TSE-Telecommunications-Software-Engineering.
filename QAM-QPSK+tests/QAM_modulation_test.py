@@ -1,5 +1,5 @@
 import unittest
-from QAM import qam_modulation  # Import the function from the main QAM modulation code
+from QAM_modulation import qam_modulation  # Import the function from the main QAM modulation code
 import numpy as np  # Required for array manipulations and validations in tests
 
 class TestQAMModulation(unittest.TestCase):
