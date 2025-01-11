@@ -53,99 +53,107 @@ This project explores the concept of a digital transmitter, how it operates, and
 
 ### Amplitude Modulation (AM)
 
-Amplitude Modulation (AM) is a modulation technique where the amplitude of the carrier signal is varied in proportion to the instantaneous amplitude of the message signal. It's a simple method but is susceptible to noise.
+**Amplitude Modulation (AM)** is a modulation technique where the amplitude of the carrier signal is varied in proportion to the instantaneous amplitude of the message signal. It's a simple method but is susceptible to noise.
 
-*The python code for amplitude modulation produces the following image:*
-
+<details>
+<summary>Amplitude Modulation (AM) image</summary>
 <p align="center">
 <img src=AM-ASK+tests/Images/AM_modulation.png>
 <br>
 Figure 1: Amplitude modulation
 </p>
+</details>
 
 ### Amplitude Shift Keying (ASK)
 
-Amplitude Shift Keying (ASK) is a form of amplitude modulation that represents digital data as variations in the amplitude of a carrier wave. In its simplest form, the presence of a carrier wave represents a binary 1, and the absence represents a binary 0.
+**Amplitude Shift Keying (ASK)** is a form of amplitude modulation that represents digital data as variations in the amplitude of a carrier wave. In its simplest form, the presence of a carrier wave represents a binary 1, and the absence represents a binary 0.
 
-*The python code for amplitude shift keying produces the following image:*
-
+<details>
+<summary>Amplitude Shift Keying (ASK) image</summary>
 <p align="center">
 <img src=AM-ASK+tests/Images/ASK_modulation.png>
 <br>
 Figure 2: Amplitude shift keying
 </p>
+</details>
 
 ### Frequency Modulation (FM)
 
-Frequency Modulation (FM) is a modulation technique where the frequency of the carrier signal is varied in proportion to the instantaneous amplitude of the message signal. FM is less susceptible to noise than AM.
+**Frequency Modulation (FM)** is a modulation technique where the frequency of the carrier signal is varied in proportion to the instantaneous amplitude of the message signal. FM is less susceptible to noise than AM.
 
-*The python code for frequency modulation produces the following image:*
-
+<details>
+<summary>Frequency Modulation (FM) image</summary>
 <p align="center">
 <img src=FM-FSK+tests/Images/FM_modulation.png>
 <br>
 Figure 3: Frequency modulation
 </p>
+</details>
 
 ### Frequency Shift Keying (FSK)
 
-Frequency Shift Keying (FSK) is a form of frequency modulation that represents digital data as variations in the frequency of a carrier wave. Different frequencies are used to represent different binary values.
+**Frequency Shift Keying (FSK)** is a form of frequency modulation that represents digital data as variations in the frequency of a carrier wave. Different frequencies are used to represent different binary values.
 
-*The python code for frequency shift keying produces the following image:*
-
+<details>
+<summary>Frequency Shift Keying (FSK) image</summary>
 <p align="center">
 <img src=FM-FSK+tests/Images/FSK_modulation.png>
 <br>
 Figure 4: Frequency shift keying
 </p>
+</details>
 
 ### Phase Shift Keying (PSK)
 
-Phase Shift Keying (PSK) is a modulation technique where the phase of the carrier signal is varied to represent digital data. The amplitude and frequency of the carrier signal remain constant.
+**Phase Shift Keying (PSK)** is a modulation technique where the phase of the carrier signal is varied to represent digital data. The amplitude and frequency of the carrier signal remain constant.
 
-*The python code for phase shift keying produces the following image:*
-
+<details>
+<summary>Phase Shift Keying (PSK) image</summary>
 <p align="center">
 <img src=PSK-BPSK+tests/Images/PSK_modulation.png>
 <br>
 Figure 5: Phase shift keying
 </p>
+</details>
 
 ### Binary Phase Shift Keying (BPSK)
 
-Binary Phase Shift Keying (BPSK) is a form of phase shift keying where the phase of the carrier signal is varied to represent binary data. It uses two phases to represent binary 0 and 1.
+**Binary Phase Shift Keying (BPSK)** is a form of phase shift keying where the phase of the carrier signal is varied to represent binary data. It uses two phases to represent binary 0 and 1.
 
-*The python code for binary phase shift keying produces the following image:*
-
+<details>
+<summary>Binary Phase Shift Keying (BPSK) image</summary>
 <p align="center">
 <img src=PSK-BPSK+tests/Images/BPSK_modulation.png>
 <br>
 Figure 6: Binary phase shift keying
 </p>
+</details>
 
 ### Quadrature Amplitude Modulation (QAM)
 
-Quadrature Amplitude Modulation (QAM) is a modulation technique that combines both amplitude and phase modulation to transmit more data per symbol. It uses multiple amplitude levels and phase shifts to encode data.
+**Quadrature Amplitude Modulation (QAM)** is a modulation technique that combines both amplitude and phase modulation to transmit more data per symbol. It uses multiple amplitude levels and phase shifts to encode data.
 
-*The python code for quadrature amplitude modulation produces the following image:*
-
+<details>
+<summary>Quadrature Amplitude Modulation (QAM) image</summary>
 <p align="center">
 <img src=QAM-QPSK+tests/Images/QAM_modulation.png>
 <br>
 Figure 6: Quadrature amplitude modulation
 </p>
+</details>
 
 ### Quadrature Phase Shift Keying (QPSK)
 
-Quadrature Phase Shift Keying (QPSK) is a form of phase shift keying where the phase of the carrier signal is varied to represent digital data. It uses four phases to represent two bits of data.
+**Quadrature Phase Shift Keying (QPSK)** is a form of phase shift keying where the phase of the carrier signal is varied to represent digital data. It uses four phases to represent two bits of data.
 
-*The python code for quadrature phase shift keying produces the following image:*
-
+<details>
+<summary>Quadrature Phase Shift Keying (QPSK) image</summary>
 <p align="center">
 <img src=QAM-QPSK+tests/Images/QPSK_modulation.png>
 <br>
 Figure 7: Quadrature phase shift keying
 </p>
+</details>
 
 ---
 
