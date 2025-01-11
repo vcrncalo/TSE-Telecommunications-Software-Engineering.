@@ -26,10 +26,10 @@ jobs:
 
     - name: Run tests with coverage
       run: |
-        pytest --cov=./ "AM - ASK Modulations + tests/ASK_modulation_test.py"
-        pytest --cov=./ "AM - ASK Modulations + tests/AM_modulation_test.py"
-        pytest --cov=./ "FM-FSK Modulations-tests/FM_modulation_test.py"
-        pytest --cov=./ "FM-FSK Modulations-tests/FSK_modulation_test.py"
-        pytest --cov=./ "PSK-BPSK-Modulation_and_tests/PSK_test.py"
-        pytest --cov=./ "PSK-BPSK-Modulation_and_tests/BPSK_test.py"
-        pytest --cov=./ "QAM-Modulation_and_test/QAM_test.py"
+        pytest -v --cov=./ "AM-ASK+tests/ASK_modulation_test.py"
+        pytest -v --cov=./ "AM-ASK+tests/AM_modulation_test.py"
+        pytest -v --cov=./ "FM-FSK+tests/FM_modulation_test.py"
+        pytest -v --cov=./ "FM-FSK+tests/FSK_modulation_test.py"
+        pytest -v --cov=./ "PSK-BPSK+tests/PSK_modulation_test.py"
+        pytest -v --cov=./ "PSK-BPSK+tests/BPSK_modulation_test.py"
+        pytest -v --cov=./ "QAM+tests/QAM_test.py"
