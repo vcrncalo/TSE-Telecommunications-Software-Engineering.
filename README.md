@@ -174,6 +174,52 @@ Figure 8: Code coverage
 
 ---
 
+## Doxygen
+
+**Doxygen** is a documentation generator used across several programming languages, including Python. It parses specially-formatted comments within the code to produce documentation in various formats like HTML, LaTeX, and man pages.
+
+### Doxyfile
+
+A **Doxyfile** is Doxygen's configuration file, controlling the documentation generation process. It specifies settings such as input files, output directories, and documentation style.
+
+#### Key Doxyfile Settings
+
+The Doxyfile uses a variety of settings to configure the documentation generation. Here are some of the key settings:
+
+##### Project Information
+-   **`PROJECT_NAME`**: The name of the project.
+-   **`PROJECT_NUMBER`**: The version number of the project.
+
+##### Input and Output
+-   **`OUTPUT_DIRECTORY`**: The directory where the generated documentation will be placed.
+-   **`INPUT`**: Specifies the input files or directories to be processed by Doxygen.
+-    **`FILE_PATTERNS`**: Specifies the file patterns to be included in the documentation.
+-   **`RECURSIVE`**:  Whether to recursively search for input files in subdirectories.
+-   **`HTML_OUTPUT`**: Specifies the directory where the HTML documentation will be placed.
+-   **`LATEX_OUTPUT`**: Specifies the directory where the LaTeX documentation will be placed.
+
+##### Extraction Options
+-   **`EXTRACT_ALL`**: Whether to extract documentation from all code elements, even if they are not explicitly documented.
+-   **`EXTRACT_PRIVATE`**: Whether to extract documentation from private members.
+-   **`EXTRACT_STATIC`**: Whether to extract documentation from static members.
+
+##### Preprocessing and Includes
+-   **`ENABLE_PREPROCESSING`**: Whether to enable preprocessing of the input files.
+-   **`MACRO_EXPANSION`**: Whether to expand macros in the input files.
+-   **`SEARCH_INCLUDES`**: Whether to search for include files in the input files.
+-   **`INCLUDE_PATH`**: The path to the include files.
+
+##### Other Settings
+-   **`IMAGE_PATH`**: The path to the images used in the documentation.
+-   **`EXAMPLE_PATH`**: The path to the example files.
+-   **`GENERATE_HTML`**: Whether to generate HTML documentation.
+-   **`GENERATE_LATEX`**: Whether to generate LaTeX documentation.
+-   **`GENERATE_TREEVIEW`**: Whether to generate a tree view of the documentation.
+
+The Doxyfile is central to configuring Doxygen. The `INPUT` setting is used to specify the files or directories to be processed, and the `RECURSIVE` setting is important for projects with subdirectories. The current specified input is "." which means that all files in the current directory will be processed, and the Doxyfile was generated in the root directory. The `FILE_PATTERNS` setting allows for specific file types to be included in the documentation.
+
+---
+
 ## Technologies Used
 
 - **Programming Language:** Python  
