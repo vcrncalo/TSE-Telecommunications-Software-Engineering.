@@ -1,0 +1,241 @@
+\chapter{Telecommunications software engineering -\/ Digital transmitter design and signal modulation}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{Telecommunications software engineering -\/ Digital transmitter design and signal modulation@{Telecommunications software engineering -\/ Digital transmitter design and signal modulation}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{Project Goal}{Project Goal}}\label{md__r_e_a_d_m_e_autotoc_md1}
+{\itshape The goal of this project is to design a basic digital transmitter, focusing on\+:} ~\newline
+
+\begin{DoxyItemize}
+\item Signal generation, ~\newline
+
+\item Implementation of various modulation techniques, ~\newline
+
+\item Analysis of a communication channel with noise,
+\item Evaluation of the efficiency and robustness of different modulation schemes.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{\texorpdfstring{Project Description}{Project Description}}\label{md__r_e_a_d_m_e_autotoc_md3}
+This project explores the concept of a digital transmitter, how it operates, and how signals are generated and prepared for transmission through a communication channel. It delves into the practical aspects of signal modulation and the challenges of transmitting signals through noisy channels.\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysubsection{\texorpdfstring{Main Activities}{Main Activities}}\label{md__r_e_a_d_m_e_autotoc_md4}
+
+\begin{DoxyEnumerate}
+\item {\itshape Designing a digital transmitter\+:}
+\begin{DoxyItemize}
+\item Developing a foundational digital transmitter using Python, focusing on modular design and clear signal processing steps.
+\end{DoxyItemize}
+\item {\itshape Implementation of modulation schemes\+:}
+\begin{DoxyItemize}
+\item Amplitude Modulation (AM),
+\item Amplitude Shift Keying (ASK),
+\item Frequency Modulation (FM),
+\item Frequency Shift Keying (FSK),
+\item Phase Shift Keying (PSK),
+\item Binary Phase Shift Keying (BPSK),
+\item Quadrature Amplitude Modulation (QAM),
+\item Quadrature Phase Shift Keying (QPSK).
+\end{DoxyItemize}
+\item {\itshape Simulation of a communication channel with noise\+:} ~\newline
+
+\begin{DoxyItemize}
+\item Implementing a channel with Additive White Gaussian Noise (AWGN). ~\newline
+
+\item Analyzing the Signal-\/to-\/\+Noise Ratio (SNR).
+\end{DoxyItemize}
+\item {\itshape Evaluation of efficiency and robustness\+:}
+\begin{DoxyItemize}
+\item Assessing the energy efficiency of each modulation scheme. ~\newline
+
+\item Analyzing noise resistance.
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysection{\texorpdfstring{Repository Structure}{Repository Structure}}\label{md__r_e_a_d_m_e_autotoc_md5}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Directory/\+File name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Directory/\+File name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endhead
+AM-\/\+ASK+tests   &This directory contains all code files necessary for AM and ASK modulations, as well as their respective test files and modulation images.    \\\cline{1-2}
+FM-\/\+FSK+tests   &This directory contains all code files necessary for FM and FSK modulations, as well as their respective test files and modulation images.    \\\cline{1-2}
+PSK-\/\+BPSK+tests   &This directory contains all code files necessary for PSK and BPSK modulations, as well as their respective test files and modulation images.    \\\cline{1-2}
+QAM-\/\+QPSK+tests   &This directory contains all code files necessary for QAM and QPSK modulations, as well as their respective test files and modulation images.    \\\cline{1-2}
+Images   &This directory contains a variety of images related to modulations and tests.    \\\cline{1-2}
+.github   &This directory contains test.\+yml file which checks all tests and will notify the user if the tests don\textquotesingle{}t pass (useful for debugging)    \\\cline{1-2}
+.coverage   &This file was generated with {\ttfamily pytest -\/v -\/cov}, it run all Python tests in the root directory    \\\cline{1-2}
+README.\+md   &Project details.   \\\cline{1-2}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysection{\texorpdfstring{Modulation techniques}{Modulation techniques}}\label{md__r_e_a_d_m_e_autotoc_md7}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysubsection{\texorpdfstring{Amplitude Modulation (AM)}{Amplitude Modulation (AM)}}\label{md__r_e_a_d_m_e_autotoc_md8}
+{\bfseries{Amplitude Modulation (AM)}} is a modulation technique where the amplitude of the carrier signal is varied in proportion to the instantaneous amplitude of the message signal. It\textquotesingle{}s a simple method but is susceptible to noise.
+
+
+
+{\bfseries{Amplitude Modulation (AM) image}}\begin{adjustwidth}{1em}{0em}
+
+
+ ~\newline
+ Figure 1\+: Amplitude modulation 
+
+\end{adjustwidth}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysubsection{\texorpdfstring{Amplitude Shift Keying (ASK)}{Amplitude Shift Keying (ASK)}}\label{md__r_e_a_d_m_e_autotoc_md9}
+{\bfseries{Amplitude Shift Keying (ASK)}} is a form of amplitude modulation that represents digital data as variations in the amplitude of a carrier wave. In its simplest form, the presence of a carrier wave represents a binary 1, and the absence represents a binary 0.
+
+
+
+{\bfseries{Amplitude Shift Keying (ASK) image}}\begin{adjustwidth}{1em}{0em}
+
+
+ ~\newline
+ Figure 2\+: Amplitude shift keying 
+
+\end{adjustwidth}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md10}{}\doxysubsection{\texorpdfstring{Frequency Modulation (FM)}{Frequency Modulation (FM)}}\label{md__r_e_a_d_m_e_autotoc_md10}
+{\bfseries{Frequency Modulation (FM)}} is a modulation technique where the frequency of the carrier signal is varied in proportion to the instantaneous amplitude of the message signal. FM is less susceptible to noise than AM.
+
+
+
+{\bfseries{Frequency Modulation (FM) image}}\begin{adjustwidth}{1em}{0em}
+
+
+ ~\newline
+ Figure 3\+: Frequency modulation 
+
+\end{adjustwidth}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md11}{}\doxysubsection{\texorpdfstring{Frequency Shift Keying (FSK)}{Frequency Shift Keying (FSK)}}\label{md__r_e_a_d_m_e_autotoc_md11}
+{\bfseries{Frequency Shift Keying (FSK)}} is a form of frequency modulation that represents digital data as variations in the frequency of a carrier wave. Different frequencies are used to represent different binary values.
+
+
+
+{\bfseries{Frequency Shift Keying (FSK) image}}\begin{adjustwidth}{1em}{0em}
+
+
+ ~\newline
+ Figure 4\+: Frequency shift keying 
+
+\end{adjustwidth}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md12}{}\doxysubsection{\texorpdfstring{Phase Shift Keying (PSK)}{Phase Shift Keying (PSK)}}\label{md__r_e_a_d_m_e_autotoc_md12}
+{\bfseries{Phase Shift Keying (PSK)}} is a modulation technique where the phase of the carrier signal is varied to represent digital data. The amplitude and frequency of the carrier signal remain constant.
+
+
+
+{\bfseries{Phase Shift Keying (PSK) image}}\begin{adjustwidth}{1em}{0em}
+
+
+ ~\newline
+ Figure 5\+: Phase shift keying 
+
+\end{adjustwidth}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md13}{}\doxysubsection{\texorpdfstring{Binary Phase Shift Keying (BPSK)}{Binary Phase Shift Keying (BPSK)}}\label{md__r_e_a_d_m_e_autotoc_md13}
+{\bfseries{Binary Phase Shift Keying (BPSK)}} is a form of phase shift keying where the phase of the carrier signal is varied to represent binary data. It uses two phases to represent binary 0 and 1.
+
+
+
+{\bfseries{Binary Phase Shift Keying (BPSK) image}}\begin{adjustwidth}{1em}{0em}
+
+
+ ~\newline
+ Figure 6\+: Binary phase shift keying 
+
+\end{adjustwidth}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md14}{}\doxysubsection{\texorpdfstring{Quadrature Amplitude Modulation (QAM)}{Quadrature Amplitude Modulation (QAM)}}\label{md__r_e_a_d_m_e_autotoc_md14}
+{\bfseries{Quadrature Amplitude Modulation (QAM)}} is a modulation technique that combines both amplitude and phase modulation to transmit more data per symbol. It uses multiple amplitude levels and phase shifts to encode data.
+
+
+
+{\bfseries{Quadrature Amplitude Modulation (QAM) image}}\begin{adjustwidth}{1em}{0em}
+
+
+ ~\newline
+ Figure 6\+: Quadrature amplitude modulation 
+
+\end{adjustwidth}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md15}{}\doxysubsection{\texorpdfstring{Quadrature Phase Shift Keying (QPSK)}{Quadrature Phase Shift Keying (QPSK)}}\label{md__r_e_a_d_m_e_autotoc_md15}
+{\bfseries{Quadrature Phase Shift Keying (QPSK)}} is a form of phase shift keying where the phase of the carrier signal is varied to represent digital data. It uses four phases to represent two bits of data.
+
+
+
+{\bfseries{Quadrature Phase Shift Keying (QPSK) image}}\begin{adjustwidth}{1em}{0em}
+
+
+ ~\newline
+ Figure 7\+: Quadrature phase shift keying 
+
+\end{adjustwidth}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md17}{}\doxysection{\texorpdfstring{Pytest}{Pytest}}\label{md__r_e_a_d_m_e_autotoc_md17}
+{\itshape The pytest framework is used to run the tests for each modulation technique. The tests can be run with\+: `pytest -\/v -\/-\/cov \textquotesingle{}file.\+py'\`{}.}
+
+{\itshape Figure 8 shows how pytest output looks when running the tests for all the modulation techniques\+:}
+
+ ~\newline
+ Figure 8\+: Code coverage 
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md19}{}\doxysection{\texorpdfstring{Doxygen}{Doxygen}}\label{md__r_e_a_d_m_e_autotoc_md19}
+{\bfseries{Doxygen}} is a documentation generator used across several programming languages, including Python. It parses specially-\/formatted comments within the code to produce documentation in various formats like HTML, La\+TeX, and man pages.\hypertarget{md__r_e_a_d_m_e_autotoc_md20}{}\doxysubsection{\texorpdfstring{Doxyfile}{Doxyfile}}\label{md__r_e_a_d_m_e_autotoc_md20}
+A {\bfseries{Doxyfile}} is Doxygen\textquotesingle{}s configuration file, controlling the documentation generation process. It specifies settings such as input files, output directories, and documentation style. Doxyfile can be generated with\+: {\ttfamily doxygen -\/g Doxyfile}, and it can later be edited with a text editor, such as vim with\+: {\ttfamily vim Doxyfile}. Once we\textquotesingle{}ve configured Doxfile the way we want it to be, we can finally type\+: {\ttfamily doxygen Doxyfile} which will create {\ttfamily html} and {\ttfamily latex} directories, and later, {\ttfamily latex} directory can be used to compile a PDF document from there.\hypertarget{md__r_e_a_d_m_e_autotoc_md21}{}\doxysubsubsection{\texorpdfstring{Key Doxyfile Settings}{Key Doxyfile Settings}}\label{md__r_e_a_d_m_e_autotoc_md21}
+The Doxyfile uses a variety of settings to configure the documentation generation. Here are some of the key settings\+:\hypertarget{md__r_e_a_d_m_e_autotoc_md22}{}\doxysubsubsubsection{\texorpdfstring{Project Information}{Project Information}}\label{md__r_e_a_d_m_e_autotoc_md22}
+
+\begin{DoxyItemize}
+\item {\bfseries{{\ttfamily PROJECT\+\_\+\+NAME}}}\+: The name of the project.
+\item {\bfseries{{\ttfamily PROJECT\+\_\+\+NUMBER}}}\+: The version number of the project.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md23}{}\doxysubsubsubsection{\texorpdfstring{Input and Output}{Input and Output}}\label{md__r_e_a_d_m_e_autotoc_md23}
+
+\begin{DoxyItemize}
+\item {\bfseries{{\ttfamily OUTPUT\+\_\+\+DIRECTORY}}}\+: The directory where the generated documentation will be placed.
+\item {\bfseries{{\ttfamily INPUT}}}\+: Specifies the input files or directories to be processed by Doxygen.
+\item {\bfseries{{\ttfamily FILE\+\_\+\+PATTERNS}}}\+: Specifies the file patterns to be included in the documentation.
+\item {\bfseries{{\ttfamily RECURSIVE}}}\+: Whether to recursively search for input files in subdirectories.
+\item {\bfseries{{\ttfamily HTML\+\_\+\+OUTPUT}}}\+: Specifies the directory where the HTML documentation will be placed.
+\item {\bfseries{{\ttfamily LATEX\+\_\+\+OUTPUT}}}\+: Specifies the directory where the La\+TeX documentation will be placed.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md24}{}\doxysubsubsubsection{\texorpdfstring{Extraction Options}{Extraction Options}}\label{md__r_e_a_d_m_e_autotoc_md24}
+
+\begin{DoxyItemize}
+\item {\bfseries{{\ttfamily EXTRACT\+\_\+\+ALL}}}\+: Whether to extract documentation from all code elements, even if they are not explicitly documented.
+\item {\bfseries{{\ttfamily EXTRACT\+\_\+\+PRIVATE}}}\+: Whether to extract documentation from private members.
+\item {\bfseries{{\ttfamily EXTRACT\+\_\+\+STATIC}}}\+: Whether to extract documentation from static members.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md25}{}\doxysubsubsubsection{\texorpdfstring{Preprocessing and Includes}{Preprocessing and Includes}}\label{md__r_e_a_d_m_e_autotoc_md25}
+
+\begin{DoxyItemize}
+\item {\bfseries{{\ttfamily ENABLE\+\_\+\+PREPROCESSING}}}\+: Whether to enable preprocessing of the input files.
+\item {\bfseries{{\ttfamily MACRO\+\_\+\+EXPANSION}}}\+: Whether to expand macros in the input files.
+\item {\bfseries{{\ttfamily SEARCH\+\_\+\+INCLUDES}}}\+: Whether to search for include files in the input files.
+\item {\bfseries{{\ttfamily INCLUDE\+\_\+\+PATH}}}\+: The path to the include files.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md26}{}\doxysubsubsubsection{\texorpdfstring{Other Settings}{Other Settings}}\label{md__r_e_a_d_m_e_autotoc_md26}
+
+\begin{DoxyItemize}
+\item {\bfseries{{\ttfamily IMAGE\+\_\+\+PATH}}}\+: The path to the images used in the documentation.
+\item {\bfseries{{\ttfamily EXAMPLE\+\_\+\+PATH}}}\+: The path to the example files.
+\item {\bfseries{{\ttfamily GENERATE\+\_\+\+HTML}}}\+: Whether to generate HTML documentation.
+\item {\bfseries{{\ttfamily GENERATE\+\_\+\+LATEX}}}\+: Whether to generate La\+TeX documentation.
+\item {\bfseries{{\ttfamily GENERATE\+\_\+\+TREEVIEW}}}\+: Whether to generate a tree view of the documentation.
+\end{DoxyItemize}
+
+The Doxyfile is central to configuring Doxygen. The {\ttfamily INPUT} setting is used to specify the files or directories to be processed, and the {\ttfamily RECURSIVE} setting is important for projects with subdirectories. The current specified input is "{}."{} which means that all files in the current directory will be processed, and the Doxyfile was generated in the root directory. The {\ttfamily FILE\+\_\+\+PATTERNS} setting allows for specific file types to be included in the documentation.
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md28}{}\doxysection{\texorpdfstring{Technologies Used}{Technologies Used}}\label{md__r_e_a_d_m_e_autotoc_md28}
+
+\begin{DoxyItemize}
+\item {\bfseries{Programming Language\+:}} Python ~\newline
+
+\item {\bfseries{Libraries\+:}} ~\newline
+
+\begin{DoxyItemize}
+\item {\ttfamily numpy} -\/ Numerical data processing. ~\newline
+
+\item {\ttfamily matplotlib} -\/ Visualization of simulation results. ~\newline
+
+\item {\ttfamily scipy} -\/ Noise generation and SNR analysis. .
+\item {\ttfamily pytest} -\/ Testing framework.
+\item {\ttfamily coverage} -\/ Code coverage analysis. 
+\end{DoxyItemize}
+\end{DoxyItemize}
