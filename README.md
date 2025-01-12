@@ -39,13 +39,15 @@ This project explores the concept of a digital transmitter, how it operates, and
 
 ## Repository Structure
 
-|Directory name|Description|
+|Directory/File name|Description|
 |--------------|-----------|
 |AM-ASK+tests|This directory contains all code files necessary for AM and ASK modulations, as well as their respective test files and modulation images.|
 |FM-FSK+tests|This directory contains all code files necessary for FM and FSK modulations, as well as their respective test files and modulation images.|
 |PSK-BPSK+tests|This directory contains all code files necessary for PSK and BPSK modulations, as well as their respective test files and modulation images.|
 |QAM-QPSK+tests|This directory contains all code files necessary for QAM and QPSK modulations, as well as their respective test files and modulation images.|
 |Images|This directory contains a variety of images related to modulations and tests.|
+|.github|This directory contains test.yml file which checks all tests and will notify the user if the tests don't pass (useful for debugging)|
+|.coverage|This file was generated with `pytest -v --cov`, it run all Python tests in the root directory|
 |README.md|Project details.|
 
 ---
