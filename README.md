@@ -180,7 +180,7 @@ Figure 8: Code coverage
 
 ### Doxyfile
 
-A **Doxyfile** is Doxygen's configuration file, controlling the documentation generation process. It specifies settings such as input files, output directories, and documentation style. Doxyfile can be generated with: `doxygen -g Doxyfile`, and it can later be edited with a text editor, such as vim with: `vim Doxyfile`. 
+A **Doxyfile** is Doxygen's configuration file, controlling the documentation generation process. It specifies settings such as input files, output directories, and documentation style. Doxyfile can be generated with: `doxygen -g Doxyfile`, and it can later be edited with a text editor, such as vim with: `vim Doxyfile`. Once we've configured Doxfile the way we want it to be, we can finally type: `doxygen Doxyfile` which will create `html` and `latex` directories, and later, `latex` directory can be used to compile a PDF document from there. 
 
 #### Key Doxyfile Settings
 
