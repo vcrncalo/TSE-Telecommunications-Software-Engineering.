@@ -1,0 +1,195 @@
+\chapter{Telecommunication software engineering -\/ Digital transmitter design and signal modulation}
+\hypertarget{md_README}{}\label{md_README}\index{Telecommunication software engineering -\/ Digital transmitter design and signal modulation@{Telecommunication software engineering -\/ Digital transmitter design and signal modulation}}
+\label{md_README_autotoc_md0}%
+\Hypertarget{md_README_autotoc_md0}%
+ \hypertarget{md_README_autotoc_md1}{}\doxysection{\texorpdfstring{Project Goal}{Project Goal}}\label{md_README_autotoc_md1}
+{\itshape The goal of this project is to design a basic digital transmitter, focusing on\+:} ~\newline
+
+\begin{DoxyItemize}
+\item Signal generation, ~\newline
+
+\item Implementation of various modulation techniques, ~\newline
+
+\item Analysis of a communication channel with noise,
+\item Evaluation of the efficiency and robustness of different modulation schemes.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md3}{}\doxysection{\texorpdfstring{Project Description}{Project Description}}\label{md_README_autotoc_md3}
+This project explores the concept of a digital transmitter, how it operates, and how signals are generated and prepared for transmission through a communication channel. It delves into the practical aspects of signal modulation and the challenges of transmitting signals through noisy channels.\hypertarget{md_README_autotoc_md4}{}\doxysubsection{\texorpdfstring{Main Activities}{Main Activities}}\label{md_README_autotoc_md4}
+
+\begin{DoxyEnumerate}
+\item {\itshape Designing a digital transmitter\+:}
+\begin{DoxyItemize}
+\item Developing a foundational digital transmitter using Python, focusing on modular design and clear signal processing steps.
+\end{DoxyItemize}
+\item {\itshape Implementation of modulation schemes\+:}
+\begin{DoxyItemize}
+\item Amplitude Modulation (AM),
+\item Amplitude Shift Keying (ASK),
+\item Frequency Modulation (FM),
+\item Frequency Shift Keying (FSK),
+\item Phase Shift Keying (PSK),
+\item Binary Phase Shift Keying (BPSK),
+\item Quadrature Amplitude Modulation (QAM),
+\item Quadrature Phase Shift Keying (QPSK).
+\end{DoxyItemize}
+\item {\itshape Simulation of a communication channel with noise\+:} ~\newline
+
+\begin{DoxyItemize}
+\item Implementing a channel with Additive White Gaussian Noise (AWGN). ~\newline
+
+\item Analyzing the Signal-\/to-\/\+Noise Ratio (SNR).
+\end{DoxyItemize}
+\item {\itshape Evaluation of efficiency and robustness\+:}
+\begin{DoxyItemize}
+\item Assessing the energy efficiency of each modulation scheme. ~\newline
+
+\item Analyzing noise resistance.
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{md_README_autotoc_md5}{}\doxysection{\texorpdfstring{Repository Structure}{Repository Structure}}\label{md_README_autotoc_md5}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Directory name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Directory name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endhead
+AM-\/\+ASK+tests   &This directory contains all code files necessary for AM and ASK modulations, as well as their respective test files.    \\\cline{1-2}
+FM-\/\+FSK+tests   &This directory contains all code files necessary for FM and FSK modulations, as well as their respective test files.    \\\cline{1-2}
+PSK-\/\+BPSK+tests   &This directory contains all code files necessary for PSK and BPSK modulations, as well as their respective test files.    \\\cline{1-2}
+QAM-\/\+QPSK+tests   &This directory contains all code files necessary for QAM and QPSK modulations, as well as their respective test files.    \\\cline{1-2}
+README.\+md   &Project details.   \\\cline{1-2}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md7}{}\doxysection{\texorpdfstring{Modulation techniques}{Modulation techniques}}\label{md_README_autotoc_md7}
+\hypertarget{md_README_autotoc_md8}{}\doxysubsection{\texorpdfstring{Amplitude Modulation (\+AM)}{Amplitude Modulation (AM)}}\label{md_README_autotoc_md8}
+{\bfseries{Amplitude Modulation (AM)}} is a modulation technique where the amplitude of the carrier signal is varied in proportion to the instantaneous amplitude of the message signal. It\textquotesingle{}s a simple method but is susceptible to noise.
+
+
+
+{\bfseries{Amplitude Modulation (AM) image}}\begin{adjustwidth}{1em}{0em}
+
+
+ ~\newline
+ Figure 1\+: Amplitude modulation 
+
+\end{adjustwidth}
+\hypertarget{md_README_autotoc_md9}{}\doxysubsection{\texorpdfstring{Amplitude Shift Keying (\+ASK)}{Amplitude Shift Keying (ASK)}}\label{md_README_autotoc_md9}
+{\bfseries{Amplitude Shift Keying (ASK)}} is a form of amplitude modulation that represents digital data as variations in the amplitude of a carrier wave. In its simplest form, the presence of a carrier wave represents a binary 1, and the absence represents a binary 0.
+
+
+
+{\bfseries{Amplitude Shift Keying (ASK) image}}\begin{adjustwidth}{1em}{0em}
+
+
+ ~\newline
+ Figure 2\+: Amplitude shift keying 
+
+\end{adjustwidth}
+\hypertarget{md_README_autotoc_md10}{}\doxysubsection{\texorpdfstring{Frequency Modulation (\+FM)}{Frequency Modulation (FM)}}\label{md_README_autotoc_md10}
+{\bfseries{Frequency Modulation (FM)}} is a modulation technique where the frequency of the carrier signal is varied in proportion to the instantaneous amplitude of the message signal. FM is less susceptible to noise than AM.
+
+
+
+{\bfseries{Frequency Modulation (FM) image}}\begin{adjustwidth}{1em}{0em}
+
+
+ ~\newline
+ Figure 3\+: Frequency modulation 
+
+\end{adjustwidth}
+\hypertarget{md_README_autotoc_md11}{}\doxysubsection{\texorpdfstring{Frequency Shift Keying (\+FSK)}{Frequency Shift Keying (FSK)}}\label{md_README_autotoc_md11}
+{\bfseries{Frequency Shift Keying (FSK)}} is a form of frequency modulation that represents digital data as variations in the frequency of a carrier wave. Different frequencies are used to represent different binary values.
+
+
+
+{\bfseries{Frequency Shift Keying (FSK) image}}\begin{adjustwidth}{1em}{0em}
+
+
+ ~\newline
+ Figure 4\+: Frequency shift keying 
+
+\end{adjustwidth}
+\hypertarget{md_README_autotoc_md12}{}\doxysubsection{\texorpdfstring{Phase Shift Keying (\+PSK)}{Phase Shift Keying (PSK)}}\label{md_README_autotoc_md12}
+{\bfseries{Phase Shift Keying (PSK)}} is a modulation technique where the phase of the carrier signal is varied to represent digital data. The amplitude and frequency of the carrier signal remain constant.
+
+
+
+{\bfseries{Phase Shift Keying (PSK) image}}\begin{adjustwidth}{1em}{0em}
+
+
+ ~\newline
+ Figure 5\+: Phase shift keying 
+
+\end{adjustwidth}
+\hypertarget{md_README_autotoc_md13}{}\doxysubsection{\texorpdfstring{Binary Phase Shift Keying (\+BPSK)}{Binary Phase Shift Keying (BPSK)}}\label{md_README_autotoc_md13}
+{\bfseries{Binary Phase Shift Keying (BPSK)}} is a form of phase shift keying where the phase of the carrier signal is varied to represent binary data. It uses two phases to represent binary 0 and 1.
+
+
+
+{\bfseries{Binary Phase Shift Keying (BPSK) image}}\begin{adjustwidth}{1em}{0em}
+
+
+ ~\newline
+ Figure 6\+: Binary phase shift keying 
+
+\end{adjustwidth}
+\hypertarget{md_README_autotoc_md14}{}\doxysubsection{\texorpdfstring{Quadrature Amplitude Modulation (\+QAM)}{Quadrature Amplitude Modulation (QAM)}}\label{md_README_autotoc_md14}
+{\bfseries{Quadrature Amplitude Modulation (QAM)}} is a modulation technique that combines both amplitude and phase modulation to transmit more data per symbol. It uses multiple amplitude levels and phase shifts to encode data.
+
+
+
+{\bfseries{Quadrature Amplitude Modulation (QAM) image}}\begin{adjustwidth}{1em}{0em}
+
+
+ ~\newline
+ Figure 6\+: Quadrature amplitude modulation 
+
+\end{adjustwidth}
+\hypertarget{md_README_autotoc_md15}{}\doxysubsection{\texorpdfstring{Quadrature Phase Shift Keying (\+QPSK)}{Quadrature Phase Shift Keying (QPSK)}}\label{md_README_autotoc_md15}
+{\bfseries{Quadrature Phase Shift Keying (QPSK)}} is a form of phase shift keying where the phase of the carrier signal is varied to represent digital data. It uses four phases to represent two bits of data.
+
+
+
+{\bfseries{Quadrature Phase Shift Keying (QPSK) image}}\begin{adjustwidth}{1em}{0em}
+
+
+ ~\newline
+ Figure 7\+: Quadrature phase shift keying 
+
+\end{adjustwidth}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md17}{}\doxysection{\texorpdfstring{Pytest}{Pytest}}\label{md_README_autotoc_md17}
+\texorpdfstring{$\ast$}{*}\+The pytest framework is used to run the tests for each modulation technique. The tests can be run with\+: `pytest -\/v -\/-\/cov \textquotesingle{}file.\+py'\`{}.\texorpdfstring{$\ast$}{*}
+
+{\itshape Figure 8 shows how pytest output looks when running the tests for all the modulation techniques\+:}
+
+ ~\newline
+ Figure 8\+: Code coverage 
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md19}{}\doxysection{\texorpdfstring{Technologies Used}{Technologies Used}}\label{md_README_autotoc_md19}
+
+\begin{DoxyItemize}
+\item {\bfseries{Programming Language\+:}} Python ~\newline
+
+\item {\bfseries{Libraries\+:}} ~\newline
+
+\begin{DoxyItemize}
+\item {\ttfamily numpy} -\/ Numerical data processing. ~\newline
+
+\item {\ttfamily matplotlib} -\/ Visualization of simulation results. ~\newline
+
+\item {\ttfamily scipy} -\/ Noise generation and SNR analysis. .
+\item {\ttfamily pytest} -\/ Testing framework.
+\item {\ttfamily coverage} -\/ Code coverage analysis. 
+\end{DoxyItemize}
+\end{DoxyItemize}
