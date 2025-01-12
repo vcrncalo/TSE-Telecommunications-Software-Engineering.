@@ -162,7 +162,7 @@ Figure 7: Quadrature phase shift keying
 
 ## Pytest
 
-*The pytest framework is used to run the tests for each modulation technique. The tests can be run with: `pytest -v --cov 'file.py'`.*
+*The pytest framework is used to run the tests for each modulation technique. The tests can be run with: `pytest -v -cov 'file.py'`.*
 
 *Figure 8 shows how pytest output looks when running the tests for all the modulation techniques:*
 
