@@ -88,7 +88,7 @@ def plot_fm_signals(time, message_signal, carrier_signal, fm_signal, carrier_fre
     # Plot the FM modulated signal.
     plt.subplot(3, 1, 3)
     plt.plot(time, fm_signal)
-    plt.title(f'FM Signal, Fc = {carrier_freq} Hz, Δf = {freq_deviation} Hz')
+    plt.title(f'FM Signal, Fc = {carrier_freq} Hz, \\Delta f = {freq_deviation} Hz')
     plt.xlabel('Time (s)')
     plt.ylabel('Amplitude')
     plt.grid(True)
