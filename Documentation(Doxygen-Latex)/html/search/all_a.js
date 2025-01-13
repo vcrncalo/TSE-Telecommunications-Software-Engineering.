@@ -1,12 +1,10 @@
 var searchData=
 [
-  ['phase_20shift_20keying_20bpsk_0',['Binary Phase Shift Keying (BPSK)',['../md_README.html#autotoc_md13',1,'']]],
-  ['phase_20shift_20keying_20psk_1',['Phase Shift Keying (PSK)',['../md_README.html#autotoc_md12',1,'']]],
-  ['phase_20shift_20keying_20qpsk_2',['Quadrature Phase Shift Keying (QPSK)',['../md_README.html#autotoc_md15',1,'']]],
-  ['preprocessing_20and_20includes_3',['Preprocessing and Includes',['../md_README.html#autotoc_md25',1,'']]],
-  ['project_20description_4',['Project Description',['../md_README.html#autotoc_md3',1,'']]],
-  ['project_20goal_5',['Project Goal',['../md_README.html#autotoc_md1',1,'']]],
-  ['project_20information_6',['Project Information',['../md_README.html#autotoc_md22',1,'']]],
-  ['psk_7',['Phase Shift Keying (PSK)',['../md_README.html#autotoc_md12',1,'']]],
-  ['pytest_8',['Pytest',['../md_README.html#autotoc_md17',1,'']]]
+  ['main_20activities_0',['Main Activities',['../md_README.html#autotoc_md4',1,'']]],
+  ['modulation_1',['Telecommunications software engineering - Digital transmitter design and signal modulation',['../md_README.html',1,'']]],
+  ['modulation_20am_2',['Amplitude Modulation (AM)',['../md_README.html#autotoc_md8',1,'']]],
+  ['modulation_20fm_3',['Frequency Modulation (FM)',['../md_README.html#autotoc_md10',1,'']]],
+  ['modulation_20qam_4',['Quadrature Amplitude Modulation (QAM)',['../md_README.html#autotoc_md14',1,'']]],
+  ['modulation_20techniques_5',['Modulation techniques',['../md_README.html#autotoc_md7',1,'']]],
+  ['modulationgui_6',['ModulationGUI',['../classGUI_1_1ModulationGUI.html',1,'GUI']]]
 ];

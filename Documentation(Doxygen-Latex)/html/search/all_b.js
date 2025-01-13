@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['qam_0',['Quadrature Amplitude Modulation (QAM)',['../md_README.html#autotoc_md14',1,'']]],
-  ['qpsk_1',['Quadrature Phase Shift Keying (QPSK)',['../md_README.html#autotoc_md15',1,'']]],
-  ['quadrature_20amplitude_20modulation_20qam_2',['Quadrature Amplitude Modulation (QAM)',['../md_README.html#autotoc_md14',1,'']]],
-  ['quadrature_20phase_20shift_20keying_20qpsk_3',['Quadrature Phase Shift Keying (QPSK)',['../md_README.html#autotoc_md15',1,'']]]
+  ['options_0',['Extraction Options',['../md_README.html#autotoc_md24',1,'']]],
+  ['other_20settings_1',['Other Settings',['../md_README.html#autotoc_md26',1,'']]],
+  ['output_2',['Input and Output',['../md_README.html#autotoc_md23',1,'']]]
 ];

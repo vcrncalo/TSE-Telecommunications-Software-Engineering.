@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['includes_0',['Preprocessing and Includes',['../md_README.html#autotoc_md25',1,'']]],
-  ['information_1',['Project Information',['../md_README.html#autotoc_md22',1,'']]],
-  ['input_20and_20output_2',['Input and Output',['../md_README.html#autotoc_md23',1,'']]]
+  ['get_5fparameters_0',['get_parameters',['../classGUI_1_1ModulationGUI.html#adabf2997c895ea709b590ff38409737e',1,'GUI::ModulationGUI']]],
+  ['goal_1',['Project Goal',['../md_README.html#autotoc_md1',1,'']]]
 ];
