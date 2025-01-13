@@ -1,7 +1,7 @@
 import numpy as np  # For mathematical operations and generating signals.
 import matplotlib.pyplot as plt  # For creating plots similar to those in MATLAB.
 
-def amplitude_modulation(carrier_freq, sample_rate, duration):
+def am_modulation(carrier_freq, sample_rate, duration):
     """!
     @brief Perform Amplitude Modulation (AM) of a message signal.
     
@@ -16,7 +16,7 @@ def amplitude_modulation(carrier_freq, sample_rate, duration):
         - am_signal: The resulting amplitude-modulated signal.
     
     @code
-    time, msg, carrier, am = amplitude_modulation(10, 1000, 2)
+    time, msg, carrier, am = am_modulation(10, 1000, 2)
     print(len(time))  # Output: 2000
     print(len(msg), len(carrier), len(am))  # Output: (2000, 2000, 2000)
     @endcode
@@ -24,7 +24,7 @@ def amplitude_modulation(carrier_freq, sample_rate, duration):
     time = np.arange(0, duration, 1 / sample_rate)
     message_signal = np.sin(2 * np.pi * time)
     carrier_signal = np.sin(2 * np.pi * carrier_freq * time)
-    am_signal = message_signal * np.cos(2 * np.pi * carrier_freq * time)
+    am_signal = message_signal * carrier_signal
     return time, message_signal, carrier_signal, am_signal
 
 def plot_am_signals(time, message_signal, carrier_signal, am_signal, carrier_freq):
@@ -38,7 +38,7 @@ def plot_am_signals(time, message_signal, carrier_signal, am_signal, carrier_fre
     @param carrier_freq Frequency of the carrier signal in Hz.
     
     @code
-    time, msg, carrier, am = amplitude_modulation(10, 1000, 2)
+    time, msg, carrier, am = am_modulation(10, 1000, 2)
     plot_am_signals(time, msg, carrier, am, 10)
     @endcode
     """
@@ -89,7 +89,7 @@ def main_am(carrier_freq=10, sample_rate=1000, duration=2):
     print(len(time))  # Output: 2000
     @endcode
     """
-    time, message_signal, carrier_signal, am_signal = amplitude_modulation(
+    time, message_signal, carrier_signal, am_signal = am_modulation(
         carrier_freq, sample_rate, duration)
     plot_am_signals(time, message_signal, carrier_signal, am_signal, carrier_freq)
     return time, message_signal, carrier_signal, am_signal
