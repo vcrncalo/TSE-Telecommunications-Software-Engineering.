@@ -1,5 +1,5 @@
-\chapter{Telecommunication software engineering -\/ Digital transmitter design and signal modulation}
-\hypertarget{md_README}{}\label{md_README}\index{Telecommunication software engineering -\/ Digital transmitter design and signal modulation@{Telecommunication software engineering -\/ Digital transmitter design and signal modulation}}
+\chapter{Telecommunications software engineering -\/ Digital transmitter design and signal modulation}
+\hypertarget{md_README}{}\label{md_README}\index{Telecommunications software engineering -\/ Digital transmitter design and signal modulation@{Telecommunications software engineering -\/ Digital transmitter design and signal modulation}}
 \label{md_README_autotoc_md0}%
 \Hypertarget{md_README_autotoc_md0}%
  \hypertarget{md_README_autotoc_md1}{}\doxysection{\texorpdfstring{Project Goal}{Project Goal}}\label{md_README_autotoc_md1}
@@ -51,17 +51,20 @@ This project explores the concept of a digital transmitter, how it operates, and
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
 \hline
-\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Directory name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Directory/\+File name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
 \endfirsthead
 \hline
 \endfoot
 \hline
-\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Directory name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Directory/\+File name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
 \endhead
-AM-\/\+ASK+tests   &This directory contains all code files necessary for AM and ASK modulations, as well as their respective test files.    \\\cline{1-2}
-FM-\/\+FSK+tests   &This directory contains all code files necessary for FM and FSK modulations, as well as their respective test files.    \\\cline{1-2}
-PSK-\/\+BPSK+tests   &This directory contains all code files necessary for PSK and BPSK modulations, as well as their respective test files.    \\\cline{1-2}
-QAM-\/\+QPSK+tests   &This directory contains all code files necessary for QAM and QPSK modulations, as well as their respective test files.    \\\cline{1-2}
+AM-\/\+ASK+tests   &This directory contains all code files necessary for AM and ASK modulations, as well as their respective test files and modulation images.    \\\cline{1-2}
+FM-\/\+FSK+tests   &This directory contains all code files necessary for FM and FSK modulations, as well as their respective test files and modulation images.    \\\cline{1-2}
+PSK-\/\+BPSK+tests   &This directory contains all code files necessary for PSK and BPSK modulations, as well as their respective test files and modulation images.    \\\cline{1-2}
+QAM-\/\+QPSK+tests   &This directory contains all code files necessary for QAM and QPSK modulations, as well as their respective test files and modulation images.    \\\cline{1-2}
+Images   &This directory contains a variety of images related to modulations and tests.    \\\cline{1-2}
+.github   &This directory contains test.\+yml file which checks all tests and will notify the user if the tests don\textquotesingle{}t pass (useful for debugging)    \\\cline{1-2}
+.coverage   &This file was generated with {\ttfamily pytest -\/v -\/cov}, it run all Python tests in the root directory    \\\cline{1-2}
 README.\+md   &Project details.   \\\cline{1-2}
 \end{longtabu}
 
@@ -168,7 +171,7 @@ README.\+md   &Project details.   \\\cline{1-2}
 
 \DoxyHorRuler{0}
 \hypertarget{md_README_autotoc_md17}{}\doxysection{\texorpdfstring{Pytest}{Pytest}}\label{md_README_autotoc_md17}
-\texorpdfstring{$\ast$}{*}\+The pytest framework is used to run the tests for each modulation technique. The tests can be run with\+: `pytest -\/v -\/-\/cov \textquotesingle{}file.\+py'\`{}.\texorpdfstring{$\ast$}{*}
+\texorpdfstring{$\ast$}{*}\+The pytest framework is used to run the tests for each modulation technique. The tests can be run with\+: `pytest -\/v -\/cov \textquotesingle{}file.\+py'\`{}.\texorpdfstring{$\ast$}{*}
 
 {\itshape Figure 8 shows how pytest output looks when running the tests for all the modulation techniques\+:}
 
@@ -176,7 +179,50 @@ README.\+md   &Project details.   \\\cline{1-2}
  Figure 8\+: Code coverage 
 
 \DoxyHorRuler{0}
-\hypertarget{md_README_autotoc_md19}{}\doxysection{\texorpdfstring{Technologies Used}{Technologies Used}}\label{md_README_autotoc_md19}
+\hypertarget{md_README_autotoc_md19}{}\doxysection{\texorpdfstring{Doxygen}{Doxygen}}\label{md_README_autotoc_md19}
+{\bfseries{Doxygen}} is a documentation generator used across several programming languages, including Python. It parses specially-\/formatted comments within the code to produce documentation in various formats like HTML, La\+TeX, and man pages.\hypertarget{md_README_autotoc_md20}{}\doxysubsection{\texorpdfstring{Doxyfile}{Doxyfile}}\label{md_README_autotoc_md20}
+A {\bfseries{Doxyfile}} is Doxygen\textquotesingle{}s configuration file, controlling the documentation generation process. It specifies settings such as input files, output directories, and documentation style. Doxyfile can be generated with\+: {\ttfamily doxygen -\/g Doxyfile}, and it can later be edited with a text editor, such as vim with\+: {\ttfamily vim Doxyfile}. Once we\textquotesingle{}ve configured Doxfile the way we want it to be, we can finally type\+: {\ttfamily doxygen Doxyfile} which will create {\ttfamily html} and {\ttfamily latex} directories, and later, {\ttfamily latex} directory can be used to compile a PDF document from there.\hypertarget{md_README_autotoc_md21}{}\doxysubsubsection{\texorpdfstring{Key Doxyfile Settings}{Key Doxyfile Settings}}\label{md_README_autotoc_md21}
+The Doxyfile uses a variety of settings to configure the documentation generation. Here are some of the key settings\+:\hypertarget{md_README_autotoc_md22}{}\doxyparagraph{\texorpdfstring{Project Information}{Project Information}}\label{md_README_autotoc_md22}
+
+\begin{DoxyItemize}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily PROJECT\+\_\+\+NAME}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+: The name of the project.
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily PROJECT\+\_\+\+NUMBER}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+: The version number of the project.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md23}{}\doxyparagraph{\texorpdfstring{Input and Output}{Input and Output}}\label{md_README_autotoc_md23}
+
+\begin{DoxyItemize}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily OUTPUT\+\_\+\+DIRECTORY}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+: The directory where the generated documentation will be placed.
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily INPUT}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+: Specifies the input files or directories to be processed by Doxygen.
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily FILE\+\_\+\+PATTERNS}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+: Specifies the file patterns to be included in the documentation.
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily RECURSIVE}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+: Whether to recursively search for input files in subdirectories.
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily HTML\+\_\+\+OUTPUT}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+: Specifies the directory where the HTML documentation will be placed.
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily LATEX\+\_\+\+OUTPUT}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+: Specifies the directory where the La\+TeX documentation will be placed.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md24}{}\doxyparagraph{\texorpdfstring{Extraction Options}{Extraction Options}}\label{md_README_autotoc_md24}
+
+\begin{DoxyItemize}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily EXTRACT\+\_\+\+ALL}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+: Whether to extract documentation from all code elements, even if they are not explicitly documented.
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily EXTRACT\+\_\+\+PRIVATE}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+: Whether to extract documentation from private members.
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily EXTRACT\+\_\+\+STATIC}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+: Whether to extract documentation from static members.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md25}{}\doxyparagraph{\texorpdfstring{Preprocessing and Includes}{Preprocessing and Includes}}\label{md_README_autotoc_md25}
+
+\begin{DoxyItemize}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily ENABLE\+\_\+\+PREPROCESSING}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+: Whether to enable preprocessing of the input files.
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily MACRO\+\_\+\+EXPANSION}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+: Whether to expand macros in the input files.
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily SEARCH\+\_\+\+INCLUDES}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+: Whether to search for include files in the input files.
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily INCLUDE\+\_\+\+PATH}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+: The path to the include files.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md26}{}\doxyparagraph{\texorpdfstring{Other Settings}{Other Settings}}\label{md_README_autotoc_md26}
+
+\begin{DoxyItemize}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily IMAGE\+\_\+\+PATH}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+: The path to the images used in the documentation.
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily EXAMPLE\+\_\+\+PATH}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+: The path to the example files.
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily GENERATE\+\_\+\+HTML}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+: Whether to generate HTML documentation.
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily GENERATE\+\_\+\+LATEX}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+: Whether to generate La\+TeX documentation.
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily GENERATE\+\_\+\+TREEVIEW}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+: Whether to generate a tree view of the documentation.
+\end{DoxyItemize}
+
+The Doxyfile is central to configuring Doxygen. The {\ttfamily INPUT} setting is used to specify the files or directories to be processed, and the {\ttfamily RECURSIVE} setting is important for projects with subdirectories. The current specified input is "{}."{} which means that all files in the current directory will be processed, and the Doxyfile was generated in the root directory. The {\ttfamily FILE\+\_\+\+PATTERNS} setting allows for specific file types to be included in the documentation.
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md28}{}\doxysection{\texorpdfstring{Technologies Used}{Technologies Used}}\label{md_README_autotoc_md28}
 
 \begin{DoxyItemize}
 \item {\bfseries{Programming Language\+:}} Python ~\newline
