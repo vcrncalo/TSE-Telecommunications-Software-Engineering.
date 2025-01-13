@@ -1,0 +1,154 @@
+import tkinter as tk
+from tkinter import ttk, messagebox
+import os
+import importlib
+import traceback
+
+class ModulationGUI:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Modulation Test Loader")
+        self.root.geometry("600x400")  # Increased window size
+        self.root.resizable(True, True)  # Allow resizing
+
+        # Set background color
+        self.root.configure(bg='#f0f0f0')
+
+        # Style for the UI elements
+        self.style = ttk.Style()
+        self.style.configure("TLabel", font=("Helvetica", 12), background="#f0f0f0")
+        self.style.configure("TButton", font=("Helvetica", 12), padding=6)
+        self.style.configure("TCombobox", font=("Helvetica", 12), padding=6)
+
+        # Modulation selection variable
+        self.modulation_var = tk.StringVar()
+        self.path_var = tk.StringVar()
+        self.test_var = tk.StringVar()
+
+        # Create a header label for the application
+        self.header_label = tk.Label(root, text="Select Modulation and Test Path", font=("Helvetica", 16, "bold"), bg="#f0f0f0")
+        self.header_label.pack(pady=20)
+
+        # Dropdown for selecting modulation
+        ttk.Label(root, text="Select Modulation:").pack(pady=5)
+        self.modulation_menu = ttk.Combobox(root, textvariable=self.modulation_var, state="readonly")
+        self.modulation_menu['values'] = ['PSK', 'BPSK', 'QAM', 'AM', 'ASK', 'FM', 'FSK']
+        self.modulation_menu.pack(pady=10)
+        self.modulation_menu.bind("<<ComboboxSelected>>", self.load_modulation)
+
+        # Dropdown for selecting test path
+        ttk.Label(root, text="Select Test Path:").pack(pady=5)
+        self.path_menu = ttk.Combobox(root, textvariable=self.path_var, state="readonly")
+        self.path_menu.pack(pady=10)
+        self.path_menu.bind("<<ComboboxSelected>>", self.update_test_menu)
+
+        # Dropdown for selecting test
+        ttk.Label(root, text="Select Test:").pack(pady=5)
+        self.test_menu = ttk.Combobox(root, textvariable=self.test_var, state="readonly")
+        self.test_menu.pack(pady=10)
+
+        # Run Test button
+        self.run_button = ttk.Button(root, text="Run Test", command=self.run_test)
+        self.run_button.pack(pady=20)
+        self.run_button.bind("<Enter>", self.on_hover)
+        self.run_button.bind("<Leave>", self.on_leave)
+
+        # Initialize variables
+        self.current_module = None
+
+    def load_modulation(self, event):
+        """Load the selected modulation and update the dropdowns."""
+        modulation = self.modulation_var.get()
+        module_name = f"{modulation}.py"
+
+        # Check if the file exists
+        if not os.path.exists(module_name):
+            self.current_module = None
+            self.path_menu['values'] = []
+            self.test_menu['values'] = []
+            self.path_var.set('')
+            self.test_var.set('')
+            messagebox.showerror("Error", f"Modulation file '{module_name}' not found!")
+            return
+
+        # Dynamically import the selected module
+        try:
+            self.current_module = importlib.import_module(modulation)
+            importlib.reload(self.current_module)  # Reload in case of changes
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to load module '{module_name}': {e}")
+            self.current_module = None
+            return
+
+        # Update test path options
+        self.path_menu['values'] = ['Happy Path', 'Sad Path']
+        self.path_var.set('')
+        self.test_menu['values'] = []
+        self.test_var.set('')
+
+    def update_test_menu(self, event):
+        """Update the test menu based on the selected path."""
+        if not self.current_module:
+            return
+
+        selected_path = self.path_var.get()
+
+        # Retrieve test functions from the current module
+        tests = [
+            attr for attr in dir(self.current_module)
+            if callable(getattr(self.current_module, attr)) and attr.startswith("test_")
+        ]
+
+        # Filter tests based on the selected path
+        if selected_path == 'Happy Path':
+            filtered_tests = [test for test in tests if 'happy' in test]
+        elif selected_path == 'Sad Path':
+            filtered_tests = [test for test in tests if 'sad' in test or 'invalid' in test]
+        else:
+            filtered_tests = []
+
+        self.test_menu['values'] = filtered_tests
+        self.test_var.set('')  # Clear previously selected test
+
+    def run_test(self):
+        """Run the selected test."""
+        if not self.current_module:
+            messagebox.showerror("Error", "No modulation module is loaded!")
+            return
+
+        selected_test = self.test_var.get()
+        if not selected_test:
+            messagebox.showerror("Error", "Please select a test to run.")
+            return
+
+        try:
+            test_func = getattr(self.current_module, selected_test)
+            test_func()  # Run the selected test function
+            messagebox.showinfo("Success", f"Test '{selected_test}' ran successfully.")
+        except Exception as e:
+            # For sad path tests, display terminal message notification
+            if 'sad' in selected_test or 'invalid' in selected_test:
+                messagebox.showerror(
+                    "Test Error",
+                    f"Sad path test '{selected_test}' failed. Detailed output is available in the terminal."
+                )
+                print(f"Error while running '{selected_test}':\n{traceback.format_exc()}")
+            else:
+                messagebox.showerror(
+                    "Test Error",
+                    f"An error occurred while running the test:\n\n{e}"
+                )
+
+    def on_hover(self, event):
+        """Change button color on hover."""
+        self.run_button.configure(style="TButtonHover")
+
+    def on_leave(self, event):
+        """Reset button color when hover ends."""
+        self.run_button.configure(style="TButton")
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = ModulationGUI(root)
+    root.mainloop()
+
