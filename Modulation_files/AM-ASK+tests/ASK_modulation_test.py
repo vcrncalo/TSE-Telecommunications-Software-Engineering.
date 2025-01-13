@@ -9,8 +9,12 @@ class TestASKModulation(unittest.TestCase):
         Test 1: Verify the lengths of all arrays returned by the `ask_modulation` function.
         """
         binary_sequence = [0, 1]
-        t, bw, sint, st = ask_modulation(binary_sequence)
-        assert len(t) == len(bw) == len(sint) == len(st) == len(binary_sequence) * 100, \
+        carrier_freq = 10
+        amplitude = 1
+        bit_duration = 1
+        t, bw, sint, st = ask_modulation(binary_sequence, carrier_freq, amplitude, bit_duration)
+        samples_per_bit = int(1000 * bit_duration)
+        assert len(t) == len(bw) == len(sint) == len(st) == len(binary_sequence) * samples_per_bit, \
             "Array lengths do not match the expected value."
 
     def test_ask_modulation_values(self):
@@ -18,25 +22,37 @@ class TestASKModulation(unittest.TestCase):
         Test 2: Verify the values of the binary wave generated during ASK modulation.
         """
         binary_sequence = [0, 1]
-        t, bw, sint, st = ask_modulation(binary_sequence)
-        assert np.all(bw[:100] == 0), "The first 100 values of the binary wave should be 0."
-        assert np.all(bw[100:] == 1), "The next 100 values of the binary wave should be 1."
+        carrier_freq = 10
+        amplitude = 1
+        bit_duration = 1
+        t, bw, sint, st = ask_modulation(binary_sequence, carrier_freq, amplitude, bit_duration)
+        samples_per_bit = int(1000 * bit_duration)
+        assert np.all(bw[:samples_per_bit] == 0), f"The first {samples_per_bit} values of the binary wave should be 0."
+        assert np.all(bw[samples_per_bit:] == 1), f"The next {samples_per_bit} values of the binary wave should be 1."
 
     def test_ask_large_binary_sequence(self):
         """
         Test 4: Verify handling of a very large binary sequence.
         """
         large_binary_sequence = [0, 1] * 500  # 1000 bits
-        t, bw, sint, st = ask_modulation(large_binary_sequence)
-        assert len(t) == len(bw) == len(sint) == len(st) == len(large_binary_sequence) * 100, \
+        carrier_freq = 10
+        amplitude = 1
+        bit_duration = 1
+        t, bw, sint, st = ask_modulation(large_binary_sequence, carrier_freq, amplitude, bit_duration)
+        samples_per_bit = int(1000 * bit_duration)
+        assert len(t) == len(bw) == len(sint) == len(st) == len(large_binary_sequence) * samples_per_bit, \
             "Array lengths do not match the expected value for a large binary sequence."
 
     def test_ask_single_bit_sequence(self):
         """
         Test 5: Verify handling of a single-bit binary sequence.
         """
-        t, bw, sint, st = ask_modulation([1])
-        assert len(t) == len(bw) == len(sint) == len(st) == 100, \
+        carrier_freq = 10
+        amplitude = 1
+        bit_duration = 1
+        t, bw, sint, st = ask_modulation([1], carrier_freq, amplitude, bit_duration)
+        samples_per_bit = int(1000 * bit_duration)
+        assert len(t) == len(bw) == len(sint) == len(st) == samples_per_bit, \
             "Array lengths do not match the expected value for a single-bit sequence."
         assert np.all(bw == 1), "Binary wave should only contain the single bit value."
 
@@ -44,45 +60,64 @@ class TestASKModulation(unittest.TestCase):
         """
         Test 6: Verify handling of a sequence with all zeros.
         """
-        t, bw, sint, st = ask_modulation([0, 0, 0])
+        carrier_freq = 10
+        amplitude = 1
+        bit_duration = 1
+        t, bw, sint, st = ask_modulation([0, 0, 0], carrier_freq, amplitude, bit_duration)
+        samples_per_bit = int(1000 * bit_duration)
         assert np.all(bw == 0), "Binary wave should only contain zeros."
-        assert len(t) == len(bw) == len(sint) == len(st) == 300, "Array lengths are incorrect"
+        assert len(t) == len(bw) == len(sint) == len(st) == 3 * samples_per_bit, "Array lengths are incorrect"
 
     def test_ask_alternating_sequence(self):
         """
         Test 7: Verify handling of an alternating sequence.
         """
-        t, bw, sint, st = ask_modulation([1, 0, 1, 0])
-        assert np.all(bw[:100] == 1)
-        assert np.all(bw[100:200] == 0)
-        assert np.all(bw[200:300] == 1)
-        assert np.all(bw[300:] == 0)
-        assert len(t) == len(bw) == len(sint) == len(st) == 400, "Array lengths are incorrect"
+        carrier_freq = 10
+        amplitude = 1
+        bit_duration = 1
+        t, bw, sint, st = ask_modulation([1, 0, 1, 0], carrier_freq, amplitude, bit_duration)
+        samples_per_bit = int(1000 * bit_duration)
+        assert np.all(bw[:samples_per_bit] == 1)
+        assert np.all(bw[samples_per_bit:2*samples_per_bit] == 0)
+        assert np.all(bw[2*samples_per_bit:3*samples_per_bit] == 1)
+        assert np.all(bw[3*samples_per_bit:] == 0)
+        assert len(t) == len(bw) == len(sint) == len(st) == 4 * samples_per_bit, "Array lengths are incorrect"
 
     def test_ask_long_same_bit_sequence(self):
         """
         Test 8: Verify handling of a long sequence of the same bit.
         """
-        t, bw, sint, st = ask_modulation([1] * 10)
+        carrier_freq = 10
+        amplitude = 1
+        bit_duration = 1
+        t, bw, sint, st = ask_modulation([1] * 10, carrier_freq, amplitude, bit_duration)
+        samples_per_bit = int(1000 * bit_duration)
         assert np.all(bw == 1), "Binary wave should only contain ones."
-        assert len(t) == len(bw) == len(sint) == len(st) == 1000, "Array lengths are incorrect"
+        assert len(t) == len(bw) == len(sint) == len(st) == 10 * samples_per_bit, "Array lengths are incorrect"
 
     def test_ask_modulation_basic_sequence(self):
         """
         Test 10: Verify that a basic sequence [0, 1, 0] works.
         """
-        t, bw, sint, st = ask_modulation([0, 1, 0])
-        assert len(t) == len(bw) == len(sint) == len(st) == 300
-        assert np.all(bw[:100] == 0)
-        assert np.all(bw[100:200] == 1)
-        assert np.all(bw[200:] == 0)
+        carrier_freq = 10
+        amplitude = 1
+        bit_duration = 1
+        t, bw, sint, st = ask_modulation([0, 1, 0], carrier_freq, amplitude, bit_duration)
+        samples_per_bit = int(1000 * bit_duration)
+        assert len(t) == len(bw) == len(sint) == len(st) == 3 * samples_per_bit
+        assert np.all(bw[:samples_per_bit] == 0)
+        assert np.all(bw[samples_per_bit:2*samples_per_bit] == 1)
+        assert np.all(bw[2*samples_per_bit:] == 0)
 
     # Sad path tests
     def test_ask_empty_binary_sequence(self):
         """
         Test 3: Verify that an empty binary sequence returns empty arrays.
         """
-        t, bw, sint, st = ask_modulation([])
+        carrier_freq = 10
+        amplitude = 1
+        bit_duration = 1
+        t, bw, sint, st = ask_modulation([], carrier_freq, amplitude, bit_duration)
         assert len(t) == len(bw) == len(sint) == len(st) == 0, \
             "Empty binary sequence should result in empty output arrays."
 
@@ -90,7 +125,10 @@ class TestASKModulation(unittest.TestCase):
         """
         Test 9: Verify that an empty input raises an error.
         """
-        t, bw, sint, st = ask_modulation([])
+        carrier_freq = 10
+        amplitude = 1
+        bit_duration = 1
+        t, bw, sint, st = ask_modulation([], carrier_freq, amplitude, bit_duration)
         assert len(t) == 0
         assert len(bw) == 0
         assert len(sint) == 0

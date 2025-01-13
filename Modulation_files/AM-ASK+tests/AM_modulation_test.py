@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from AM_modulation import amplitude_modulation
+from AM_modulation import am_modulation
 
 class TestAMModulation(unittest.TestCase):
     # Happy path tests
@@ -11,7 +11,7 @@ class TestAMModulation(unittest.TestCase):
         carrier_freq = 10
         sample_rate = 1000
         duration = 2
-        time, message_signal, carrier_signal, am_signal = amplitude_modulation(
+        time, message_signal, carrier_signal, am_signal = am_modulation(
             carrier_freq, sample_rate, duration)
         expected_length = int(sample_rate * duration)
         self.assertEqual(len(time), expected_length)
@@ -26,7 +26,7 @@ class TestAMModulation(unittest.TestCase):
         carrier_freq = 10
         sample_rate = 1000
         duration = 2
-        _, _, carrier_signal, _ = amplitude_modulation(
+        _, _, carrier_signal, _ = am_modulation(
             carrier_freq, sample_rate, duration)
         self.assertTrue(np.all(carrier_signal <= 1))
         self.assertTrue(np.all(carrier_signal >= -1))
@@ -38,7 +38,7 @@ class TestAMModulation(unittest.TestCase):
         carrier_freq = 10
         sample_rate = 1000
         duration = 2
-        _, _, _, am_signal = amplitude_modulation(
+        _, _, _, am_signal = am_modulation(
             carrier_freq, sample_rate, duration)
         self.assertTrue(np.all(am_signal <= 1))
         self.assertTrue(np.all(am_signal >= -1))
@@ -50,7 +50,7 @@ class TestAMModulation(unittest.TestCase):
         carrier_freq = 10
         high_sample_rate = 100000
         duration = 2
-        time, message_signal, carrier_signal, am_signal = amplitude_modulation(
+        time, message_signal, carrier_signal, am_signal = am_modulation(
             carrier_freq, high_sample_rate, duration)
         expected_length = int(high_sample_rate * duration)
         self.assertEqual(len(time), expected_length)
@@ -65,7 +65,7 @@ class TestAMModulation(unittest.TestCase):
         carrier_freq = 10
         low_sample_rate = 10
         duration = 2
-        time, message_signal, carrier_signal, am_signal = amplitude_modulation(
+        time, message_signal, carrier_signal, am_signal = am_modulation(
             carrier_freq, low_sample_rate, duration)
         expected_length = int(low_sample_rate * duration)
         self.assertEqual(len(time), expected_length)
@@ -80,7 +80,7 @@ class TestAMModulation(unittest.TestCase):
         carrier_freq = 10
         sample_rate = 1000
         large_duration = 100
-        time, message_signal, carrier_signal, am_signal = amplitude_modulation(
+        time, message_signal, carrier_signal, am_signal = am_modulation(
             carrier_freq, sample_rate, large_duration)
         expected_length = int(sample_rate * large_duration)
         self.assertEqual(len(time), expected_length)
@@ -95,7 +95,7 @@ class TestAMModulation(unittest.TestCase):
         different_carrier_freq = 50
         sample_rate = 1000
         duration = 2
-        time, message_signal, carrier_signal, am_signal = amplitude_modulation(
+        time, message_signal, carrier_signal, am_signal = am_modulation(
             different_carrier_freq, sample_rate, duration)
         expected_length = int(sample_rate * duration)
         self.assertEqual(len(time), expected_length)
@@ -110,7 +110,7 @@ class TestAMModulation(unittest.TestCase):
         zero_carrier_freq = 0
         sample_rate = 1000
         duration = 2
-        time, message_signal, carrier_signal, am_signal = amplitude_modulation(
+        time, message_signal, carrier_signal, am_signal = am_modulation(
             zero_carrier_freq, sample_rate, duration)
         expected_length = int(sample_rate * duration)
         self.assertEqual(len(time), expected_length)
@@ -125,7 +125,7 @@ class TestAMModulation(unittest.TestCase):
         """
         carrier_freq = 10
         sample_rate = 1000
-        time, message_signal, carrier_signal, am_signal = amplitude_modulation(
+        time, message_signal, carrier_signal, am_signal = am_modulation(
             carrier_freq, sample_rate, duration=0)
         self.assertEqual(len(time), 0)
         self.assertEqual(len(message_signal), 0)
@@ -139,7 +139,7 @@ class TestAMModulation(unittest.TestCase):
         carrier_freq = 10
         sample_rate = 1000
         duration = 2
-        _, _, _, am_signal = amplitude_modulation(
+        _, _, _, am_signal = am_modulation(
             carrier_freq, sample_rate, duration)
         self.assertTrue(np.all(am_signal <= 1))
         self.assertTrue(np.all(am_signal >= -1))
