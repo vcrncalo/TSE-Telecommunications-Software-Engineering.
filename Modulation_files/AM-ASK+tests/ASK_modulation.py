@@ -91,8 +91,8 @@ if __name__ == "__main__":
     @endcode
     """
     binary_sequence = input(
-        "Enter a binary sequence in the format [1, 0, 1, 0] with brackets, commas, and spaces: ")
-    binary_sequence = list(map(int, binary_sequence.strip('[]').split(",")))
+        "Enter a binary sequence in the format 1, 0, 1, 0: ")
+    binary_sequence = list(map(int, binary_sequence.strip().split(",")))
 
     # Perform ASK modulation and obtain the components.
     carrier_freq = 10
