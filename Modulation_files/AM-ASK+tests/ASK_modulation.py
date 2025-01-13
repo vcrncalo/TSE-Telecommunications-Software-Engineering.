@@ -1,11 +1,14 @@
 import numpy as np  # Provides mathematical functions like pi (np.pi) and sine (np.sin).
 import matplotlib.pyplot as plt  # Enables plotting of graphs.
 
-def ask_modulation(binary_sequence):
+def ask_modulation(binary_sequence, carrier_freq, amplitude, bit_duration):
     """!
     @brief Generates ASK (Amplitude Shift Keying) modulation components for a given binary sequence.
 
     @param binary_sequence A binary sequence (e.g., [1, 0, 1, 0]).
+    @param carrier_freq Carrier frequency (Hz).
+    @param amplitude Amplitude of the carrier signal.
+    @param bit_duration Duration of each bit (seconds).
     
     @return A tuple containing:
         - t (numpy array): Time vector for the signal.
@@ -15,14 +18,18 @@ def ask_modulation(binary_sequence):
 
     @code
     binary_sequence = [1, 0, 1, 0]
-    t, bw, sint, st = ask_modulation(binary_sequence)
-    print(len(t), len(bw))  # Outputs: 400 400
+    carrier_freq = 10
+    amplitude = 1
+    bit_duration = 1
+    t, bw, sint, st = ask_modulation(binary_sequence, carrier_freq, amplitude, bit_duration)
+    print(len(t), len(bw))
     @endcode
     """
     n = len(binary_sequence)  # Length of the binary sequence.
-    bw = np.repeat(binary_sequence, 100)  # Each bit is repeated 100 times.
-    t = np.linspace(0, n, len(bw))  # Time vector from 0 to n with len(bw) points.
-    sint = np.sin(2 * np.pi * t)  # Carrier sinusoidal signal.
+    samples_per_bit = int(1000 * bit_duration)
+    bw = np.repeat(binary_sequence, samples_per_bit)  # Each bit is repeated based on bit_duration and sample rate.
+    t = np.linspace(0, n * bit_duration, len(bw), endpoint=False)  # Time vector from 0 to n*bit_duration with len(bw) points.
+    sint = amplitude * np.sin(2 * np.pi * carrier_freq * t)  # Carrier sinusoidal signal.
     st = bw * sint  # ASK modulated signal is the product of the binary signal and the sinusoidal signal.
     return t, bw, sint, st  # Return the components.
 
