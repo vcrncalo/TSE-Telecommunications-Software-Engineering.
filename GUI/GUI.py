@@ -816,8 +816,8 @@ class ModulationGUI:
         ax2.grid(True)
 
         ax3 = self.fig.add_subplot(3, 1, 3, sharex=ax1)
-        ax3.plot(time, fm_signal, label=f'FM Signal (Δf={freq_deviation} Hz)', color='green')
-        ax3.set_title(f'FM Signal (Δf={freq_deviation} Hz)')
+        ax3.plot(time, fm_signal, label=f'FM Signal (\\Delta f={freq_deviation} Hz)', color='green')
+        ax3.set_title(f'FM Signal (\\Delta f={freq_deviation} Hz)')
         ax3.set_xlabel('Time (s)')
         ax3.set_ylabel('Amplitude')
         ax3.legend()
