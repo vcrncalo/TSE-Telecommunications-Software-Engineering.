@@ -1,0 +1,514 @@
+\doxysection{GUI.\+Modulation\+GUI Class Reference}
+\hypertarget{classGUI_1_1ModulationGUI}{}\label{classGUI_1_1ModulationGUI}\index{GUI.ModulationGUI@{GUI.ModulationGUI}}
+
+
+A graphical user interface for simulating various digital and analog modulation techniques.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGUI_1_1ModulationGUI_af1a295afe50ae14edc000344765c975e}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, root)
+\begin{DoxyCompactList}\small\item\em Initializes the Modulation\+GUI with the main Tkinter window. \end{DoxyCompactList}\item 
+\Hypertarget{classGUI_1_1ModulationGUI_acd6edbf4252d56474cdd83eb2dc8c0fb}\label{classGUI_1_1ModulationGUI_acd6edbf4252d56474cdd83eb2dc8c0fb} 
+{\bfseries show\+\_\+help} (self)
+\begin{DoxyCompactList}\small\item\em Displays a help message box with information about the program. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGUI_1_1ModulationGUI_adabf2997c895ea709b590ff38409737e}{get\+\_\+parameters}} (self, param\+\_\+names)
+\begin{DoxyCompactList}\small\item\em Extracts parameters from the parameter\+\_\+vars dictionary. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGUI_1_1ModulationGUI_a320a55e42ce98b8b85f549963bb7b7bd}{validate\+\_\+range}} (self, value, min\+\_\+val, max\+\_\+val, var\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Validates if the input value is within the specified range. \end{DoxyCompactList}\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a658e619957ce9808a76a78d52bef249b}\label{classGUI_1_1ModulationGUI_a658e619957ce9808a76a78d52bef249b} 
+{\bfseries show\+\_\+parameters} (self, event)
+\item 
+\mbox{\hyperlink{classGUI_1_1ModulationGUI_afd62b429309cf224df3745c085d35cbe}{load\+\_\+modulation\+\_\+modules}} (self)
+\begin{DoxyCompactList}\small\item\em Loads modulation modules from the \textquotesingle{}Modulation\+\_\+files\textquotesingle{} directory. \end{DoxyCompactList}\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a0675bf00b44bcd19036d9e9761dbc069}\label{classGUI_1_1ModulationGUI_a0675bf00b44bcd19036d9e9761dbc069} 
+{\bfseries run\+\_\+simulation} (self)
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a3ae496f493bbde5e445b31099c2dedd4}\label{classGUI_1_1ModulationGUI_a3ae496f493bbde5e445b31099c2dedd4} 
+{\bfseries validate\+\_\+am\+\_\+carrier\+\_\+freq} (self, value)
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a3be31ba45ab4a8b8021d18a8b303257a}\label{classGUI_1_1ModulationGUI_a3be31ba45ab4a8b8021d18a8b303257a} 
+{\bfseries validate\+\_\+ask\+\_\+carrier\+\_\+freq} (self, value)
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a840d777f08bd91a289932c7f2503a5bf}\label{classGUI_1_1ModulationGUI_a840d777f08bd91a289932c7f2503a5bf} 
+{\bfseries update\+\_\+am\+\_\+labels} (self)
+\begin{DoxyCompactList}\small\item\em Updates the labels for AM parameters with the current values. \end{DoxyCompactList}\item 
+\Hypertarget{classGUI_1_1ModulationGUI_ae8ec554a6bca946a57563e848746a3b8}\label{classGUI_1_1ModulationGUI_ae8ec554a6bca946a57563e848746a3b8} 
+{\bfseries update\+\_\+ask\+\_\+labels} (self)
+\begin{DoxyCompactList}\small\item\em Updates the labels for ASK parameters with the current values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGUI_1_1ModulationGUI_a30bec786e32d09ab4a69697cd6bb6736}{plot\+\_\+am\+\_\+signals}} (self, time, message\+\_\+signal, carrier\+\_\+signal, am\+\_\+signal, carrier\+\_\+freq)
+\begin{DoxyCompactList}\small\item\em Plot the message signal, carrier signal, and AM modulated signal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGUI_1_1ModulationGUI_a88b55f70c275d9fdcf452d70c60fb907}{plot\+\_\+fsk\+\_\+signals}} (self, time, modulating\+\_\+signal, carrier\+\_\+signal\+\_\+0, carrier\+\_\+signal\+\_\+1, fsk\+\_\+signal, carrier\+\_\+freq\+\_\+0, carrier\+\_\+freq\+\_\+1)
+\begin{DoxyCompactList}\small\item\em Plot the modulating signal, carrier signals, and the FSK modulated signal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGUI_1_1ModulationGUI_a800b4e08c18a1e027f4989edfc4bfaa3}{plot\+\_\+bpsk\+\_\+signals}} (self, time, modulating\+\_\+signal, carrier\+\_\+signal, bpsk\+\_\+signal, carrier\+\_\+freq)
+\begin{DoxyCompactList}\small\item\em Plot the modulating signal, carrier signal, and the BPSK modulated signal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGUI_1_1ModulationGUI_afaad6ce1e37387e5af83f117305e8c05}{plot\+\_\+psk\+\_\+signals}} (self, time, modulating\+\_\+signal, carrier\+\_\+signal, psk\+\_\+signal, carrier\+\_\+freq)
+\begin{DoxyCompactList}\small\item\em Plot the modulating signal, carrier signal, and the PSK modulated signal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGUI_1_1ModulationGUI_a540087064a9a167e8fd5ef412d314dae}{plot\+\_\+qam\+\_\+signals}} (self, time, modulating\+\_\+signal, carrier\+\_\+signal\+\_\+i, carrier\+\_\+signal\+\_\+q, qam\+\_\+signal, carrier\+\_\+freq, constellation\+\_\+points)
+\begin{DoxyCompactList}\small\item\em Plot the modulating signal, carrier signals, and the QAM modulated signal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGUI_1_1ModulationGUI_a2b4633d397de34785265918db4d1551b}{plot\+\_\+fm\+\_\+signals}} (self, time, message\+\_\+signal, carrier\+\_\+signal, fm\+\_\+signal, carrier\+\_\+freq, freq\+\_\+deviation)
+\begin{DoxyCompactList}\small\item\em Plot the message signal, carrier signal, and FM modulated signal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGUI_1_1ModulationGUI_a3eb91356277f88262a523c2b16c08692}{plot\+\_\+ask\+\_\+signals}} (self, time, bw, sint, st)
+\begin{DoxyCompactList}\small\item\em Plot the digital signal, carrier signal, and ASK modulated signal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGUI_1_1ModulationGUI_a49c8c3a71d6c527567004a5db9a6b814}{plot\+\_\+qpsk\+\_\+signals}} (self, time, modulating\+\_\+signal, carrier\+\_\+signal\+\_\+i, carrier\+\_\+signal\+\_\+q, qpsk\+\_\+signal, carrier\+\_\+freq)
+\begin{DoxyCompactList}\small\item\em Plot the modulating signal, carrier signals, and the QPSK modulated signal. \end{DoxyCompactList}\item 
+\Hypertarget{classGUI_1_1ModulationGUI_af1a295afe50ae14edc000344765c975e}\label{classGUI_1_1ModulationGUI_af1a295afe50ae14edc000344765c975e} 
+{\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, root)
+\item 
+\mbox{\hyperlink{classGUI_1_1ModulationGUI_a5e69734139952fc9677644570c356f14}{load\+\_\+modulation}} (self, event)
+\item 
+\mbox{\hyperlink{classGUI_1_1ModulationGUI_a54ad9a1aa778a641e47754c6babfa9e9}{update\+\_\+test\+\_\+menu}} (self, event)
+\item 
+\mbox{\hyperlink{classGUI_1_1ModulationGUI_affdc9dd45e3cce5c2fb34df7f704d447}{run\+\_\+test}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a1a2e5d6970f8ce4c62372c1dc8a98475}\label{classGUI_1_1ModulationGUI_a1a2e5d6970f8ce4c62372c1dc8a98475} 
+{\bfseries root}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a09e579123bf6a217636df579c48c3495}\label{classGUI_1_1ModulationGUI_a09e579123bf6a217636df579c48c3495} 
+{\bfseries modulation\+\_\+modules}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_ab08aa43c1addacac06949dc5344fe480}\label{classGUI_1_1ModulationGUI_ab08aa43c1addacac06949dc5344fe480} 
+{\bfseries modulation\+\_\+names}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a81cd283c16020e60fb4a65cde11e3c73}\label{classGUI_1_1ModulationGUI_a81cd283c16020e60fb4a65cde11e3c73} 
+{\bfseries selected\+\_\+modulation}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a03940430a922f383ae2c74f786e2ec3a}\label{classGUI_1_1ModulationGUI_a03940430a922f383ae2c74f786e2ec3a} 
+{\bfseries parameter\+\_\+frames}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_ab660d4e4437dca70f10294dde680c98f}\label{classGUI_1_1ModulationGUI_ab660d4e4437dca70f10294dde680c98f} 
+{\bfseries parameter\+\_\+vars}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a73b0429917c57788236fd9b2f09472b3}\label{classGUI_1_1ModulationGUI_a73b0429917c57788236fd9b2f09472b3} 
+{\bfseries modulation\+\_\+combo}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a07facd7954abe764896fd03788fae66e}\label{classGUI_1_1ModulationGUI_a07facd7954abe764896fd03788fae66e} 
+{\bfseries fig}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_aa2338b399d3b75add05355fc9ff25cff}\label{classGUI_1_1ModulationGUI_aa2338b399d3b75add05355fc9ff25cff} 
+{\bfseries ax}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_ae7edd02cb7305a6a7b34f3b91c4c5c94}\label{classGUI_1_1ModulationGUI_ae7edd02cb7305a6a7b34f3b91c4c5c94} 
+{\bfseries canvas}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a479f7066aaa443291d3f9603638de1fc}\label{classGUI_1_1ModulationGUI_a479f7066aaa443291d3f9603638de1fc} 
+{\bfseries canvas\+\_\+widget}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a8c67a46558206b381cac8322a0ea2c38}\label{classGUI_1_1ModulationGUI_a8c67a46558206b381cac8322a0ea2c38} 
+{\bfseries show\+\_\+parameters}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a635135cde2b506a30bb7cbbc72436537}\label{classGUI_1_1ModulationGUI_a635135cde2b506a30bb7cbbc72436537} 
+{\bfseries am\+\_\+carrier\+\_\+freq\+\_\+label}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a0721f6a2195e7a03c43ece3f919e1490}\label{classGUI_1_1ModulationGUI_a0721f6a2195e7a03c43ece3f919e1490} 
+{\bfseries am\+\_\+initial\+\_\+phase\+\_\+label}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_af6f1e56df988842ee1a3b4ee59f327df}\label{classGUI_1_1ModulationGUI_af6f1e56df988842ee1a3b4ee59f327df} 
+{\bfseries am\+\_\+amplitude\+\_\+label}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_abc5af85dbc7a09adba202d6bcf641880}\label{classGUI_1_1ModulationGUI_abc5af85dbc7a09adba202d6bcf641880} 
+{\bfseries am\+\_\+duration\+\_\+label}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_ac89b65a3f72f109d59ea7493053bfd21}\label{classGUI_1_1ModulationGUI_ac89b65a3f72f109d59ea7493053bfd21} 
+{\bfseries fsk\+\_\+carrier\+\_\+freq\+\_\+0\+\_\+label}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a68612d9ec2c3228bf2dc52f8908f05eb}\label{classGUI_1_1ModulationGUI_a68612d9ec2c3228bf2dc52f8908f05eb} 
+{\bfseries fsk\+\_\+carrier\+\_\+freq\+\_\+1\+\_\+label}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a6d3c63ec030c741cb894aee8a5805ebb}\label{classGUI_1_1ModulationGUI_a6d3c63ec030c741cb894aee8a5805ebb} 
+{\bfseries fsk\+\_\+bit\+\_\+duration\+\_\+label}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a204d624f897bb2de5e11ffd0652925b4}\label{classGUI_1_1ModulationGUI_a204d624f897bb2de5e11ffd0652925b4} 
+{\bfseries bpsk\+\_\+carrier\+\_\+freq\+\_\+label}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_aa3b9334ba6323672640ba6917c0e463f}\label{classGUI_1_1ModulationGUI_aa3b9334ba6323672640ba6917c0e463f} 
+{\bfseries bpsk\+\_\+bit\+\_\+duration\+\_\+label}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a10b250c241b4f1cfbd942e91fcb0e113}\label{classGUI_1_1ModulationGUI_a10b250c241b4f1cfbd942e91fcb0e113} 
+{\bfseries psk\+\_\+carrier\+\_\+freq\+\_\+label}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a0c4b175a922ce11a6f716800f0b383c1}\label{classGUI_1_1ModulationGUI_a0c4b175a922ce11a6f716800f0b383c1} 
+{\bfseries psk\+\_\+bit\+\_\+duration\+\_\+label}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a7d9090353f0a1cc225da002186a6f8e1}\label{classGUI_1_1ModulationGUI_a7d9090353f0a1cc225da002186a6f8e1} 
+{\bfseries qam\+\_\+carrier\+\_\+freq\+\_\+label}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_ad588ff5c29e29602025cc13d6ca6acf7}\label{classGUI_1_1ModulationGUI_ad588ff5c29e29602025cc13d6ca6acf7} 
+{\bfseries qam\+\_\+bit\+\_\+duration\+\_\+label}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a902f3e3704d986e9d1dfc0d07a4aacac}\label{classGUI_1_1ModulationGUI_a902f3e3704d986e9d1dfc0d07a4aacac} 
+{\bfseries fm\+\_\+carrier\+\_\+freq\+\_\+label}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a3abab4bd7d83dbcf0aaf702daa40d96f}\label{classGUI_1_1ModulationGUI_a3abab4bd7d83dbcf0aaf702daa40d96f} 
+{\bfseries fm\+\_\+duration\+\_\+label}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_aa3a911ad19e2765adf19988de1ac01e0}\label{classGUI_1_1ModulationGUI_aa3a911ad19e2765adf19988de1ac01e0} 
+{\bfseries fm\+\_\+freq\+\_\+deviation\+\_\+label}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a573a6906d21479d890292f6001ec249e}\label{classGUI_1_1ModulationGUI_a573a6906d21479d890292f6001ec249e} 
+{\bfseries ask\+\_\+carrier\+\_\+freq\+\_\+label}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_aaa9f81a622cb64efb0f397ab76a57642}\label{classGUI_1_1ModulationGUI_aaa9f81a622cb64efb0f397ab76a57642} 
+{\bfseries ask\+\_\+amplitude\+\_\+label}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a71660aff0ec47f33ed560f4d87ee4046}\label{classGUI_1_1ModulationGUI_a71660aff0ec47f33ed560f4d87ee4046} 
+{\bfseries ask\+\_\+bit\+\_\+duration\+\_\+label}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_acdfb0901f23912cadfe6d7fad38e964d}\label{classGUI_1_1ModulationGUI_acdfb0901f23912cadfe6d7fad38e964d} 
+{\bfseries qpsk\+\_\+carrier\+\_\+freq\+\_\+label}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a44944997aba25a45ce1245c116ad93e8}\label{classGUI_1_1ModulationGUI_a44944997aba25a45ce1245c116ad93e8} 
+{\bfseries qpsk\+\_\+bit\+\_\+duration\+\_\+label}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a1b8b3ef282e161e0c1bdba0a97dcf79d}\label{classGUI_1_1ModulationGUI_a1b8b3ef282e161e0c1bdba0a97dcf79d} 
+{\bfseries bg\+\_\+color}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_ace5f99e8d23a3e719841b83523dd8385}\label{classGUI_1_1ModulationGUI_ace5f99e8d23a3e719841b83523dd8385} 
+{\bfseries fg\+\_\+color}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a7c2d0b9971cb89e7cefe08a048de07f1}\label{classGUI_1_1ModulationGUI_a7c2d0b9971cb89e7cefe08a048de07f1} 
+{\bfseries accent\+\_\+color}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a3e24df72974d04eee5b506351c686bba}\label{classGUI_1_1ModulationGUI_a3e24df72974d04eee5b506351c686bba} 
+{\bfseries modulation\+\_\+var}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_aa070509b3ce298e2da79221edca86689}\label{classGUI_1_1ModulationGUI_aa070509b3ce298e2da79221edca86689} 
+{\bfseries path\+\_\+var}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_afdaa2d97546ba84e1877a4a0ca2c4f58}\label{classGUI_1_1ModulationGUI_afdaa2d97546ba84e1877a4a0ca2c4f58} 
+{\bfseries test\+\_\+var}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a0295be8af61896b88bea40a4d096ca77}\label{classGUI_1_1ModulationGUI_a0295be8af61896b88bea40a4d096ca77} 
+{\bfseries style}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a49a906b9a97fdc73d1f05132c21b6315}\label{classGUI_1_1ModulationGUI_a49a906b9a97fdc73d1f05132c21b6315} 
+{\bfseries header\+\_\+label}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a8293336a720fcf123faa816f845a308b}\label{classGUI_1_1ModulationGUI_a8293336a720fcf123faa816f845a308b} 
+{\bfseries modulation\+\_\+menu}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a8d09c9ce839e3bb727c7a3aefd16644a}\label{classGUI_1_1ModulationGUI_a8d09c9ce839e3bb727c7a3aefd16644a} 
+{\bfseries load\+\_\+modulation}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a2a0bc914cb4f3e016a57e968e8d0a401}\label{classGUI_1_1ModulationGUI_a2a0bc914cb4f3e016a57e968e8d0a401} 
+{\bfseries path\+\_\+menu}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a8de1690c2a3ff8e462e337d854e8c0c9}\label{classGUI_1_1ModulationGUI_a8de1690c2a3ff8e462e337d854e8c0c9} 
+{\bfseries update\+\_\+test\+\_\+menu}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a03c4d586c1568e2b6e203db1c8faecd9}\label{classGUI_1_1ModulationGUI_a03c4d586c1568e2b6e203db1c8faecd9} 
+{\bfseries test\+\_\+menu}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a1d85e2ecba49e615124d3fe30dfd0f37}\label{classGUI_1_1ModulationGUI_a1d85e2ecba49e615124d3fe30dfd0f37} 
+{\bfseries run\+\_\+button}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_acd08fd3887a6bc0bf4d569c30a5023c8}\label{classGUI_1_1ModulationGUI_acd08fd3887a6bc0bf4d569c30a5023c8} 
+{\bfseries exit\+\_\+button}
+\item 
+\Hypertarget{classGUI_1_1ModulationGUI_a56333a9e2d8279be9519595fee504423}\label{classGUI_1_1ModulationGUI_a56333a9e2d8279be9519595fee504423} 
+{\bfseries current\+\_\+module}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A graphical user interface for simulating various digital and analog modulation techniques. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGUI_1_1ModulationGUI_af1a295afe50ae14edc000344765c975e}\label{classGUI_1_1ModulationGUI_af1a295afe50ae14edc000344765c975e} 
+\index{GUI.ModulationGUI@{GUI.ModulationGUI}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!GUI.ModulationGUI@{GUI.ModulationGUI}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily GUI.\+Modulation\+GUI.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{root }\end{DoxyParamCaption})}
+
+
+
+Initializes the Modulation\+GUI with the main Tkinter window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & (tk.\+Tk)\+: The root Tkinter window. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGUI_1_1ModulationGUI_adabf2997c895ea709b590ff38409737e}\label{classGUI_1_1ModulationGUI_adabf2997c895ea709b590ff38409737e} 
+\index{GUI.ModulationGUI@{GUI.ModulationGUI}!get\_parameters@{get\_parameters}}
+\index{get\_parameters@{get\_parameters}!GUI.ModulationGUI@{GUI.ModulationGUI}}
+\doxysubsubsection{\texorpdfstring{get\_parameters()}{get\_parameters()}}
+{\footnotesize\ttfamily GUI.\+Modulation\+GUI.\+get\+\_\+parameters (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{param\+\_\+names }\end{DoxyParamCaption})}
+
+
+
+Extracts parameters from the parameter\+\_\+vars dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param\+\_\+names} & (list)\+: A list of parameter names to extract.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+dict\+: A dictionary containing the extracted parameters. 
+\end{DoxyReturn}
+\Hypertarget{classGUI_1_1ModulationGUI_a5e69734139952fc9677644570c356f14}\label{classGUI_1_1ModulationGUI_a5e69734139952fc9677644570c356f14} 
+\index{GUI.ModulationGUI@{GUI.ModulationGUI}!load\_modulation@{load\_modulation}}
+\index{load\_modulation@{load\_modulation}!GUI.ModulationGUI@{GUI.ModulationGUI}}
+\doxysubsubsection{\texorpdfstring{load\_modulation()}{load\_modulation()}}
+{\footnotesize\ttfamily GUI.\+Modulation\+GUI.\+load\+\_\+modulation (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Load the selected modulation and update the dropdowns.\end{DoxyVerb}
+ \Hypertarget{classGUI_1_1ModulationGUI_afd62b429309cf224df3745c085d35cbe}\label{classGUI_1_1ModulationGUI_afd62b429309cf224df3745c085d35cbe} 
+\index{GUI.ModulationGUI@{GUI.ModulationGUI}!load\_modulation\_modules@{load\_modulation\_modules}}
+\index{load\_modulation\_modules@{load\_modulation\_modules}!GUI.ModulationGUI@{GUI.ModulationGUI}}
+\doxysubsubsection{\texorpdfstring{load\_modulation\_modules()}{load\_modulation\_modules()}}
+{\footnotesize\ttfamily GUI.\+Modulation\+GUI.\+load\+\_\+modulation\+\_\+modules (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Loads modulation modules from the \textquotesingle{}Modulation\+\_\+files\textquotesingle{} directory. 
+
+\begin{DoxyReturn}{Returns}
+dict\+: A dictionary where keys are module names and values are the modulation functions. 
+\end{DoxyReturn}
+\Hypertarget{classGUI_1_1ModulationGUI_a30bec786e32d09ab4a69697cd6bb6736}\label{classGUI_1_1ModulationGUI_a30bec786e32d09ab4a69697cd6bb6736} 
+\index{GUI.ModulationGUI@{GUI.ModulationGUI}!plot\_am\_signals@{plot\_am\_signals}}
+\index{plot\_am\_signals@{plot\_am\_signals}!GUI.ModulationGUI@{GUI.ModulationGUI}}
+\doxysubsubsection{\texorpdfstring{plot\_am\_signals()}{plot\_am\_signals()}}
+{\footnotesize\ttfamily GUI.\+Modulation\+GUI.\+plot\+\_\+am\+\_\+signals (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{time,  }\item[{}]{message\+\_\+signal,  }\item[{}]{carrier\+\_\+signal,  }\item[{}]{am\+\_\+signal,  }\item[{}]{carrier\+\_\+freq }\end{DoxyParamCaption})}
+
+
+
+Plot the message signal, carrier signal, and AM modulated signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & (np.\+array)\+: Time vector for the signals. \\
+\hline
+{\em message\+\_\+signal} & (np.\+array)\+: The base message signal. \\
+\hline
+{\em carrier\+\_\+signal} & (np.\+array)\+: The carrier signal. \\
+\hline
+{\em am\+\_\+signal} & (np.\+array)\+: The AM modulated signal. \\
+\hline
+{\em carrier\+\_\+freq} & (float)\+: Frequency of the carrier signal in Hz. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGUI_1_1ModulationGUI_a3eb91356277f88262a523c2b16c08692}\label{classGUI_1_1ModulationGUI_a3eb91356277f88262a523c2b16c08692} 
+\index{GUI.ModulationGUI@{GUI.ModulationGUI}!plot\_ask\_signals@{plot\_ask\_signals}}
+\index{plot\_ask\_signals@{plot\_ask\_signals}!GUI.ModulationGUI@{GUI.ModulationGUI}}
+\doxysubsubsection{\texorpdfstring{plot\_ask\_signals()}{plot\_ask\_signals()}}
+{\footnotesize\ttfamily GUI.\+Modulation\+GUI.\+plot\+\_\+ask\+\_\+signals (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{time,  }\item[{}]{bw,  }\item[{}]{sint,  }\item[{}]{st }\end{DoxyParamCaption})}
+
+
+
+Plot the digital signal, carrier signal, and ASK modulated signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & (np.\+array)\+: Time vector for the signal. \\
+\hline
+{\em bw} & (np.\+array)\+: Repeated binary sequence. \\
+\hline
+{\em sint} & (np.\+array)\+: Carrier sinusoidal signal. \\
+\hline
+{\em st} & (np.\+array)\+: ASK modulated signal. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGUI_1_1ModulationGUI_a800b4e08c18a1e027f4989edfc4bfaa3}\label{classGUI_1_1ModulationGUI_a800b4e08c18a1e027f4989edfc4bfaa3} 
+\index{GUI.ModulationGUI@{GUI.ModulationGUI}!plot\_bpsk\_signals@{plot\_bpsk\_signals}}
+\index{plot\_bpsk\_signals@{plot\_bpsk\_signals}!GUI.ModulationGUI@{GUI.ModulationGUI}}
+\doxysubsubsection{\texorpdfstring{plot\_bpsk\_signals()}{plot\_bpsk\_signals()}}
+{\footnotesize\ttfamily GUI.\+Modulation\+GUI.\+plot\+\_\+bpsk\+\_\+signals (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{time,  }\item[{}]{modulating\+\_\+signal,  }\item[{}]{carrier\+\_\+signal,  }\item[{}]{bpsk\+\_\+signal,  }\item[{}]{carrier\+\_\+freq }\end{DoxyParamCaption})}
+
+
+
+Plot the modulating signal, carrier signal, and the BPSK modulated signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & (np.\+array)\+: Time vector for the signals. \\
+\hline
+{\em modulating\+\_\+signal} & (np.\+array)\+: Binary modulating signal over time. \\
+\hline
+{\em carrier\+\_\+signal} & (np.\+array)\+: Carrier signal. \\
+\hline
+{\em bpsk\+\_\+signal} & (np.\+array)\+: BPSK modulated signal. \\
+\hline
+{\em carrier\+\_\+freq} & (float)\+: Frequency of carrier signal (Hz). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGUI_1_1ModulationGUI_a2b4633d397de34785265918db4d1551b}\label{classGUI_1_1ModulationGUI_a2b4633d397de34785265918db4d1551b} 
+\index{GUI.ModulationGUI@{GUI.ModulationGUI}!plot\_fm\_signals@{plot\_fm\_signals}}
+\index{plot\_fm\_signals@{plot\_fm\_signals}!GUI.ModulationGUI@{GUI.ModulationGUI}}
+\doxysubsubsection{\texorpdfstring{plot\_fm\_signals()}{plot\_fm\_signals()}}
+{\footnotesize\ttfamily GUI.\+Modulation\+GUI.\+plot\+\_\+fm\+\_\+signals (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{time,  }\item[{}]{message\+\_\+signal,  }\item[{}]{carrier\+\_\+signal,  }\item[{}]{fm\+\_\+signal,  }\item[{}]{carrier\+\_\+freq,  }\item[{}]{freq\+\_\+deviation }\end{DoxyParamCaption})}
+
+
+
+Plot the message signal, carrier signal, and FM modulated signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & (np.\+array)\+: Time vector for the signals. \\
+\hline
+{\em message\+\_\+signal} & (np.\+array)\+: The base message signal. \\
+\hline
+{\em carrier\+\_\+signal} & (np.\+array)\+: The carrier signal. \\
+\hline
+{\em fm\+\_\+signal} & (np.\+array)\+: The FM modulated signal. \\
+\hline
+{\em carrier\+\_\+freq} & (float)\+: Frequency of the carrier signal in Hz. \\
+\hline
+{\em freq\+\_\+deviation} & (float)\+: Frequency deviation in Hz. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGUI_1_1ModulationGUI_a88b55f70c275d9fdcf452d70c60fb907}\label{classGUI_1_1ModulationGUI_a88b55f70c275d9fdcf452d70c60fb907} 
+\index{GUI.ModulationGUI@{GUI.ModulationGUI}!plot\_fsk\_signals@{plot\_fsk\_signals}}
+\index{plot\_fsk\_signals@{plot\_fsk\_signals}!GUI.ModulationGUI@{GUI.ModulationGUI}}
+\doxysubsubsection{\texorpdfstring{plot\_fsk\_signals()}{plot\_fsk\_signals()}}
+{\footnotesize\ttfamily GUI.\+Modulation\+GUI.\+plot\+\_\+fsk\+\_\+signals (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{time,  }\item[{}]{modulating\+\_\+signal,  }\item[{}]{carrier\+\_\+signal\+\_\+0,  }\item[{}]{carrier\+\_\+signal\+\_\+1,  }\item[{}]{fsk\+\_\+signal,  }\item[{}]{carrier\+\_\+freq\+\_\+0,  }\item[{}]{carrier\+\_\+freq\+\_\+1 }\end{DoxyParamCaption})}
+
+
+
+Plot the modulating signal, carrier signals, and the FSK modulated signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & (np.\+array)\+: Time vector for the signals. \\
+\hline
+{\em modulating\+\_\+signal} & (np.\+array)\+: Binary modulating signal over time. \\
+\hline
+{\em carrier\+\_\+signal\+\_\+0} & (np.\+array)\+: Carrier signal for binary 0. \\
+\hline
+{\em carrier\+\_\+signal\+\_\+1} & (np.\+array)\+: Carrier signal for binary 1. \\
+\hline
+{\em fsk\+\_\+signal} & (np.\+array)\+: FSK modulated signal. \\
+\hline
+{\em carrier\+\_\+freq\+\_\+0} & (float)\+: Frequency of carrier signal for binary 0 (Hz). \\
+\hline
+{\em carrier\+\_\+freq\+\_\+1} & (float)\+: Frequency of carrier signal for binary 1 (Hz). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGUI_1_1ModulationGUI_afaad6ce1e37387e5af83f117305e8c05}\label{classGUI_1_1ModulationGUI_afaad6ce1e37387e5af83f117305e8c05} 
+\index{GUI.ModulationGUI@{GUI.ModulationGUI}!plot\_psk\_signals@{plot\_psk\_signals}}
+\index{plot\_psk\_signals@{plot\_psk\_signals}!GUI.ModulationGUI@{GUI.ModulationGUI}}
+\doxysubsubsection{\texorpdfstring{plot\_psk\_signals()}{plot\_psk\_signals()}}
+{\footnotesize\ttfamily GUI.\+Modulation\+GUI.\+plot\+\_\+psk\+\_\+signals (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{time,  }\item[{}]{modulating\+\_\+signal,  }\item[{}]{carrier\+\_\+signal,  }\item[{}]{psk\+\_\+signal,  }\item[{}]{carrier\+\_\+freq }\end{DoxyParamCaption})}
+
+
+
+Plot the modulating signal, carrier signal, and the PSK modulated signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & (np.\+array)\+: Time vector for the signals. \\
+\hline
+{\em modulating\+\_\+signal} & (np.\+array)\+: Binary modulating signal over time. \\
+\hline
+{\em carrier\+\_\+signal} & (np.\+array)\+: Carrier signal. \\
+\hline
+{\em psk\+\_\+signal} & (np.\+array)\+: PSK modulated signal. \\
+\hline
+{\em carrier\+\_\+freq} & (float)\+: Frequency of carrier signal (Hz). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGUI_1_1ModulationGUI_a540087064a9a167e8fd5ef412d314dae}\label{classGUI_1_1ModulationGUI_a540087064a9a167e8fd5ef412d314dae} 
+\index{GUI.ModulationGUI@{GUI.ModulationGUI}!plot\_qam\_signals@{plot\_qam\_signals}}
+\index{plot\_qam\_signals@{plot\_qam\_signals}!GUI.ModulationGUI@{GUI.ModulationGUI}}
+\doxysubsubsection{\texorpdfstring{plot\_qam\_signals()}{plot\_qam\_signals()}}
+{\footnotesize\ttfamily GUI.\+Modulation\+GUI.\+plot\+\_\+qam\+\_\+signals (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{time,  }\item[{}]{modulating\+\_\+signal,  }\item[{}]{carrier\+\_\+signal\+\_\+i,  }\item[{}]{carrier\+\_\+signal\+\_\+q,  }\item[{}]{qam\+\_\+signal,  }\item[{}]{carrier\+\_\+freq,  }\item[{}]{constellation\+\_\+points }\end{DoxyParamCaption})}
+
+
+
+Plot the modulating signal, carrier signals, and the QAM modulated signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & (np.\+array)\+: Time vector for the signals. \\
+\hline
+{\em modulating\+\_\+signal} & (np.\+array)\+: Integer representation of the constellation points over time. \\
+\hline
+{\em carrier\+\_\+signal\+\_\+i} & (np.\+array)\+: In-\/phase carrier signal. \\
+\hline
+{\em carrier\+\_\+signal\+\_\+q} & (np.\+array)\+: Quadrature carrier signal. \\
+\hline
+{\em qam\+\_\+signal} & (np.\+array)\+: QAM modulated signal. \\
+\hline
+{\em carrier\+\_\+freq} & (float)\+: Frequency of carrier signal (Hz). \\
+\hline
+{\em constellation\+\_\+points} & (list)\+: A list of complex numbers representing the constellation points. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGUI_1_1ModulationGUI_a49c8c3a71d6c527567004a5db9a6b814}\label{classGUI_1_1ModulationGUI_a49c8c3a71d6c527567004a5db9a6b814} 
+\index{GUI.ModulationGUI@{GUI.ModulationGUI}!plot\_qpsk\_signals@{plot\_qpsk\_signals}}
+\index{plot\_qpsk\_signals@{plot\_qpsk\_signals}!GUI.ModulationGUI@{GUI.ModulationGUI}}
+\doxysubsubsection{\texorpdfstring{plot\_qpsk\_signals()}{plot\_qpsk\_signals()}}
+{\footnotesize\ttfamily GUI.\+Modulation\+GUI.\+plot\+\_\+qpsk\+\_\+signals (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{time,  }\item[{}]{modulating\+\_\+signal,  }\item[{}]{carrier\+\_\+signal\+\_\+i,  }\item[{}]{carrier\+\_\+signal\+\_\+q,  }\item[{}]{qpsk\+\_\+signal,  }\item[{}]{carrier\+\_\+freq }\end{DoxyParamCaption})}
+
+
+
+Plot the modulating signal, carrier signals, and the QPSK modulated signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & (np.\+array)\+: Time vector for the signals. \\
+\hline
+{\em modulating\+\_\+signal} & (np.\+array)\+: Complex representation of the constellation points over time. \\
+\hline
+{\em carrier\+\_\+signal\+\_\+i} & (np.\+array)\+: In-\/phase carrier signal. \\
+\hline
+{\em carrier\+\_\+signal\+\_\+q} & (np.\+array)\+: Quadrature carrier signal. \\
+\hline
+{\em qpsk\+\_\+signal} & (np.\+array)\+: QPSK modulated signal. \\
+\hline
+{\em carrier\+\_\+freq} & (float)\+: Frequency of carrier signal (Hz). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGUI_1_1ModulationGUI_affdc9dd45e3cce5c2fb34df7f704d447}\label{classGUI_1_1ModulationGUI_affdc9dd45e3cce5c2fb34df7f704d447} 
+\index{GUI.ModulationGUI@{GUI.ModulationGUI}!run\_test@{run\_test}}
+\index{run\_test@{run\_test}!GUI.ModulationGUI@{GUI.ModulationGUI}}
+\doxysubsubsection{\texorpdfstring{run\_test()}{run\_test()}}
+{\footnotesize\ttfamily GUI.\+Modulation\+GUI.\+run\+\_\+test (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Run the selected test.\end{DoxyVerb}
+ \Hypertarget{classGUI_1_1ModulationGUI_a54ad9a1aa778a641e47754c6babfa9e9}\label{classGUI_1_1ModulationGUI_a54ad9a1aa778a641e47754c6babfa9e9} 
+\index{GUI.ModulationGUI@{GUI.ModulationGUI}!update\_test\_menu@{update\_test\_menu}}
+\index{update\_test\_menu@{update\_test\_menu}!GUI.ModulationGUI@{GUI.ModulationGUI}}
+\doxysubsubsection{\texorpdfstring{update\_test\_menu()}{update\_test\_menu()}}
+{\footnotesize\ttfamily GUI.\+Modulation\+GUI.\+update\+\_\+test\+\_\+menu (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Update the test menu based on the selected path.\end{DoxyVerb}
+ \Hypertarget{classGUI_1_1ModulationGUI_a320a55e42ce98b8b85f549963bb7b7bd}\label{classGUI_1_1ModulationGUI_a320a55e42ce98b8b85f549963bb7b7bd} 
+\index{GUI.ModulationGUI@{GUI.ModulationGUI}!validate\_range@{validate\_range}}
+\index{validate\_range@{validate\_range}!GUI.ModulationGUI@{GUI.ModulationGUI}}
+\doxysubsubsection{\texorpdfstring{validate\_range()}{validate\_range()}}
+{\footnotesize\ttfamily GUI.\+Modulation\+GUI.\+validate\+\_\+range (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value,  }\item[{}]{min\+\_\+val,  }\item[{}]{max\+\_\+val,  }\item[{}]{var\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Validates if the input value is within the specified range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & (str)\+: The input value to validate. \\
+\hline
+{\em min\+\_\+val} & (float)\+: The minimum allowed value. \\
+\hline
+{\em max\+\_\+val} & (float)\+: The maximum allowed value. \\
+\hline
+{\em var\+\_\+name} & (str)\+: The name of the variable being validated.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\+: True if the value is valid, False otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+GUI/GUI.\+py\item 
+GUI2/GUI.\+py\end{DoxyCompactItemize}
