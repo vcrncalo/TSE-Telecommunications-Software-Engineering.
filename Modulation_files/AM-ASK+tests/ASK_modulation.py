@@ -95,7 +95,10 @@ if __name__ == "__main__":
     binary_sequence = list(map(int, binary_sequence.strip('[]').split(",")))
 
     # Perform ASK modulation and obtain the components.
-    t, bw, sint, st = ask_modulation(binary_sequence)
+    carrier_freq = 10
+    amplitude = 1
+    bit_duration = 1
+    t, bw, sint, st = ask_modulation(binary_sequence, carrier_freq, amplitude, bit_duration)
 
     # Plot the ASK signals.
     plot_ask_signals(t, bw, sint, st)
