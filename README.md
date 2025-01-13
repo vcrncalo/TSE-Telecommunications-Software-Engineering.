@@ -61,7 +61,7 @@ This project explores the concept of a digital transmitter, how it operates, and
 <details>
 <summary>Amplitude Modulation (AM) image</summary>
 <p align="center">
-<img src=AM-ASK+tests/Images/AM_modulation.png>
+<img src=Modulation_files/AM-ASK+tests/Images/AM_modulation.png>
 <br>
 Figure 1: Amplitude modulation
 </p>
@@ -74,7 +74,7 @@ Figure 1: Amplitude modulation
 <details>
 <summary>Amplitude Shift Keying (ASK) image</summary>
 <p align="center">
-<img src=AM-ASK+tests/Images/ASK_modulation.png>
+<img src=Modulation_files/AM-ASK+tests/Images/ASK_modulation.png>
 <br>
 Figure 2: Amplitude shift keying
 </p>
@@ -87,7 +87,7 @@ Figure 2: Amplitude shift keying
 <details>
 <summary>Frequency Modulation (FM) image</summary>
 <p align="center">
-<img src=FM-FSK+tests/Images/FM_modulation.png>
+<img src=Modulation_files/FM-FSK+tests/Images/FM_modulation.png>
 <br>
 Figure 3: Frequency modulation
 </p>
@@ -100,7 +100,7 @@ Figure 3: Frequency modulation
 <details>
 <summary>Frequency Shift Keying (FSK) image</summary>
 <p align="center">
-<img src=FM-FSK+tests/Images/FSK_modulation.png>
+<img src=Modulation_files/FM-FSK+tests/Images/FSK_modulation.png>
 <br>
 Figure 4: Frequency shift keying
 </p>
@@ -113,7 +113,7 @@ Figure 4: Frequency shift keying
 <details>
 <summary>Phase Shift Keying (PSK) image</summary>
 <p align="center">
-<img src=PSK-BPSK+tests/Images/PSK_modulation.png>
+<img src=Modulation_files/PSK-BPSK+tests/Images/PSK_modulation.png>
 <br>
 Figure 5: Phase shift keying
 </p>
@@ -126,7 +126,7 @@ Figure 5: Phase shift keying
 <details>
 <summary>Binary Phase Shift Keying (BPSK) image</summary>
 <p align="center">
-<img src=PSK-BPSK+tests/Images/BPSK_modulation.png>
+<img src=Modulation_files/PSK-BPSK+tests/Images/BPSK_modulation.png>
 <br>
 Figure 6: Binary phase shift keying
 </p>
@@ -139,7 +139,7 @@ Figure 6: Binary phase shift keying
 <details>
 <summary>Quadrature Amplitude Modulation (QAM) image</summary>
 <p align="center">
-<img src=QAM-QPSK+tests/Images/QAM_modulation.png>
+<img src=Modulation_files/QAM-QPSK+tests/Images/QAM_modulation.png>
 <br>
 Figure 6: Quadrature amplitude modulation
 </p>
@@ -152,7 +152,7 @@ Figure 6: Quadrature amplitude modulation
 <details>
 <summary>Quadrature Phase Shift Keying (QPSK) image</summary>
 <p align="center">
-<img src=QAM-QPSK+tests/Images/QPSK_modulation.png>
+<img src=Modulation_files/QAM-QPSK+tests/Images/QPSK_modulation.png>
 <br>
 Figure 7: Quadrature phase shift keying
 </p>
