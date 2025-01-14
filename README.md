@@ -183,15 +183,15 @@ Figure 8: Code coverage
 
 A **Doxyfile** is Doxygen's configuration file, controlling the documentation generation process. It specifies settings such as input files, output directories, and documentation style. Doxyfile can be generated with: `doxygen -g Doxyfile`, and it can later be edited with a text editor, such as vim with: `vim Doxyfile`. Once we've configured Doxfile the way we want it to be, we can finally type: `doxygen Doxyfile` which will create `html` and `latex` directories, and later, `latex` directory can be used to compile a PDF document from there. 
 
-#### Key Doxyfile Settings
+<u>*Key Doxyfile Settings:*</u>
 
 The Doxyfile uses a variety of settings to configure the documentation generation. Here are some of the key settings:
 
-##### Project Information
+#### Project Information
 -   **`PROJECT_NAME`**: The name of the project.
 -   **`PROJECT_NUMBER`**: The version number of the project.
 
-##### Input and Output
+#### Input and Output
 -   **`OUTPUT_DIRECTORY`**: The directory where the generated documentation will be placed.
 -   **`INPUT`**: Specifies the input files or directories to be processed by Doxygen.
 -    **`FILE_PATTERNS`**: Specifies the file patterns to be included in the documentation.
@@ -199,18 +199,18 @@ The Doxyfile uses a variety of settings to configure the documentation generatio
 -   **`HTML_OUTPUT`**: Specifies the directory where the HTML documentation will be placed.
 -   **`LATEX_OUTPUT`**: Specifies the directory where the LaTeX documentation will be placed.
 
-##### Extraction Options
+#### Extraction Options
 -   **`EXTRACT_ALL`**: Whether to extract documentation from all code elements, even if they are not explicitly documented.
 -   **`EXTRACT_PRIVATE`**: Whether to extract documentation from private members.
 -   **`EXTRACT_STATIC`**: Whether to extract documentation from static members.
 
-##### Preprocessing and Includes
+#### Preprocessing and Includes
 -   **`ENABLE_PREPROCESSING`**: Whether to enable preprocessing of the input files.
 -   **`MACRO_EXPANSION`**: Whether to expand macros in the input files.
 -   **`SEARCH_INCLUDES`**: Whether to search for include files in the input files.
 -   **`INCLUDE_PATH`**: The path to the include files.
 
-##### Other Settings
+#### Other Settings
 -   **`IMAGE_PATH`**: The path to the images used in the documentation.
 -   **`EXAMPLE_PATH`**: The path to the example files.
 -   **`GENERATE_HTML`**: Whether to generate HTML documentation.
@@ -236,18 +236,18 @@ The project includes a graphical user interface (GUI) built using Tkinter. The G
 
 This project includes two versions of the GUI, each with different functionalities and design approaches.
 
-#### GUI Version 1
+<u>*GUI Version 1*</u>
 
 The first version of the GUI (`GUI/GUI_v1`) is designed to load and run tests for different modulation techniques. It provides a way to select a modulation type, choose a test path (happy or sad path), and run the corresponding tests. This version is more focused on testing the modulation functions rather than visualizing the modulated signals.
 
-##### Features of GUI Version 1
+#### Features of GUI Version 1
 
 -   **Modulation Selection:** Users can select a modulation technique from a dropdown menu.
 -   **Test Path Selection:** Users can choose to run either happy path or sad path tests.
 -   **Test Execution:** The GUI runs the selected test and displays a success or error message.
 -   **Terminal Output:** Detailed error messages for sad path tests are displayed in the terminal.
 
-##### How to Run GUI Version 1
+#### How to Run GUI Version 1
 
 To run the first version of the GUI, navigate to the `GUI/GUI_v1` directory and execute the `GUI.py` file.
 
@@ -256,18 +256,18 @@ cd GUI/GUI_v1
 python GUI.py
 ```
 
-#### GUI Version 2
+<u>*GUI Version 2:*</u>
 
 The second version of the GUI (`GUI/GUI_v2`) is designed to simulate and visualize various modulation techniques. It allows users to select a modulation type, adjust its parameters, and visualize the modulated signal in real-time. This version is more focused on the practical application and visualization of modulation techniques.
 
-##### Features of GUI Version 2
+#### Features of GUI Version 2
 
 -   **Modulation Selection:** Users can choose from a variety of modulation techniques using a dropdown menu.
 -   **Parameter Adjustment:** The GUI provides input fields for adjusting the parameters of the selected modulation technique.
 -   **Signal Visualization:** The GUI displays plots of the message signal, carrier signal, and the modulated signal.
 -   **Help Menu:** The GUI includes a help menu that provides information about the program and how to use it.
 
-##### How to Run GUI Version 2
+#### How to Run GUI Version 2
 
 To run the second version of the GUI, navigate to the `GUI/GUI_v2` directory and execute the `GUI.py` file.
 
