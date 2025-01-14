@@ -45,6 +45,7 @@ This project explores the concept of a digital transmitter, how it operates, and
 |FM-FSK+tests|This directory contains all code files necessary for FM and FSK modulations, as well as their respective test files and modulation images.|
 |PSK-BPSK+tests|This directory contains all code files necessary for PSK and BPSK modulations, as well as their respective test files and modulation images.|
 |QAM-QPSK+tests|This directory contains all code files necessary for QAM and QPSK modulations, as well as their respective test files and modulation images.|
+|GUI|This directory contains all code files necessary for the GUI.|
 |Images|This directory contains a variety of images related to modulations and tests.|
 |.github|This directory contains test.yml file which checks all tests and will notify the user if the tests don't pass (useful for debugging)|
 |.coverage|This file was generated with `pytest -v -cov`, it run all Python tests in the root directory|
@@ -220,6 +221,28 @@ The Doxyfile is central to configuring Doxygen. The `INPUT` setting is used to s
 
 ---
 
+## GUI
+
+The project includes a graphical user interface (GUI) built using Tkinter. The GUI allows users to select a modulation technique, adjust its parameters, and visualize the modulated signal.
+
+### Features
+
+-   **Modulation Selection:** Users can choose from a variety of modulation techniques using a dropdown menu.
+-   **Parameter Adjustment:** The GUI provides input fields for adjusting the parameters of the selected modulation technique.
+-   **Signal Visualization:** The GUI displays plots of the message signal, carrier signal, and the modulated signal.
+-   **Help Menu:** The GUI includes a help menu that provides information about the program and how to use it.
+
+### How to Run the GUI
+
+To run the GUI, navigate to the `GUI/GUI_v2` directory and execute the `GUI.py` file.
+
+```bash
+cd GUI/GUI_v2
+python GUI.py
+```
+
+---
+
 ## Technologies Used
 
 - **Programming Language:** Python  
@@ -229,3 +252,4 @@ The Doxyfile is central to configuring Doxygen. The `INPUT` setting is used to s
   - `scipy` - Noise generation and SNR analysis. .
   - `pytest` - Testing framework.
   - `coverage` - Code coverage analysis.
+  - `tkinter` - GUI framework.
