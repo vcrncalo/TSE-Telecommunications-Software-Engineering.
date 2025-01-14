@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['repository_20structure_0',['Repository Structure',['../md_README.html#autotoc_md5',1,'']]],
-  ['run_5ftest_1',['run_test',['../classGUI_1_1ModulationGUI.html#affdc9dd45e3cce5c2fb34df7f704d447',1,'GUI::ModulationGUI']]]
+  ['qam_0',['Quadrature Amplitude Modulation (QAM)',['../md_README.html#autotoc_md14',1,'']]],
+  ['qpsk_1',['Quadrature Phase Shift Keying (QPSK)',['../md_README.html#autotoc_md15',1,'']]],
+  ['quadrature_20amplitude_20modulation_20qam_2',['Quadrature Amplitude Modulation (QAM)',['../md_README.html#autotoc_md14',1,'']]],
+  ['quadrature_20phase_20shift_20keying_20qpsk_3',['Quadrature Phase Shift Keying (QPSK)',['../md_README.html#autotoc_md15',1,'']]]
 ];

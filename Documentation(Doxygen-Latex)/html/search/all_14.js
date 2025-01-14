@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['settings_0',['settings',['../md_README.html#autotoc_md23',1,'Key Doxyfile Settings'],['../md_README.html#autotoc_md28',1,'Other Settings']]],
-  ['shift_20keying_20ask_1',['Amplitude Shift Keying (ASK)',['../md_README.html#autotoc_md11',1,'']]],
-  ['shift_20keying_20bpsk_2',['Binary Phase Shift Keying (BPSK)',['../md_README.html#autotoc_md15',1,'']]],
-  ['shift_20keying_20fsk_3',['Frequency Shift Keying (FSK)',['../md_README.html#autotoc_md13',1,'']]],
-  ['shift_20keying_20psk_4',['Phase Shift Keying (PSK)',['../md_README.html#autotoc_md14',1,'']]],
-  ['shift_20keying_20qpsk_5',['Quadrature Phase Shift Keying (QPSK)',['../md_README.html#autotoc_md17',1,'']]],
-  ['show_5fhelp_6',['show_help',['../classGUI_1_1ModulationGUI.html#acd6edbf4252d56474cdd83eb2dc8c0fb',1,'GUI::ModulationGUI']]],
-  ['signal_20modulation_7',['Telecommunications software engineering - Digital transmitter design and signal modulation',['../md_README.html',1,'']]],
-  ['so_20i_20can_20input_201_200_20and_20not_20with_20brackets_8',['also make it so i can input 1, 0 and not with brackets',['../md__8aider_8chat_8history.html#autotoc_md1',1,'']]],
-  ['software_20engineering_20digital_20transmitter_20design_20and_20signal_20modulation_9',['Telecommunications software engineering - Digital transmitter design and signal modulation',['../md_README.html',1,'']]],
-  ['structure_10',['Repository Structure',['../md_README.html#autotoc_md7',1,'']]]
+  ['qam_0',['Quadrature Amplitude Modulation (QAM)',['../md_README.html#autotoc_md14',1,'']]],
+  ['qam_20qpsk_1',['sort the modulations in the dropdown like this: AM, ASK, FM, FSK, PSK, BPSK, QAM, QPSK',['../md_Trash_2_8aider_8chat_8history.html#autotoc_md154',1,'']]],
+  ['qam_20qpsk_20tests_20qam_5fmodulation_20py_2',['/add Modulation_files/QAM-QPSK+tests/QAM_modulation.py',['../md_Trash_2_8aider_8chat_8history.html#autotoc_md129',1,'']]],
+  ['qam_20qpsk_20tests_20qpsk_5fmodulation_20py_3',['/add Modulation_files/QAM-QPSK+tests/QPSK_modulation.py',['../md_Trash_2_8aider_8chat_8history.html#autotoc_md130',1,'']]],
+  ['qam_5fmodulation_20py_4',['/add Modulation_files/QAM-QPSK+tests/QAM_modulation.py',['../md_Trash_2_8aider_8chat_8history.html#autotoc_md129',1,'']]],
+  ['qpsk_5',['qpsk',['../md_README.html#autotoc_md15',1,'Quadrature Phase Shift Keying (QPSK)'],['../md_Trash_2_8aider_8chat_8history.html#autotoc_md154',1,'sort the modulations in the dropdown like this: AM, ASK, FM, FSK, PSK, BPSK, QAM, QPSK']]],
+  ['qpsk_20tests_20qam_5fmodulation_20py_6',['/add Modulation_files/QAM-QPSK+tests/QAM_modulation.py',['../md_Trash_2_8aider_8chat_8history.html#autotoc_md129',1,'']]],
+  ['qpsk_20tests_20qpsk_5fmodulation_20py_7',['/add Modulation_files/QAM-QPSK+tests/QPSK_modulation.py',['../md_Trash_2_8aider_8chat_8history.html#autotoc_md130',1,'']]],
+  ['qpsk_5fmodulation_20py_8',['/add Modulation_files/QAM-QPSK+tests/QPSK_modulation.py',['../md_Trash_2_8aider_8chat_8history.html#autotoc_md130',1,'']]],
+  ['quadrature_20amplitude_20modulation_20qam_9',['Quadrature Amplitude Modulation (QAM)',['../md_README.html#autotoc_md14',1,'']]],
+  ['quadrature_20phase_20shift_20keying_20qpsk_10',['Quadrature Phase Shift Keying (QPSK)',['../md_README.html#autotoc_md15',1,'']]]
 ];

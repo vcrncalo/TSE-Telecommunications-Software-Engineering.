@@ -20,11 +20,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="ETF_logo.jpg"/></td>
+  <td id="projectlogo"><img alt="Logo" src="ETF_logo.png"/></td>
   <td id="projectalign">
    <div id="projectname">Telecommunications software engineering - Digital transmitter design and signal modulation
    </div>
-   <div id="projectbrief">Radili: Vedad Crnčalo, Amna Bumbul, Harun Dedović, Muhamed Crnčalo\nDatum: 13.01.2025.</div>
+   <div id="projectbrief">Radili: Vedad Crnčalo, Amna Bumbul, Harun Dedović, Muhamed Crnčalo</div>
   </td>
  </tr>
  </tbody>
@@ -136,12 +136,14 @@ Repository Structure</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">QAM-QPSK+tests   </td><td class="markdownTableBodyNone">This directory contains all code files necessary for QAM and QPSK modulations, as well as their respective test files and modulation images.    </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">GUI   </td><td class="markdownTableBodyNone">This directory contains <code>GUI.py</code> code file necessary for the GUI.    </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Images   </td><td class="markdownTableBodyNone">This directory contains a variety of images related to modulations and tests.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">.github   </td><td class="markdownTableBodyNone">This directory contains test.yml file which checks all tests and will notify the user if the tests don't pass (useful for debugging)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">.coverage   </td><td class="markdownTableBodyNone">This file was generated with <code>pytest -v -cov</code>, it run all Python tests in the root directory    </td></tr>
+<td class="markdownTableBodyNone">.github   </td><td class="markdownTableBodyNone">This directory contains test.yml file which checks all tests and will notify the user if the tests don't pass (useful for debugging)    </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">.coverage   </td><td class="markdownTableBodyNone">This file was generated with <code>pytest -v -cov</code>, it run all Python tests in the root directory    </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">README.md   </td><td class="markdownTableBodyNone">Project details.   </td></tr>
 </table>
 <hr  />
@@ -239,9 +241,6 @@ Quadrature Phase Shift Keying (QPSK) image</summary>
 <h1><a class="anchor" id="autotoc_md17"></a>
 Pytest</h1>
 <p>*The pytest framework is used to run the tests for each modulation technique. The tests can be run with: &lsquo;pytest -v -cov 'file.py&rsquo;`.*</p>
-<p><em>Figure 8 shows how pytest output looks when running the tests for all the modulation techniques:</em></p>
-<p><img src="Images/Main_coverage.png" alt="" class="inline"/> <br  />
- Figure 8: Code coverage </p>
 <hr  />
 <h1><a class="anchor" id="autotoc_md19"></a>
 Doxygen</h1>
@@ -249,17 +248,16 @@ Doxygen</h1>
 <h2><a class="anchor" id="autotoc_md20"></a>
 Doxyfile</h2>
 <p>A <b>Doxyfile</b> is Doxygen's configuration file, controlling the documentation generation process. It specifies settings such as input files, output directories, and documentation style. Doxyfile can be generated with: <code>doxygen -g Doxyfile</code>, and it can later be edited with a text editor, such as vim with: <code>vim Doxyfile</code>. Once we've configured Doxfile the way we want it to be, we can finally type: <code>doxygen Doxyfile</code> which will create <code>html</code> and <code>latex</code> directories, and later, <code>latex</code> directory can be used to compile a PDF document from there.</p>
-<h3><a class="anchor" id="autotoc_md21"></a>
-Key Doxyfile Settings</h3>
+<p><u><em>Key Doxyfile Settings:</em></u></p>
 <p>The Doxyfile uses a variety of settings to configure the documentation generation. Here are some of the key settings:</p>
-<h4><a class="anchor" id="autotoc_md22"></a>
-Project Information</h4>
+<h3><a class="anchor" id="autotoc_md21"></a>
+Project Information</h3>
 <ul>
 <li>**<code>PROJECT_NAME</code>**: The name of the project.</li>
 <li>**<code>PROJECT_NUMBER</code>**: The version number of the project.</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md23"></a>
-Input and Output</h4>
+<h3><a class="anchor" id="autotoc_md22"></a>
+Input and Output</h3>
 <ul>
 <li>**<code>OUTPUT_DIRECTORY</code>**: The directory where the generated documentation will be placed.</li>
 <li>**<code>INPUT</code>**: Specifies the input files or directories to be processed by Doxygen.</li>
@@ -268,23 +266,23 @@ Input and Output</h4>
 <li>**<code>HTML_OUTPUT</code>**: Specifies the directory where the HTML documentation will be placed.</li>
 <li>**<code>LATEX_OUTPUT</code>**: Specifies the directory where the LaTeX documentation will be placed.</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md24"></a>
-Extraction Options</h4>
+<h3><a class="anchor" id="autotoc_md23"></a>
+Extraction Options</h3>
 <ul>
 <li>**<code>EXTRACT_ALL</code>**: Whether to extract documentation from all code elements, even if they are not explicitly documented.</li>
 <li>**<code>EXTRACT_PRIVATE</code>**: Whether to extract documentation from private members.</li>
 <li>**<code>EXTRACT_STATIC</code>**: Whether to extract documentation from static members.</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md25"></a>
-Preprocessing and Includes</h4>
+<h3><a class="anchor" id="autotoc_md24"></a>
+Preprocessing and Includes</h3>
 <ul>
 <li>**<code>ENABLE_PREPROCESSING</code>**: Whether to enable preprocessing of the input files.</li>
 <li>**<code>MACRO_EXPANSION</code>**: Whether to expand macros in the input files.</li>
 <li>**<code>SEARCH_INCLUDES</code>**: Whether to search for include files in the input files.</li>
 <li>**<code>INCLUDE_PATH</code>**: The path to the include files.</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md26"></a>
-Other Settings</h4>
+<h3><a class="anchor" id="autotoc_md25"></a>
+Other Settings</h3>
 <ul>
 <li>**<code>IMAGE_PATH</code>**: The path to the images used in the documentation.</li>
 <li>**<code>EXAMPLE_PATH</code>**: The path to the example files.</li>
@@ -294,7 +292,25 @@ Other Settings</h4>
 </ul>
 <p>The Doxyfile is central to configuring Doxygen. The <code>INPUT</code> setting is used to specify the files or directories to be processed, and the <code>RECURSIVE</code> setting is important for projects with subdirectories. The current specified input is "." which means that all files in the current directory will be processed, and the Doxyfile was generated in the root directory. The <code>FILE_PATTERNS</code> setting allows for specific file types to be included in the documentation.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md28"></a>
+<h1><a class="anchor" id="autotoc_md27"></a>
+GUI</h1>
+<p>The project includes a graphical user interface (GUI) built using Tkinter. The GUI allows users to select a modulation technique, adjust its parameters, and visualize the modulated signal.</p>
+<p>The GUI is designed to simulate and visualize various modulation techniques. It allows users to select a modulation type, adjust its parameters, and visualize the modulated signal in real-time. This GUI is more focused on the practical application and visualization of modulation techniques.</p>
+<h2><a class="anchor" id="autotoc_md28"></a>
+Features of the GUI</h2>
+<ul>
+<li><b>Modulation Selection:</b> Users can choose from a variety of modulation techniques using a dropdown menu.</li>
+<li><b>Parameter Adjustment:</b> The GUI provides input fields for adjusting the parameters of the selected modulation technique.</li>
+<li><b>Signal Visualization:</b> The GUI displays plots of the message signal, carrier signal, and the modulated signal.</li>
+<li><b>Help Menu:</b> The GUI includes a help menu that provides information about the program and how to use it.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md29"></a>
+How to Run the GUI</h3>
+<p>To run the GUI, navigate to the <code>GUI</code> directory and execute the <code>GUI.py</code> file.</p>
+<div class="fragment"><div class="line">cd GUI</div>
+<div class="line">python GUI.py</div>
+</div><!-- fragment --><hr  />
+<h1><a class="anchor" id="autotoc_md31"></a>
 Technologies Used</h1>
 <ul>
 <li><b>Programming Language:</b> Python <br  />
@@ -305,9 +321,10 @@ Technologies Used</h1>
 </li>
 <li><code>matplotlib</code> - Visualization of simulation results. <br  />
 </li>
-<li><code>scipy</code> - Noise generation and SNR analysis. .</li>
+<li><code>scipy</code> - Noise generation and SNR analysis.</li>
 <li><code>pytest</code> - Testing framework.</li>
-<li><code>coverage</code> - Code coverage analysis. </li>
+<li><code>coverage</code> - Code coverage analysis.</li>
+<li><code>tkinter</code> - GUI framework. </li>
 </ul>
 </li>
 </ul>

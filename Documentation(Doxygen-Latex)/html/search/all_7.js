@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['includes_0',['Preprocessing and Includes',['../md_README.html#autotoc_md25',1,'']]],
-  ['information_1',['Project Information',['../md_README.html#autotoc_md22',1,'']]],
-  ['input_20and_20output_2',['Input and Output',['../md_README.html#autotoc_md23',1,'']]]
+  ['how_20to_20run_20the_20gui_0',['How to Run the GUI',['../md_README.html#autotoc_md29',1,'']]]
 ];
