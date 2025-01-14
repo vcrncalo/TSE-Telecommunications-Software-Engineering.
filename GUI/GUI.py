@@ -1,5 +1,7 @@
 import os
 import importlib
+import os
+import importlib
 import tkinter as tk
 from tkinter import ttk, messagebox
 import matplotlib.pyplot as plt
@@ -24,7 +26,7 @@ class ModulationGUI:
 
         # Load modulation modules
         self.modulation_modules = self.load_modulation_modules()
-        self.modulation_names = ['AM_modulation', 'ASK_modulation', 'FM_modulation', 'FSK_modulation', 'PSK_modulation', 'BPSK_modulation', 'QAM_modulation', 'QPSK_modulation']
+        self.modulation_names = ["AM_modulation", "ASK_modulation", "FM_modulation", "FSK_modulation", "PSK_modulation", "BPSK_modulation", "QAM_modulation", "QPSK_modulation"]
         self.selected_modulation = tk.StringVar()
 
         # Parameter frames
@@ -390,9 +392,8 @@ class ModulationGUI:
 
         @return dict: A dictionary where keys are module names and values are the modulation functions.
         """
-        
         gui_dir = os.path.dirname(os.path.abspath(__file__))
-        modulation_dir = os.path.join(gui_dir, '..', '..', 'Modulation_files')
+        modulation_dir = os.path.join(gui_dir, '..', 'Modulation_files')
         modulation_modules = {}
         print("Contents of modulation directory:", os.listdir(modulation_dir))
         for root, _, files in os.walk(modulation_dir):
@@ -434,11 +435,6 @@ class ModulationGUI:
             messagebox.showerror("Error", "Please select a modulation type.")
             return
 
-        selected_module = self.selected_modulation.get()
-        if not selected_module:
-            messagebox.showerror("Error", "Please select a modulation type.")
-            return
-
         module = self.modulation_modules.get(selected_module)
         if module is None:
             messagebox.showerror("Error", "Selected modulation module not found.")
@@ -449,7 +445,7 @@ class ModulationGUI:
                 params = self.get_parameters(['am_carrier_freq', 'am_initial_phase', 'am_amplitude', 'am_duration'])
                 if params is None:
                     return
-                time, message_signal, carrier_signal, am_signal = self.modulation_modules[selected_module](
+                time, message_signal, carrier_signal, am_signal = module(
                     carrier_freq=params['am_carrier_freq'], sample_rate=1000, duration=params['am_duration'])
                 am_signal = params['am_amplitude'] * message_signal * np.cos(2 * np.pi * params['am_carrier_freq'] * time + params['am_initial_phase'])
                 self.plot_am_signals(time, message_signal, carrier_signal, am_signal, carrier_freq=params['am_carrier_freq'])
@@ -460,7 +456,7 @@ class ModulationGUI:
                 if params is None:
                     return
                 binary_data = [1, 0, 1, 0]  # Fixed binary data for now
-                time, modulating_signal, carrier_signal_0, carrier_signal_1, fsk_signal = self.modulation_modules[selected_module](
+                time, modulating_signal, carrier_signal_0, carrier_signal_1, fsk_signal = module(
                     binary_data=binary_data, carrier_freq_0=params['fsk_carrier_freq_0'], carrier_freq_1=params['fsk_carrier_freq_1'], sample_rate=1000, bit_duration=params['fsk_bit_duration'])
                 self.plot_fsk_signals(time, modulating_signal, carrier_signal_0, carrier_signal_1, fsk_signal, carrier_freq_0=params['fsk_carrier_freq_0'], carrier_freq_1=params['fsk_carrier_freq_1'])
 
@@ -469,7 +465,7 @@ class ModulationGUI:
                 if params is None:
                     return
                 binary_data = [1, 0, 1, 0]  # Fixed binary data for now
-                time, modulating_signal, carrier_signal, bpsk_signal = self.modulation_modules[selected_module](
+                time, modulating_signal, carrier_signal, bpsk_signal = module(
                     binary_data=binary_data, carrier_freq=params['bpsk_carrier_freq'], sample_rate=1000, bit_duration=params['bpsk_bit_duration'])
                 self.plot_bpsk_signals(time, modulating_signal, carrier_signal, bpsk_signal, carrier_freq=params['bpsk_carrier_freq'])
 
@@ -478,7 +474,7 @@ class ModulationGUI:
                 if params is None:
                     return
                 binary_data = [1, 0, 1, 0]  # Fixed binary data for now
-                time, modulating_signal, carrier_signal, psk_signal = self.modulation_modules[selected_module](
+                time, modulating_signal, carrier_signal, psk_signal = module(
                     binary_data=binary_data, carrier_freq=params['psk_carrier_freq'], sample_rate=1000, bit_duration=params['psk_bit_duration'])
                 self.plot_psk_signals(time, modulating_signal, carrier_signal, psk_signal, carrier_freq=params['psk_carrier_freq'])
 
@@ -492,7 +488,7 @@ class ModulationGUI:
                     messagebox.showerror("Error", "Invalid constellation points format.")
                     return
                 binary_data = [0, 1, 1, 0, 1, 1, 0, 0]  # Fixed binary data for now
-                time, modulating_signal, carrier_signal_i, carrier_signal_q, qam_signal = self.modulation_modules[selected_module](
+                time, modulating_signal, carrier_signal_i, carrier_signal_q, qam_signal = module(
                     binary_data=binary_data, carrier_freq=params['qam_carrier_freq'], sample_rate=1000, bit_duration=params['qam_bit_duration'], constellation_points=constellation_points)
                 self.plot_qam_signals(time, modulating_signal, carrier_signal_i, carrier_signal_q, qam_signal, carrier_freq=params['qam_carrier_freq'], constellation_points=constellation_points)
 
@@ -500,7 +496,7 @@ class ModulationGUI:
                 params = self.get_parameters(['fm_carrier_freq', 'fm_duration', 'fm_freq_deviation'])
                 if params is None:
                     return
-                time, message_signal, carrier_signal, fm_signal = self.modulation_modules[selected_module](
+                time, message_signal, carrier_signal, fm_signal = module(
                     carrier_freq=params['fm_carrier_freq'], sample_rate=1000, duration=params['fm_duration'], freq_deviation=params['fm_freq_deviation'])
                 self.plot_fm_signals(time, message_signal, carrier_signal, fm_signal, carrier_freq=params['fm_carrier_freq'], freq_deviation=params['fm_freq_deviation'])
 
@@ -513,7 +509,7 @@ class ModulationGUI:
                 except ValueError:
                     messagebox.showerror("Error", "Invalid binary sequence format.")
                     return
-                time, bw, sint, st = self.modulation_modules['ASK_modulation'](
+                time, bw, sint, st = module(
                     binary_sequence=binary_sequence, carrier_freq=params['ask_carrier_freq'], amplitude=params['ask_amplitude'], bit_duration=params['ask_bit_duration']
                 )
                 self.plot_ask_signals(time, bw, sint, st)
@@ -523,7 +519,7 @@ class ModulationGUI:
                 if params is None:
                     return
                 binary_data = [0, 1, 1, 0, 1, 1, 0, 0]  # Fixed binary data for now
-                time, modulating_signal, carrier_signal_i, carrier_signal_q, qpsk_signal = self.modulation_modules[selected_module](
+                time, modulating_signal, carrier_signal_i, carrier_signal_q, qpsk_signal = module(
                     binary_data=binary_data, carrier_freq=params['qpsk_carrier_freq'], sample_rate=1000, bit_duration=params['qpsk_bit_duration'])
                 self.plot_qpsk_signals(time, modulating_signal, carrier_signal_i, carrier_signal_q, qpsk_signal, carrier_freq=params['qpsk_carrier_freq'])
             else:
