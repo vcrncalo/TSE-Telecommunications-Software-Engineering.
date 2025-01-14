@@ -232,9 +232,44 @@ The project includes a graphical user interface (GUI) built using Tkinter. The G
 -   **Signal Visualization:** The GUI displays plots of the message signal, carrier signal, and the modulated signal.
 -   **Help Menu:** The GUI includes a help menu that provides information about the program and how to use it.
 
-### How to Run the GUI
+### GUI Versions
 
-To run the GUI, navigate to the `GUI/GUI_v2` directory and execute the `GUI.py` file.
+This project includes two versions of the GUI, each with different functionalities and design approaches.
+
+#### GUI Version 1
+
+The first version of the GUI (`GUI/GUI_v1`) is designed to load and run tests for different modulation techniques. It provides a way to select a modulation type, choose a test path (happy or sad path), and run the corresponding tests. This version is more focused on testing the modulation functions rather than visualizing the modulated signals.
+
+##### Features of GUI Version 1
+
+-   **Modulation Selection:** Users can select a modulation technique from a dropdown menu.
+-   **Test Path Selection:** Users can choose to run either happy path or sad path tests.
+-   **Test Execution:** The GUI runs the selected test and displays a success or error message.
+-   **Terminal Output:** Detailed error messages for sad path tests are displayed in the terminal.
+
+##### How to Run GUI Version 1
+
+To run the first version of the GUI, navigate to the `GUI/GUI_v1` directory and execute the `GUI.py` file.
+
+```bash
+cd GUI/GUI_v1
+python GUI.py
+```
+
+#### GUI Version 2
+
+The second version of the GUI (`GUI/GUI_v2`) is designed to simulate and visualize various modulation techniques. It allows users to select a modulation type, adjust its parameters, and visualize the modulated signal in real-time. This version is more focused on the practical application and visualization of modulation techniques.
+
+##### Features of GUI Version 2
+
+-   **Modulation Selection:** Users can choose from a variety of modulation techniques using a dropdown menu.
+-   **Parameter Adjustment:** The GUI provides input fields for adjusting the parameters of the selected modulation technique.
+-   **Signal Visualization:** The GUI displays plots of the message signal, carrier signal, and the modulated signal.
+-   **Help Menu:** The GUI includes a help menu that provides information about the program and how to use it.
+
+##### How to Run GUI Version 2
+
+To run the second version of the GUI, navigate to the `GUI/GUI_v2` directory and execute the `GUI.py` file.
 
 ```bash
 cd GUI/GUI_v2
@@ -249,7 +284,7 @@ python GUI.py
 - **Libraries:**  
   - `numpy` - Numerical data processing.  
   - `matplotlib` - Visualization of simulation results.  
-  - `scipy` - Noise generation and SNR analysis. .
+  - `scipy` - Noise generation and SNR analysis.
   - `pytest` - Testing framework.
   - `coverage` - Code coverage analysis.
   - `tkinter` - GUI framework.
