@@ -183,7 +183,7 @@ Figure 8: Code coverage
 
 A **Doxyfile** is Doxygen's configuration file, controlling the documentation generation process. It specifies settings such as input files, output directories, and documentation style. Doxyfile can be generated with: `doxygen -g Doxyfile`, and it can later be edited with a text editor, such as vim with: `vim Doxyfile`. Once we've configured Doxfile the way we want it to be, we can finally type: `doxygen Doxyfile` which will create `html` and `latex` directories, and later, `latex` directory can be used to compile a PDF document from there. 
 
-<u>*Key Doxyfile Settings:*</u>
+<u><i>Key Doxyfile Settings:</i></u>
 
 The Doxyfile uses a variety of settings to configure the documentation generation. Here are some of the key settings:
 
@@ -236,7 +236,7 @@ The project includes a graphical user interface (GUI) built using Tkinter. The G
 
 This project includes two versions of the GUI, each with different functionalities and design approaches.
 
-<u>*GUI Version 1*</u>
+<u><i>GUI Version 1:</i></u>
 
 The first version of the GUI (`GUI/GUI_v1`) is designed to load and run tests for different modulation techniques. It provides a way to select a modulation type, choose a test path (happy or sad path), and run the corresponding tests. This version is more focused on testing the modulation functions rather than visualizing the modulated signals.
 
@@ -256,7 +256,7 @@ cd GUI/GUI_v1
 python GUI.py
 ```
 
-<u>*GUI Version 2:*</u>
+<u><i>GUI Version 2:</i></u>
 
 The second version of the GUI (`GUI/GUI_v2`) is designed to simulate and visualize various modulation techniques. It allows users to select a modulation type, adjust its parameters, and visualize the modulated signal in real-time. This version is more focused on the practical application and visualization of modulation techniques.
 
