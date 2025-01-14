@@ -391,9 +391,8 @@ class ModulationGUI:
         @return dict: A dictionary where keys are module names and values are the modulation functions.
         """
         
-        
         gui_dir = os.path.dirname(os.path.abspath(__file__))
-        modulation_dir = os.path.join(gui_dir, '..', 'Modulation_files')
+        modulation_dir = os.path.join(gui_dir, '..', '..', 'Modulation_files')
         modulation_modules = {}
         print("Contents of modulation directory:", os.listdir(modulation_dir))
         for root, _, files in os.walk(modulation_dir):
