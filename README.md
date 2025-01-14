@@ -45,7 +45,7 @@ This project explores the concept of a digital transmitter, how it operates, and
 |FM-FSK+tests|This directory contains all code files necessary for FM and FSK modulations, as well as their respective test files and modulation images.|
 |PSK-BPSK+tests|This directory contains all code files necessary for PSK and BPSK modulations, as well as their respective test files and modulation images.|
 |QAM-QPSK+tests|This directory contains all code files necessary for QAM and QPSK modulations, as well as their respective test files and modulation images.|
-|GUI|This directory contains all code files necessary for the GUI.|
+|GUI|This directory contains `GUI.py` code file necessary for the GUI.|
 |Images|This directory contains a variety of images related to modulations and tests.|
 |.github|This directory contains test.yml file which checks all tests and will notify the user if the tests don't pass (useful for debugging)|
 |.coverage|This file was generated with `pytest -v -cov`, it run all Python tests in the root directory|
@@ -165,14 +165,6 @@ Figure 7: Quadrature phase shift keying
 
 *The pytest framework is used to run the tests for each modulation technique. The tests can be run with: `pytest -v -cov 'file.py'`.*
 
-*Figure 8 shows how pytest output looks when running the tests for all the modulation techniques:*
-
-<p align="center">
-<img src=Images/Main_coverage.png>
-<br>
-Figure 8: Code coverage
-</p>
-
 ---
 
 ## Doxygen
@@ -225,54 +217,21 @@ The Doxyfile is central to configuring Doxygen. The `INPUT` setting is used to s
 
 The project includes a graphical user interface (GUI) built using Tkinter. The GUI allows users to select a modulation technique, adjust its parameters, and visualize the modulated signal.
 
-### Features
+The GUI is designed to simulate and visualize various modulation techniques. It allows users to select a modulation type, adjust its parameters, and visualize the modulated signal in real-time. This GUI is more focused on the practical application and visualization of modulation techniques.
+
+### Features of the GUI
 
 -   **Modulation Selection:** Users can choose from a variety of modulation techniques using a dropdown menu.
 -   **Parameter Adjustment:** The GUI provides input fields for adjusting the parameters of the selected modulation technique.
 -   **Signal Visualization:** The GUI displays plots of the message signal, carrier signal, and the modulated signal.
 -   **Help Menu:** The GUI includes a help menu that provides information about the program and how to use it.
 
-### GUI Versions
+#### How to Run the GUI
 
-This project includes two versions of the GUI, each with different functionalities and design approaches.
-
-<u><i>GUI Version 1:</i></u>
-
-The first version of the GUI (`GUI/GUI_v1`) is designed to load and run tests for different modulation techniques. It provides a way to select a modulation type, choose a test path (happy or sad path), and run the corresponding tests. This version is more focused on testing the modulation functions rather than visualizing the modulated signals.
-
-#### Features of GUI Version 1
-
--   **Modulation Selection:** Users can select a modulation technique from a dropdown menu.
--   **Test Path Selection:** Users can choose to run either happy path or sad path tests.
--   **Test Execution:** The GUI runs the selected test and displays a success or error message.
--   **Terminal Output:** Detailed error messages for sad path tests are displayed in the terminal.
-
-#### How to Run GUI Version 1
-
-To run the first version of the GUI, navigate to the `GUI/GUI_v1` directory and execute the `GUI.py` file.
+To run the GUI, navigate to the `GUI` directory and execute the `GUI.py` file.
 
 ```bash
-cd GUI/GUI_v1
-python GUI.py
-```
-
-<u><i>GUI Version 2:</i></u>
-
-The second version of the GUI (`GUI/GUI_v2`) is designed to simulate and visualize various modulation techniques. It allows users to select a modulation type, adjust its parameters, and visualize the modulated signal in real-time. This version is more focused on the practical application and visualization of modulation techniques.
-
-#### Features of GUI Version 2
-
--   **Modulation Selection:** Users can choose from a variety of modulation techniques using a dropdown menu.
--   **Parameter Adjustment:** The GUI provides input fields for adjusting the parameters of the selected modulation technique.
--   **Signal Visualization:** The GUI displays plots of the message signal, carrier signal, and the modulated signal.
--   **Help Menu:** The GUI includes a help menu that provides information about the program and how to use it.
-
-#### How to Run GUI Version 2
-
-To run the second version of the GUI, navigate to the `GUI/GUI_v2` directory and execute the `GUI.py` file.
-
-```bash
-cd GUI/GUI_v2
+cd GUI
 python GUI.py
 ```
 
